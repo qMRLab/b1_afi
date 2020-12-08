@@ -277,6 +277,118 @@
 			</dict>
 			<dict>
 				<key>duration</key>
+				<real>6</real>
+				<key>editableName</key>
+				<string>New TR 1</string>
+				<key>pluginClass</key>
+				<string>SBNewTRPlugin</string>
+				<key>pluginName</key>
+				<string>New TR</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>useGlobal</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>Repeat 2</string>
+				<key>pluginClass</key>
+				<string>SBRepeatPlugin</string>
+				<key>pluginName</key>
+				<string>Repeat</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>repetitions</key>
+				<integer>230</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>Draw Pulses 2</string>
+				<key>maskType</key>
+				<integer>0</integer>
+				<key>pluginClass</key>
+				<string>SBDrawPulsesPlugin</string>
+				<key>pluginName</key>
+				<string>Draw Pulses</string>
+				<key>pluginNames</key>
+				<array>
+					<string>Phase Encode Gradient</string>
+					<string>Phase Encode Gradient 1</string>
+				</array>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>duration</key>
+				<real>6</real>
+				<key>editableName</key>
+				<string>New TR 2</string>
+				<key>pluginClass</key>
+				<string>SBNewTRPlugin</string>
+				<key>pluginName</key>
+				<string>New TR</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>useGlobal</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>Repeat 3</string>
+				<key>pluginClass</key>
+				<string>SBRepeatPlugin</string>
+				<key>pluginName</key>
+				<string>Repeat</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>repetitions</key>
+				<integer>16</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>Draw Pulses 3</string>
+				<key>maskType</key>
+				<integer>1</integer>
+				<key>pluginClass</key>
+				<string>SBDrawPulsesPlugin</string>
+				<key>pluginName</key>
+				<string>Draw Pulses</string>
+				<key>pluginNames</key>
+				<array>
+					<string>Phase Encode Gradient</string>
+					<string>Phase Encode Gradient 1</string>
+				</array>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>Overlay Combinations 1</string>
+				<key>numInputs</key>
+				<integer>2</integer>
+				<key>pluginClass</key>
+				<string>SBOverlayAllCombinationsPlugin</string>
+				<key>pluginName</key>
+				<string>Overlay Combinations</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>Interleave</string>
+				<key>granularity</key>
+				<integer>1</integer>
+				<key>numInputs</key>
+				<integer>2</integer>
+				<key>pluginClass</key>
+				<string>SBInterleavePlugin</string>
+				<key>pluginName</key>
+				<string>Interleave</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>duration</key>
 				<real>1</real>
 				<key>editableName</key>
 				<string>Preacquisitions</string>
@@ -296,9 +408,9 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>797.7213134765625</real>
+	<real>44.264164428710934</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -334,13 +446,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>731</integer>
+		<integer>942</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1530</integer>
 		<key>x</key>
-		<integer>-114</integer>
+		<integer>107</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>115</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -370,7 +482,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>399</real>
+			<real>610</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -398,13 +510,13 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>115.234375</real>
+			<real>310.33203125</real>
 			<key>viewHeight</key>
-			<real>402</real>
+			<real>417.66796875</real>
 			<key>viewLeft</key>
 			<real>42.125</real>
 			<key>viewWidth</key>
-			<real>383.41015625</real>
+			<real>1084.09765625</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -418,7 +530,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-83</real>
+			<real>128</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -438,7 +550,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>504</real>
+			<real>715</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -458,13 +570,13 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>415.5</real>
+			<real>-113.30078125</real>
 			<key>viewHeight</key>
-			<real>251</real>
+			<real>420.1640625</real>
 			<key>viewLeft</key>
-			<real>349.16015625</real>
+			<real>42.125</real>
 			<key>viewWidth</key>
-			<real>884.76953125</real>
+			<real>1100.8515625</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -486,11 +598,11 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-230.5</real>
+			<real>-396</real>
 			<key>viewHeight</key>
-			<real>675.5</real>
+			<real>675</real>
 			<key>viewLeft</key>
-			<real>493.55078125</real>
+			<real>266.171875</real>
 			<key>viewWidth</key>
 			<real>602.90234375</real>
 			<key>xWaveform</key>
@@ -510,11 +622,31 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>233.17578125</real>
+			<real>56</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
-			<real>538.203125</real>
+			<real>493.55078125</real>
+			<key>viewWidth</key>
+			<real>266</real>
+		</dict>
+		<dict>
+			<key>editableName</key>
+			<string>Waveform Info 1</string>
+			<key>pluginClass</key>
+			<string>SBWaveformInfoPlugin</string>
+			<key>pluginName</key>
+			<string>Waveform Info</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>viewBottom</key>
+			<real>97.265625</real>
+			<key>viewHeight</key>
+			<real>223</real>
+			<key>viewLeft</key>
+			<real>906.78125</real>
 			<key>viewWidth</key>
 			<real>266</real>
 		</dict>
@@ -552,11 +684,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.68131347656249996</real>
+	<real>0.82416442871093754</real>
 	<key>tr</key>
 	<real>3.2300000190734863</real>
 	<key>trNum</key>
-	<integer>246</integer>
+	<integer>10</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>

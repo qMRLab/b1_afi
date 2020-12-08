@@ -1,5 +1,5 @@
 [Application]
-defaultName = VFA T1
+defaultName = B1 AFI
 interface = lib:threeplane.ui
 continuous = 0
 sharedSlot = Real-Time
@@ -8,29 +8,23 @@ controlScript = control.js
 reconScript = recon.js
 singleJSEngine = false
 continuous = 0
-exclusiveRuns = 2
 
 [excitation]
 type = waveform
 file = SlabSelect.spv
 linearPhaseIncrement = 180
 quadraticPhaseIncrement = 117
- 
+
 [echodelay]
 type = delay
 duration = 2000
 
 [readout]
 type = waveform
-file = CartesianReadout3D.spv
+file = InterleavedCartesianReadout3D.spv
 loopIndex = 0
 associatedRF = excitation
 
 [spoiler]
 type = waveform
 file = SpoilerGradient.spv
-
-[tiploop]
-type = loop
-maximumIndex = 2
-loopIndex  = 1
