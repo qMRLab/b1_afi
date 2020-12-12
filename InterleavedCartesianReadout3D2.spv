@@ -44,7 +44,7 @@
 			<key>editableName</key>
 			<string>N</string>
 			<key>max</key>
-			<real>20</real>
+			<real>10</real>
 			<key>min</key>
 			<real>1</real>
 			<key>pluginClass</key>
@@ -70,14 +70,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>script</key>
-			<string>SB.message('anan');
-if (SB.get('&lt;inter&gt;.input')==0){
-SB.message('lel');
-SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions2&gt;.index');
-}else{
-SB.message('lol');
-SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
-}</string>
+			<string></string>
 		</dict>
 	</array>
 	<key>Waveforms</key>
@@ -261,6 +254,63 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 			</dict>
 			<dict>
 				<key>duration</key>
+				<real>6</real>
+				<key>editableName</key>
+				<string>InplaneTR2</string>
+				<key>pluginClass</key>
+				<string>SBNewTRPlugin</string>
+				<key>pluginName</key>
+				<string>New TR</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>useGlobal</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>InplaneRepeat2</string>
+				<key>pluginClass</key>
+				<string>SBRepeatPlugin</string>
+				<key>pluginName</key>
+				<string>Repeat</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>repetitions</key>
+				<integer>124</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>DrawInplaneGrads2</string>
+				<key>maskType</key>
+				<integer>0</integer>
+				<key>pluginClass</key>
+				<string>SBDrawPulsesPlugin</string>
+				<key>pluginName</key>
+				<string>Draw Pulses</string>
+				<key>pluginNames</key>
+				<array>
+					<string>Phase Encode Gradient</string>
+					<string>Phase Encode Gradient 1</string>
+				</array>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>inter</string>
+				<key>granularity</key>
+				<integer>1</integer>
+				<key>numInputs</key>
+				<integer>2</integer>
+				<key>pluginClass</key>
+				<string>SBInterleavePlugin</string>
+				<key>pluginName</key>
+				<string>Interleave</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>duration</key>
 				<real>1.5440000295639038</real>
 				<key>editableName</key>
 				<string>SlabTR1</string>
@@ -316,118 +366,6 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>6</real>
-				<key>editableName</key>
-				<string>InplaneTR2</string>
-				<key>pluginClass</key>
-				<string>SBNewTRPlugin</string>
-				<key>pluginName</key>
-				<string>New TR</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>useGlobal</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>editableName</key>
-				<string>InplaneRepeat2</string>
-				<key>pluginClass</key>
-				<string>SBRepeatPlugin</string>
-				<key>pluginName</key>
-				<string>Repeat</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>repetitions</key>
-				<integer>124</integer>
-			</dict>
-			<dict>
-				<key>editableName</key>
-				<string>DrawInplaneGrads2</string>
-				<key>maskType</key>
-				<integer>0</integer>
-				<key>pluginClass</key>
-				<string>SBDrawPulsesPlugin</string>
-				<key>pluginName</key>
-				<string>Draw Pulses</string>
-				<key>pluginNames</key>
-				<array>
-					<string>Phase Encode Gradient</string>
-					<string>Phase Encode Gradient 1</string>
-				</array>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>duration</key>
-				<real>9.8600000143051147</real>
-				<key>editableName</key>
-				<string>SlabTR2</string>
-				<key>pluginClass</key>
-				<string>SBNewTRPlugin</string>
-				<key>pluginName</key>
-				<string>New TR</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>useGlobal</key>
-				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>editableName</key>
-				<string>zPartition2</string>
-				<key>pluginClass</key>
-				<string>SBRepeatPlugin</string>
-				<key>pluginName</key>
-				<string>Repeat</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>repetitions</key>
-				<integer>16</integer>
-			</dict>
-			<dict>
-				<key>editableName</key>
-				<string>DrawSlabGrads2</string>
-				<key>maskType</key>
-				<integer>1</integer>
-				<key>pluginClass</key>
-				<string>SBDrawPulsesPlugin</string>
-				<key>pluginName</key>
-				<string>Draw Pulses</string>
-				<key>pluginNames</key>
-				<array>
-					<string>Phase Encode Gradient</string>
-					<string>Phase Encode Gradient 1</string>
-				</array>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>editableName</key>
-				<string>Overlay Combinations 1</string>
-				<key>numInputs</key>
-				<integer>2</integer>
-				<key>pluginClass</key>
-				<string>SBOverlayAllCombinationsPlugin</string>
-				<key>pluginName</key>
-				<string>Overlay Combinations</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>editableName</key>
-				<string>inter</string>
-				<key>granularity</key>
-				<integer>1</integer>
-				<key>numInputs</key>
-				<integer>2</integer>
-				<key>pluginClass</key>
-				<string>SBInterleavePlugin</string>
-				<key>pluginName</key>
-				<string>Interleave</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>duration</key>
 				<real>1</real>
 				<key>editableName</key>
 				<string>Preacquisitions</string>
@@ -447,9 +385,9 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>75.224164428713266</real>
+	<real>34.166920166015622</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -479,7 +417,7 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 	<key>gradLimitZScale</key>
 	<real>1</real>
 	<key>inspectorWidth</key>
-	<real>433</real>
+	<real>361</real>
 	<key>magnification</key>
 	<real>5.3433389663696289</real>
 	<key>mainWindowFrame</key>
@@ -489,7 +427,7 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-71</integer>
+		<integer>0</integer>
 		<key>y</key>
 		<integer>45</integer>
 	</dict>
@@ -549,11 +487,11 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>115.33984375</real>
+			<real>251.0390625</real>
 			<key>viewHeight</key>
 			<real>418</real>
 			<key>viewLeft</key>
-			<real>-52.4921875</real>
+			<real>61.91015625</real>
 			<key>viewWidth</key>
 			<real>1084.09765625</real>
 		</dict>
@@ -599,29 +537,9 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 		</dict>
 		<dict>
 			<key>editableName</key>
-			<string>Sequencing View</string>
-			<key>pluginClass</key>
-			<string>SBSequencingViewPlugin</string>
-			<key>pluginName</key>
-			<string>Sequencing View</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>238</real>
-			<key>viewHeight</key>
-			<real>420</real>
-			<key>viewLeft</key>
-			<real>-107.34375</real>
-			<key>viewWidth</key>
-			<real>1100.8515625</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
 			<string>k-Space Trajectory</string>
 			<key>magnification</key>
-			<real>0.28238701820373535</real>
+			<real>0.25575348734855652</real>
 			<key>pluginClass</key>
 			<string>SBTrajectoryViewPlugin</string>
 			<key>pluginName</key>
@@ -637,11 +555,11 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-22</real>
+			<real>-517.1640625</real>
 			<key>viewHeight</key>
 			<real>675</real>
 			<key>viewLeft</key>
-			<real>216.1796875</real>
+			<real>402.25</real>
 			<key>viewWidth</key>
 			<real>602.90234375</real>
 			<key>xWaveform</key>
@@ -661,13 +579,13 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>96.40234375</real>
+			<real>-128.62890625</real>
 			<key>viewHeight</key>
-			<real>359.46484375</real>
+			<real>223</real>
 			<key>viewLeft</key>
-			<real>565.7109375</real>
+			<real>492.87109375</real>
 			<key>viewWidth</key>
-			<real>336.890625</real>
+			<real>266</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -681,13 +599,33 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>90.62109375</real>
+			<real>227.2265625</real>
 			<key>viewHeight</key>
-			<real>591.41796875</real>
+			<real>382</real>
 			<key>viewLeft</key>
-			<real>-282.22265625</real>
+			<real>148.4609375</real>
 			<key>viewWidth</key>
-			<real>817.921875</real>
+			<real>481.5703125</real>
+		</dict>
+		<dict>
+			<key>editableName</key>
+			<string>Sequencing View</string>
+			<key>pluginClass</key>
+			<string>SBSequencingViewPlugin</string>
+			<key>pluginName</key>
+			<string>Sequencing View</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>viewBottom</key>
+			<real>-48.296875</real>
+			<key>viewHeight</key>
+			<real>447.3828125</real>
+			<key>viewLeft</key>
+			<real>131.05859375</real>
+			<key>viewWidth</key>
+			<real>928.3671875</real>
 		</dict>
 	</array>
 	<key>protonDensity</key>
@@ -723,11 +661,11 @@ SB.set('&lt;N&gt;.value', SB.get('&lt;zPartitions1&gt;.index');
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>0.10416442871326581</real>
+	<real>0.5069201660156204</real>
 	<key>tr</key>
 	<real>1.9720000028610229</real>
 	<key>trNum</key>
-	<integer>14</integer>
+	<integer>17</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>

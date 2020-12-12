@@ -45,18 +45,19 @@ function reconBlock(input) {
   //});
   
  this.sort3d = new RthReconSort();
- this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index", "acquisition.<Repeat 1>.index"]);
+ this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index", "acquisition.<zPartition1>.index","acquisition.<inter>.input"]);
  this.sort3d.setInput(input);
  this.sort3d.observeKeys(["mri.RunNumber"]);
  this.sort3d.observedKeysChanged.connect(
   function(keys) {
     that.sort3d.resetAccumulation();
     var yEncodes = keys["reconstruction.phaseEncodes"];
+    RTHLOGGER_WARNING("PH" + keys["acquisition.<Cartesian Readout>.index"]);
     var samples = keys["acquisition.samples"];
     //var coils = keys["acquisition.channels"];
     var zEncodes = keys["reconstruction.zPartitions"];
     //this.sort3d.extent = [samples, coils, yEncodes, zEncodes]; // if the input is [samples x coils]
-    that.sort3d.extent = [samples, yEncodes, zEncodes]; // if the input is [samples]
+    that.sort3d.extent = [samples, yEncodes, zEncodes,2]; // if the input is [samples]
     that.sort3d.accumulate = yEncodes * zEncodes;
   }
 );
@@ -124,8 +125,6 @@ function ExportBlock(input){
     "mri.VoxelSpacing",
     "mri.EchoTime",
     "mri.RepetitionTime",
-    "mri.FlipAngle1",
-    "mri.FlipAngle2",
     "mri.FlipAngle", // Belonging to the current loop
     "mri.SliceThickness",
     "reconstruction.phaseEncodes",
@@ -156,8 +155,6 @@ function ExportBlock(input){
     that.imageExport.addTag("SpacingZ",keys["mri.VoxelSpacing"][2]);
     that.imageExport.addTag("EchoTime",keys["mri.EchoTime"]);
     that.imageExport.addTag("RepetitionTime",keys["mri.RepetitionTime"]);
-    that.imageExport.addTag("FlipAngle1",keys["mri.FlipAngle1"]);
-    that.imageExport.addTag("FlipAngle2",keys["mri.FlipAngle2"]);
     that.imageExport.addTag("FlipAngle",keys["mri.FlipAngle"]);
     that.imageExport.addTag("SliceThickness",keys["mri.SliceThickness"]);
     that.imageExport.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
@@ -175,13 +172,11 @@ function ExportBlock(input){
     that.imageExport.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
     that.imageExport.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
     var exportDirectory = "/home/agah/Desktop/AgahHV/";
-    var flipIndex = keys["mri.FlipIndex"];
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
     var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
-    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_flip-" + flipIndex + "_VFAT1.dat";
+    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_TB1AFI.dat";
     that.imageExport.setFileName(exportFileName);
-
   });
   
   //this.imageExport.observeKeys(["mri.RunNumber", // Ensured that this one will change per run.

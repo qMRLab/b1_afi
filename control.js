@@ -20,11 +20,18 @@ Created: October, 2019.
 
 // Get sequence ID
 var sequenceId  = rth.sequenceId();
+// Import display tool
+
+rth.importJS("lib:RthDisplayThreePlaneTools.js");
+var displayTools = new RthDisplayThreePlaneTools();
 
 // Fetch initial parameters described in CartesianReadout3D.spv 
 var xPixels = SB.readout["<Cartesian Readout>.xRes"]; // Number of samples, no need for this, acquisition emits this. 
 var phaseEncodes = SB.readout["<Cartesian Readout>.yRes"]; // Number of repeats 
 var zPartitions = SB.readout["<Phase Encode Gradient>.res"]; // Number of partitions (has attr fov as well)
+
+var rectSelected = true; 
+var sincSelected = false;
 
 // These values are changed in the SB only.
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, {
@@ -49,9 +56,14 @@ rth.informationInsert(sequenceId, "mri.MRAcquisitionType", "3D");
 rth.informationInsert(sequenceId, "mri.NumberOfAverages", 1);
 rth.informationInsert(sequenceId, "mri.NumberOfCoils", parameterList[2]);
 rth.informationInsert(sequenceId, "mri.EchoTrainLength", 1);
-rth.informationInsert(sequenceId,"mri.ExcitationTimeBandwidth",SB.excitation["<Sinc RF>.timeBandwidth"]);
-rth.informationInsert(sequenceId,"mri.ExcitationDuration",SB.excitation["<Sinc RF>.duration"]);
-rth.informationInsert(sequenceId,"mri.ExcitationType","Sinc Hamming");
+
+// Set RECT by default
+rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", true));
+rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", false));
+
+var rfTip = SB.excitationrect["<RF>.tip"];
+var rfEnd = SB.excitationrect["<RF>.end"];
+var rfPeak = SB.excitationrect["<RF>.peak"];
 
 // Get minimum TR
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
@@ -60,45 +72,80 @@ var minTR = scannerTR.tr();
 var startingTR = minTR;
 RTHLOGGER_WARNING("Minimum TR: " + minTR);
 
+// Specify TE delay interval 
+var minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
+var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
+rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
+var echoTime = startingTE;
+
+function updateSequenceParams(selected){
+  switch (selected) {
+    case "rect":
+      rectSelected = true;
+      sincSelected = false;
+      rth.informationInsert(sequenceId,"mri.ExcitationTimeBandwidth",SB.excitationrect["<RF>.timeBandwidth"]);
+      rth.informationInsert(sequenceId,"mri.ExcitationDuration",SB.excitationrect["<RF>.duration"]);
+      rfTip = SB.excitationrect["<RF>.tip"];
+      rfEnd = SB.excitationrect["<RF>.end"];
+      rfPeak = SB.excitationrect["<RF>.peak"];
+      rth.informationInsert(sequenceId,"mri.ExcitationType","Non-Selective Hard Pulse");
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", true));
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", false));
+      minTR = scannerTR.tr();
+      RTHLOGGER_WARNING("Minimum TR  RECT: " + minTR);
+      // Update this so that the TE is accurate
+      minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
+      // Set echodelay to the desired value w.r.t pulse selection.
+      changeTE(echoTime);
+      rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+        ExcitationDuration: SB.excitationrect["<RF>.duration"],
+        FlipAngle:SB.excitationrect["<RF>.tip"]
+      }));
+      break;
+    case "sinc":
+      rectSelected = false;
+      sincSelected = true;
+      rth.informationInsert(sequenceId,"mri.ExcitationTimeBandwidth",SB.excitationsinc["<RF>.timeBandwidth"]);
+      rth.informationInsert(sequenceId,"mri.ExcitationDuration",SB.excitationsinc["<RF>.duration"]);
+      rfTip = SB.excitationsinc["<RF>.tip"];
+      rfEnd = SB.excitationsinc["<RF>.end"];
+      rfPeak = SB.excitationsinc["<RF>.peak"];
+      rth.informationInsert(sequenceId,"mri.ExcitationType","Slab-Selective SINC pulse");
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", true));
+      minTR = scannerTR.tr();
+      RTHLOGGER_WARNING("Minimum TR SINC: " + minTR);
+      minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
+      changeTE(echoTime);
+      rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+        ExcitationDuration: SB.excitationsinc["<RF>.duration"],
+        FlipAngle:SB.excitationsinc["<RF>.tip"]
+      }));
+      break;
+  }
+}
+
+
 // Starting FOV also depends on CartesianReadout3D.spv
 // In SpinBench, FOV is defined in cm. xFOV = yFOV always. 
 var startingFOV = SB.readout["<Cartesian Readout>.fov"]; // cm
 var startingZFOV = SB.readout["<Phase Encode Gradient>.fov"]; //cm
 
-// Slice thickness depends on SlabSelect.spv
-// In SpinBench, SliceThickness is defined in mm.
-// RF pulse is associated with the gradient. Changes in SSG updates RF as well. 
-var startingThickness = SB.excitation["<Slice Select Gradient>.thickness"]; // mm
-// Insert metadata
-rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 var startingResolution = startingFOV/xPixels* 10; // mm
 
-rth.informationInsert(sequenceId,"mri.VoxelSpacing",[startingResolution*10,startingResolution*10,startingZFOV/zPartitions*10]);
-// Specify TE delay interval 
-var minTE = SB.excitation['<Sinc RF>.end'] - SB.excitation['<Sinc RF>.peak'] + SB.readout['<Cartesian Readout>.readoutCenter'];
-var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
-rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
-
-// Assume FA from SB as the smaller.
-var startingFA2 = SB.excitation["<Sinc RF>.tip"]; //20
-// FA should be in decreasing order (FA1 > FA2)
-var startingFA1 = startingFA2 - 17;
+// These params are agnostic to the RF selection
+var startingThickness = startingZFOV; // mm
+displayTools.setSliceThickness(startingThickness);
+rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
+rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,startingZFOV/zPartitions*10]);
 
 // To store the current values 
 var sliceThickness = startingThickness;
 var fieldOfView = startingFOV;
 
-//FIXME: This is temporary. Fix the order
-var flipAngle1 = startingFA2;
-var flipAngle2 = startingFA1;
-
-var echoTime = startingTE;
 var repetitionTime = startingTR;
 
-// Import display tool
 
-rth.importJS("lib:RthDisplayThreePlaneTools.js");
-var displayTools = new RthDisplayThreePlaneTools();
 
 // Change functions
 
@@ -106,10 +153,10 @@ function changeFOV(fov){
   if (fov<startingFOV) fov = startingFOV; 
   var scale = startingFOV/fov;
   // Scale gradients (x,y,z) assuming in-plane isometry
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",scale,scale, startingThickness/sliceThickness));
+  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",scale,scale, 1));
   // Waveforms are not affected by the below: 
   rth.addCommand(new RthUpdateChangeResolutionCommand(sequenceId,startingResolution/scale));
-  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,fov*10,startingThickness));
+  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fov*10,fov*10,1));
   // Annotation
   displayTools.setFOV(fov * 10);
   //displayTool.setResolution(startingResolution/scale,startingResolution/scale);
@@ -117,62 +164,17 @@ function changeFOV(fov){
   fieldOfView = fov;
 }
 
+// This will change TR1, which is set as the global TR. 
+// SpinBench sets TR2 using JS logic w.r.t N
+function changeTR1(tr1) {
+  
 
+  rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "", "setDesiredTR", "", (tr1)*1000));
+  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RepetitionTime", tr1));
 
-function changeSliceThickness(thickness){
-  if (thickness < startingThickness) thickness = startingThickness;
-
-  // Scale SS gradient
-  // The scaling is always performed with respect to the STARTING VALUE (1). Factors must be always smaller than 1.
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId,"excitation","scaleGradients","",startingThickness/thickness));
-
-  // If the slice thickness is increased, so should the zFOV (by scaling down z-grad)
-  rth.addCommand(new RthUpdateScaleGradientsCommand(sequenceId,"readout",startingFOV/fieldOfView,startingFOV/fieldOfView,startingThickness/thickness));
-
-  // Update slice prescription UI tools (the green lines in the UI)
-  displayTools.setSliceThickness(thickness);
-  // Update metadata.
-  rth.informationInsert(sequenceId,"mri.SliceThickness",thickness);
-  rth.addCommand(new RthUpdateChangeFieldOfViewCommand(sequenceId, fieldOfView*10,fieldOfView*10,thickness));
-  rth.addCommand(new RthUpdateChangeSliceThicknessCommand(sequenceId, thickness));
-  // zFOV is not equal to the slice thickness, it has a padding of 10mm. Not sure why, but this 
-  // was the convention in other 3D waveforms I saw, so I followed. 
-  rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,(startingZFOV*thickness/startingThickness)/zPartitions*10]);
-  sliceThickness = thickness;
-
+  curTR1 = tr1;
 }
 
-function changeTR(tr) {
-  if (tr < minTR) {
-    tr = minTR;
-  }
-  // TR is a generic integer parameter, so to be updated by RthUpdateIntParameterCommand
-  // Method name is given by "setDesiredTR", defined in microseconds!
-
-  var value = tr * 1000; // Convert from milisec to microsec
-  var trCommand = new RthUpdateIntParameterCommand(sequenceId, "", "setDesiredTR", "", value);
-
-  rth.addCommand(trCommand);
-  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RepetitionTime", tr));
-
-  repetitionTime = tr;
-
-}
-
-function changeFlipAngle1(angle1) {
-  //var flipCommand = RthUpdateFloatParameterCommand(sequenceId, "sequence", "scaleRF", "", angle / startingFA1);
-  //rth.addCommand(flipCommand);
-  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "FlipAngle1", angle1));
-
-  flipAngle1 = angle1;
-}
-
-function changeFlipAngle2(angle2){
-  // Just referencing global var here.
-  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "FlipAngle2", angle2));
-
-  flipAngle2 = angle2;
-}
 
 function changeTE(te)
 {
@@ -183,31 +185,31 @@ function changeTE(te)
   var echoDelay = (te - minTE) * 1000; // Convert to usec
   rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "echodelay", "setDelay", "", echoDelay));
   
+  echoTime = te;
+}
+
+function changeNFactor(N)
+{
+  
+ curTR2 = curTR1 * N;
+
+ //rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "", "setDesiredTR", "", (curTR1+curTR2) * 1000));
+ //rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RepetitionTime", curTR1+curTR2));
+
+ nFactor = N;
 }
 
 
-/* Define UI element settings and link outputs from change events to the respective vars
-  inputWidget_FOV (Done)
-  inputWidget_SliceThickness (Done)
-  inputWidget_FA1 (Done)
-  inputWidget_FA2 (Done)
-  inputWidget_TR  (Done)
-*/
-
 // Send metadata to recon
 rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
-  ExcitationTimeBandwidth: SB.excitation["<Sinc RF>.timeBandwidth"],
-  ExcitationDuration: SB.excitation["<Sinc RF>.duration"],
   NumberOfCoils: parameterList[2],
-  FlipAngle1:flipAngle1,
-  FlipAngle2: flipAngle2,
   PreAcqDuration: SB.readout["<Preacquisitions>.duration"]
 }));
 
-
-controlWidget.inputWidget_SliceThickness.minimum = startingThickness;
-controlWidget.inputWidget_SliceThickness.maximum = startingThickness*2;
-controlWidget.inputWidget_SliceThickness.value   = startingThickness;
+var startingN = 5;
+controlWidget.inputWidget_TRNfactor.minimum = startingN-2;
+controlWidget.inputWidget_TRNfactor.maximum = startingN+2;
+controlWidget.inputWidget_TRNfactor.value   = startingN;
 
 controlWidget.inputWidget_FOV.minimum = startingFOV;
 controlWidget.inputWidget_FOV.maximum = startingFOV*2;
@@ -217,17 +219,8 @@ controlWidget.inputWidget_TR.minimum = minTR;
 controlWidget.inputWidget_TR.maximum = minTR + 30;
 controlWidget.inputWidget_TR.value   = minTR;
 
-//FIXME: FA param names  
-controlWidget.inputWidget_FA1.minimum = startingFA1;
-controlWidget.inputWidget_FA1.maximum = 90;
-controlWidget.inputWidget_FA1.value   = startingFA2;
-//FIXME: FA param names 
-controlWidget.inputWidget_FA2.minimum = startingFA1;
-controlWidget.inputWidget_FA2.maximum = startingFA1+5;
-controlWidget.inputWidget_FA2.value   = startingFA1;
-
 controlWidget.inputWidget_TE.minimum = minTE;
-controlWidget.inputWidget_TE.maximum = 8;
+controlWidget.inputWidget_TE.maximum = 10;
 controlWidget.inputWidget_TE.value   = 5;
 
 
@@ -255,6 +248,20 @@ function acqClicked(chck){
   }
 }
 
+function rectClicked(chck){
+  if (chck){
+    controlWidget.checkBox_SINC.checked = false;
+    updateSequenceParams("rect");
+  }
+}
+
+function sincClicked(chck){
+  if (chck){
+    controlWidget.checkBox_RECT.checked = false;
+    updateSequenceParams("sinc");
+  }
+}
+
 var acqLabel = "";
 function acqTextChanged(txt){
   acqLabel = txt;
@@ -277,6 +284,8 @@ function subTextChanged(txt){
 
 }
 
+
+
 // Connect UI elements to the callback functions.
 
 controlWidget.acqBIDS.textChanged.connect(acqTextChanged);
@@ -297,40 +306,29 @@ acqClicked(controlWidget.isAcqBIDS.checked)
 controlWidget.inputWidget_FOV.valueChanged.connect(changeFOV);
 changeFOV(controlWidget.inputWidget_FOV.value);
 
-controlWidget.inputWidget_TR.valueChanged.connect(changeTR);
-changeTR(controlWidget.inputWidget_TR.value);
-
-controlWidget.inputWidget_FA1.valueChanged.connect(changeFlipAngle1);
-changeFlipAngle1(controlWidget.inputWidget_FA1.value);
-
-controlWidget.inputWidget_FA2.valueChanged.connect(changeFlipAngle2);
-changeFlipAngle2(controlWidget.inputWidget_FA2.value);
+controlWidget.inputWidget_TR.valueChanged.connect(changeTR1);
+changeTR1(controlWidget.inputWidget_TR.value);
 
 controlWidget.inputWidget_TE.valueChanged.connect(changeTE);
 changeTE(controlWidget.inputWidget_TE.value);
 
-controlWidget.inputWidget_SliceThickness.valueChanged.connect(changeSliceThickness);
-changeSliceThickness(controlWidget.inputWidget_SliceThickness.value);
+controlWidget.inputWidget_TRNfactor.valueChanged.connect(changeNFactor);
+changeNFactor(controlWidget.inputWidget_TRNfactor.value);
+
+controlWidget.checkBox_RECT.toggled.connect(rectClicked);
+rectClicked(controlWidget.checkBox_RECT.checked)
+
+controlWidget.checkBox_SINC.toggled.connect(sincClicked);
+sincClicked(controlWidget.checkBox_SINC.checked)
 
 // ADD LOOP COMMANDS
 
-var bigAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", 1);
+//var bigAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", 1);
 // Following sets FlipAngle to 3 when FA1 = 30 and FA2=25 
-var smallAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", flipAngle2/flipAngle1);
+//var smallAngleCommand = new  RthUpdateFloatParameterCommand(sequenceId, "excitation", "scaleRF", "", flipAngle2/flipAngle1);
 
-//rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
-//  SubjectBIDS: controlWidget.subjectBIDS.text,
-//  SessionBIDS: controlWidget.sessionBIDS.text,
-//  AcquisitionBIDS: controlWidget.acqBIDS.text
-//}));
-
-
-var infoCommand1 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle1, FlipIndex: "01"});
-var infoCommand2 = new RthUpdateChangeMRIParameterCommand(sequenceId,{FlipAngle: flipAngle2, FlipIndex: "02"});
-
-var updateGroup1 = new RthUpdateGroup([bigAngleCommand, infoCommand1]);
-var updateGroup2 = new RthUpdateGroup([smallAngleCommand, infoCommand2]);
-
-var loopCommands = [updateGroup1, updateGroup2];
-
-rth.setLoopCommands(sequenceId, "tiploop", loopCommands);
+rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+  SubjectBIDS: controlWidget.subjectBIDS.text,
+  SessionBIDS: controlWidget.sessionBIDS.text,
+  AcquisitionBIDS: controlWidget.acqBIDS.text
+}));

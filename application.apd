@@ -9,11 +9,19 @@ reconScript = recon.js
 singleJSEngine = false
 continuous = 0
 
-[excitation]
+[excitationrect]
 type = waveform
-file = SlabSelect.spv
+file = NonSelHardPulse.spv
 linearPhaseIncrement = 180
 quadraticPhaseIncrement = 117
+allowDisable = true
+
+[excitationsinc]
+type = waveform
+file = SlabSelectSINC.spv
+linearPhaseIncrement = 180
+quadraticPhaseIncrement = 117
+allowDisable = true
 
 [echodelay]
 type = delay
@@ -21,7 +29,7 @@ duration = 2000
 
 [readout]
 type = waveform
-file = InterleavedCartesianReadout3D.spv
+file = InterleavedCartesianReadout3D2.spv
 loopIndex = 0
 associatedRF = excitation
 

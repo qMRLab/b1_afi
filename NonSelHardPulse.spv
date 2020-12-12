@@ -24,7 +24,7 @@
 			<key>res</key>
 			<integer>114</integer>
 			<key>selectionStart</key>
-			<real>51.319683074951172</real>
+			<real>33.871212005615234</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -49,41 +49,6 @@
 				<key>anchor</key>
 				<dict>
 					<key>activeAnchor</key>
-					<string>peak</string>
-					<key>anchorType</key>
-					<integer>1</integer>
-					<key>anchoredToSBKey</key>
-					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
-					<key>position</key>
-					<real>1.2838979959487915</real>
-				</dict>
-				<key>duration</key>
-				<real>2.5</real>
-				<key>editableName</key>
-				<string>Sinc RF</string>
-				<key>enforceRFLimit</key>
-				<integer>1</integer>
-				<key>pluginClass</key>
-				<string>SBSincRF</string>
-				<key>pluginName</key>
-				<string>Sinc RF</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>rfGain_0_0</key>
-				<real>1</real>
-				<key>rfPhase_0_0</key>
-				<real>90</real>
-				<key>timeBandwidth</key>
-				<real>10</real>
-				<key>tip</key>
-				<real>20</real>
-				<key>window</key>
-				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>anchor</key>
-				<dict>
-					<key>activeAnchor</key>
 					<string>start</string>
 					<key>anchorType</key>
 					<integer>1</integer>
@@ -92,58 +57,24 @@
 					<key>position</key>
 					<real>0.0</real>
 				</dict>
+				<key>duration</key>
+				<real>0.40000000596046448</real>
 				<key>editableName</key>
-				<string>Slice Select Gradient</string>
-				<key>hasPrewinder</key>
-				<integer>0</integer>
-				<key>hasRewinder</key>
+				<string>RF</string>
+				<key>enforceRFLimit</key>
 				<integer>1</integer>
-				<key>netArea</key>
-				<real>5.0677957534790039</real>
-				<key>plateauDuration</key>
-				<real>2.5</real>
-				<key>plateauRefocusOffset</key>
-				<real>1.25</real>
 				<key>pluginClass</key>
-				<string>SBSliceSelectGradient</string>
+				<string>SBHardRF</string>
 				<key>pluginName</key>
-				<string>Slice Select Gradient</string>
+				<string>Hard RF</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
-				<key>prewindFirstMoment</key>
-				<integer>0</integer>
-				<key>rewindFirstMoment</key>
-				<integer>0</integer>
-				<key>rfPulse</key>
-				<string>Sinc RF</string>
-				<key>tbw</key>
-				<real>10</real>
-				<key>thickness</key>
-				<real>48</real>
-				<key>x0Component</key>
-				<real>0.0</real>
-				<key>xPlateauOverlap</key>
-				<real>0.0</real>
-				<key>xPostPlateauOverlap</key>
+				<key>rfGain_0_0</key>
 				<real>1</real>
-				<key>xPrePlateauOverlap</key>
-				<real>1</real>
-				<key>y0Component</key>
-				<real>0.0</real>
-				<key>yPlateauOverlap</key>
-				<real>0.0</real>
-				<key>yPostPlateauOverlap</key>
-				<real>1</real>
-				<key>yPrePlateauOverlap</key>
-				<real>1</real>
-				<key>z0Component</key>
-				<real>1</real>
-				<key>zPlateauOverlap</key>
-				<real>0.0</real>
-				<key>zPostPlateauOverlap</key>
-				<real>1</real>
-				<key>zPrePlateauOverlap</key>
-				<real>1</real>
+				<key>rfPhase_0_0</key>
+				<real>90</real>
+				<key>tip</key>
+				<real>60</real>
 			</dict>
 		</array>
 		<key>SequencePlugins</key>
@@ -169,7 +100,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>3.1389310359954834</real>
+	<real>0.074746429920196533</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -203,17 +134,17 @@
 	<key>inspectorWidth</key>
 	<real>222</real>
 	<key>magnification</key>
-	<real>1.7023025751113892</real>
+	<real>4.2040157318115234</real>
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>683</integer>
+		<integer>973</integer>
 		<key>width</key>
-		<integer>1158</integer>
+		<integer>1427</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>113</integer>
 		<key>y</key>
-		<integer>92</integer>
+		<integer>50</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -225,32 +156,6 @@
 	<integer>1</integer>
 	<key>outputPlugins</key>
 	<array>
-		<dict>
-			<key>displayStyle</key>
-			<string>Magnitude / Phase</string>
-			<key>editableName</key>
-			<string>Profile</string>
-			<key>magnification</key>
-			<real>1</real>
-			<key>pluginClass</key>
-			<string>SBProfileViewPlugin</string>
-			<key>pluginName</key>
-			<string>Profile</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>showYValues</key>
-			<integer>0</integer>
-			<key>viewBottom</key>
-			<real>-167</real>
-			<key>viewHeight</key>
-			<real>776</real>
-			<key>viewLeft</key>
-			<real>75.57421875</real>
-			<key>viewWidth</key>
-			<real>1080.40234375</real>
-		</dict>
 		<dict>
 			<key>editableName</key>
 			<string>Waveforms</string>
@@ -271,13 +176,13 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>-178.9765625</real>
+			<real>45.33203125</real>
 			<key>viewHeight</key>
-			<real>421</real>
+			<real>853.66796875</real>
 			<key>viewLeft</key>
-			<real>-100.73046875</real>
+			<real>173.39453125</real>
 			<key>viewWidth</key>
-			<real>395.8046875</real>
+			<real>366.20703125</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -291,11 +196,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>19</real>
+			<real>560.2109375</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
-			<real>480.59375</real>
+			<real>735.20703125</real>
 			<key>viewWidth</key>
 			<real>340</real>
 		</dict>
@@ -311,7 +216,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>456</real>
+			<real>746</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -353,9 +258,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>3.1389310359954834</real>
+	<real>0.074746429920196533</real>
 	<key>tr</key>
-	<real>2.9822690486907959</real>
+	<real>0.40000000596046448</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
@@ -369,7 +274,7 @@
 	<key>yVelocity</key>
 	<real>0.0</real>
 	<key>zPosition</key>
-	<real>51.319683074951172</real>
+	<real>33.871212005615234</real>
 	<key>zVelocity</key>
 	<real>0.0</real>
 </dict>
