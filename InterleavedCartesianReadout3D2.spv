@@ -161,7 +161,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>0.5</real>
+				<real>1</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -169,7 +169,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -198,7 +198,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>0.5</real>
+				<real>1</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -206,7 +206,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -380,7 +380,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>1</integer>
+				<integer>2</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -434,7 +434,7 @@
 	<key>absoluteTime</key>
 	<real>30.90692016601562</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -708,11 +708,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>24.386920166015621</real>
+	<real>21.126920166015619</real>
 	<key>tr</key>
 	<real>3.255605936050415</real>
 	<key>trNum</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
