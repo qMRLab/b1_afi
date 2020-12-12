@@ -61,7 +61,6 @@ rth.informationInsert(sequenceId, "mri.EchoTrainLength", 1);
 rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", true));
 rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", false));
 
-var rfTip = SB.excitationrect["<RF>.tip"];
 var rfEnd = SB.excitationrect["<RF>.end"];
 var rfPeak = SB.excitationrect["<RF>.peak"];
 
@@ -69,13 +68,15 @@ var rfPeak = SB.excitationrect["<RF>.peak"];
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
-var startingTR = minTR;
+var startingTR = 10;
 RTHLOGGER_WARNING("Minimum TR: " + minTR);
 
 // Specify TE delay interval 
 var minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
 var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
 rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
+RTHLOGGER_WARNING("Starting TE: " + startingTE);
+
 var echoTime = startingTE;
 
 function updateSequenceParams(selected){
@@ -83,43 +84,42 @@ function updateSequenceParams(selected){
     case "rect":
       rectSelected = true;
       sincSelected = false;
-      rth.informationInsert(sequenceId,"mri.ExcitationTimeBandwidth",SB.excitationrect["<RF>.timeBandwidth"]);
-      rth.informationInsert(sequenceId,"mri.ExcitationDuration",SB.excitationrect["<RF>.duration"]);
-      rfTip = SB.excitationrect["<RF>.tip"];
-      rfEnd = SB.excitationrect["<RF>.end"];
-      rfPeak = SB.excitationrect["<RF>.peak"];
-      rth.informationInsert(sequenceId,"mri.ExcitationType","Non-Selective Hard Pulse");
-      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", true));
-      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", false));
-      minTR = scannerTR.tr();
-      RTHLOGGER_WARNING("Minimum TR  RECT: " + minTR);
-      // Update this so that the TE is accurate
-      minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
-      // Set echodelay to the desired value w.r.t pulse selection.
-      changeTE(echoTime);
       rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
         ExcitationDuration: SB.excitationrect["<RF>.duration"],
-        FlipAngle:SB.excitationrect["<RF>.tip"]
+        FlipAngle:SB.excitationrect["<RF>.tip"],
+        ExcitationType: "Non-Selective RECT"
+      }));
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", true));
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", false));
+      rfEnd = SB.excitationrect["<RF>.end"];
+      rfPeak = SB.excitationrect["<RF>.peak"];
+      // Update this so that the TE is accurate
+      minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
+      RTHLOGGER_WARNING("Minimum TE  RECT: " + minTE);
+      // Set echodelay to the desired value w.r.t pulse selection.
+      controlWidget.inputWidget_TE.value = minTE + 1;
+      rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+        EchoTime: minTE+1
       }));
       break;
     case "sinc":
       rectSelected = false;
       sincSelected = true;
-      rth.informationInsert(sequenceId,"mri.ExcitationTimeBandwidth",SB.excitationsinc["<RF>.timeBandwidth"]);
-      rth.informationInsert(sequenceId,"mri.ExcitationDuration",SB.excitationsinc["<RF>.duration"]);
-      rfTip = SB.excitationsinc["<RF>.tip"];
-      rfEnd = SB.excitationsinc["<RF>.end"];
-      rfPeak = SB.excitationsinc["<RF>.peak"];
-      rth.informationInsert(sequenceId,"mri.ExcitationType","Slab-Selective SINC pulse");
-      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
-      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", true));
-      minTR = scannerTR.tr();
-      RTHLOGGER_WARNING("Minimum TR SINC: " + minTR);
-      minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
-      changeTE(echoTime);
       rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
         ExcitationDuration: SB.excitationsinc["<RF>.duration"],
-        FlipAngle:SB.excitationsinc["<RF>.tip"]
+        ExcitationDuration: SB.excitationsinc["<RF>.timeBandwidth"],
+        FlipAngle:SB.excitationsinc["<RF>.tip"],
+        ExcitationType: "Slab-Selective SINC"
+      }));
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
+      rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", true));
+      rfEnd = SB.excitationsinc["<RF>.end"];
+      rfPeak = SB.excitationsinc["<RF>.peak"];
+      minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
+      RTHLOGGER_WARNING("Minimum TE SINC: " + minTE);
+      controlWidget.inputWidget_TE.value = minTE + 1;
+      rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
+        EchoTime: minTE+1
       }));
       break;
   }
@@ -132,6 +132,7 @@ var startingFOV = SB.readout["<Cartesian Readout>.fov"]; // cm
 var startingZFOV = SB.readout["<Phase Encode Gradient>.fov"]; //cm
 
 var startingResolution = startingFOV/xPixels* 10; // mm
+
 
 // These params are agnostic to the RF selection
 var startingThickness = startingZFOV; // mm
@@ -167,7 +168,6 @@ function changeFOV(fov){
 // This will change TR1, which is set as the global TR. 
 // SpinBench sets TR2 using JS logic w.r.t N
 function changeTR1(tr1) {
-  
 
   rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "", "setDesiredTR", "", (tr1)*1000));
   rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RepetitionTime", tr1));
@@ -178,11 +178,13 @@ function changeTR1(tr1) {
 
 function changeTE(te)
 {
-  
-  rth.informationInsert(sequenceId,"mri.EchoTime",te);
+
+  controlWidget.inputWidget_TE.minimum = minTE + 0.1;
+
   rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "EchoTime", te));
 
   var echoDelay = (te - minTE) * 1000; // Convert to usec
+  RTHLOGGER_WARNING("EchoDelay has been set to: " + echoDelay);
   rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "echodelay", "setDelay", "", echoDelay));
   
   echoTime = te;
@@ -215,9 +217,9 @@ controlWidget.inputWidget_FOV.minimum = startingFOV;
 controlWidget.inputWidget_FOV.maximum = startingFOV*2;
 controlWidget.inputWidget_FOV.value   = startingFOV;
 
-controlWidget.inputWidget_TR.minimum = minTR;
+controlWidget.inputWidget_TR.minimum = 10;
 controlWidget.inputWidget_TR.maximum = minTR + 30;
-controlWidget.inputWidget_TR.value   = minTR;
+controlWidget.inputWidget_TR.value   = 10;
 
 controlWidget.inputWidget_TE.minimum = minTE;
 controlWidget.inputWidget_TE.maximum = 10;
