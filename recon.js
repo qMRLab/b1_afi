@@ -28,8 +28,12 @@ var instanceName = rth.instanceName();
 
 var observer = new RthReconRawObserver();
 observer.setSequenceId(sequenceId);
+// Acquisition samples vs acqCartROSamples!!!!
 observer.observeValueForKey("acquisition.samples", "samples");
-
+// Disable button after observer is discond
+observer.scanDisabled.connect(function (completed){
+  rth.deactivateScanButton();
+});
 
 function reconBlock(input) {
   
@@ -52,7 +56,6 @@ function reconBlock(input) {
   function(keys) {
     that.sort3d.resetAccumulation();
     var yEncodes = keys["reconstruction.phaseEncodes"];
-    RTHLOGGER_WARNING("PH" + keys["acquisition.<Cartesian Readout>.index"]);
     var samples = keys["acquisition.samples"];
     //var coils = keys["acquisition.channels"];
     var zEncodes = keys["reconstruction.zPartitions"];
