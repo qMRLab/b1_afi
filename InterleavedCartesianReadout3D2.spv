@@ -161,7 +161,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>0.5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -169,7 +169,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>16</integer>
+				<integer>1</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -198,7 +198,7 @@
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>0.5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -206,7 +206,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>16</integer>
+				<integer>1</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -380,7 +380,7 @@
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>16</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -434,7 +434,7 @@
 	<key>absoluteTime</key>
 	<real>30.90692016601562</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -534,11 +534,11 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>223.1015625</real>
+			<real>221.7734375</real>
 			<key>viewHeight</key>
 			<real>418</real>
 			<key>viewLeft</key>
-			<real>-175.73828125</real>
+			<real>35.640625</real>
 			<key>viewWidth</key>
 			<real>1084.09765625</real>
 		</dict>
@@ -666,13 +666,13 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-226.6875</real>
+			<real>127.4453125</real>
 			<key>viewHeight</key>
-			<real>447.3828125</real>
+			<real>466.1171875</real>
 			<key>viewLeft</key>
-			<real>37.2265625</real>
+			<real>-159.546875</real>
 			<key>viewWidth</key>
-			<real>928.3671875</real>
+			<real>1185.4453125</real>
 		</dict>
 	</array>
 	<key>protonDensity</key>
@@ -708,11 +708,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.5669201660156205</real>
+	<real>24.386920166015621</real>
 	<key>tr</key>
 	<real>3.255605936050415</real>
 	<key>trNum</key>
-	<integer>9</integer>
+	<integer>2</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
