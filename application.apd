@@ -32,7 +32,3 @@ type = waveform
 file = InterleavedCartesianReadout3D2.spv
 loopIndex = 0
 associatedRF = excitation
-
-[spoiler]
-type = waveform
-file = SpoilerGradient.spv
