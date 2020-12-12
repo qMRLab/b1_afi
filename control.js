@@ -137,7 +137,7 @@ var startingResolution = startingFOV/xPixels* 10; // mm
 // These params are agnostic to the RF selection
 var startingThickness = startingZFOV; // mm
 // HARDCODED FIXME
-displayTools.setSliceThickness(5);
+displayTools.setSliceThickness(10);
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,startingZFOV/zPartitions*10]);
 
