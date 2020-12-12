@@ -228,9 +228,9 @@
 					<key>anchorType</key>
 					<integer>1</integer>
 					<key>anchoredToSBKey</key>
-					<string>&lt;Phase Encode Gradient 1&gt;.end</string>
+					<string>&lt;Cartesian Readout&gt;.end</string>
 					<key>position</key>
-					<real>1.6626025438308716</real>
+					<real>1.972</real>
 				</dict>
 				<key>area</key>
 				<real>10</real>
@@ -432,7 +432,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>34.166920166015622</real>
+	<real>30.90692016601562</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -474,7 +474,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-11</integer>
+		<integer>0</integer>
 		<key>y</key>
 		<integer>45</integer>
 	</dict>
@@ -708,11 +708,11 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.6069201660156205</real>
+	<real>1.5669201660156205</real>
 	<key>tr</key>
-	<real>2.9462084770202637</real>
+	<real>3.255605936050415</real>
 	<key>trNum</key>
-	<integer>11</integer>
+	<integer>9</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
