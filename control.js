@@ -68,7 +68,7 @@ var rfPeak = SB.excitationrect["<RF>.peak"];
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
-var startingTR = 10;
+var startingTR = 20;
 RTHLOGGER_WARNING("Minimum TR: " + minTR);
 
 // Specify TE delay interval 
@@ -219,7 +219,7 @@ controlWidget.inputWidget_FOV.value   = startingFOV;
 
 controlWidget.inputWidget_TR.minimum = 10;
 controlWidget.inputWidget_TR.maximum = minTR + 30;
-controlWidget.inputWidget_TR.value   = 10;
+controlWidget.inputWidget_TR.value   = 20;
 
 controlWidget.inputWidget_TE.minimum = minTE;
 controlWidget.inputWidget_TE.maximum = 10;
