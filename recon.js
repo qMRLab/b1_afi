@@ -49,7 +49,7 @@ function reconBlock(input) {
   //});
   
  this.sort3d = new RthReconSort();
- this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index", "acquisition.<zPartition1>.index","acquisition.<inter>.input"]);
+ this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index", "acquisition.<zPartition1>.index"]);
  this.sort3d.setInput(input);
  this.sort3d.observeKeys(["mri.RunNumber"]);
  this.sort3d.observedKeysChanged.connect(
@@ -60,7 +60,7 @@ function reconBlock(input) {
     //var coils = keys["acquisition.channels"];
     var zEncodes = keys["reconstruction.zPartitions"];
     //this.sort3d.extent = [samples, coils, yEncodes, zEncodes]; // if the input is [samples x coils]
-    that.sort3d.extent = [samples, yEncodes, zEncodes,2]; // if the input is [samples]
+    that.sort3d.extent = [samples, yEncodes, zEncodes]; // if the input is [samples]
     that.sort3d.accumulate = yEncodes * zEncodes;
   }
 );
@@ -202,7 +202,7 @@ function ExportBlock(input){
   
   RTHLOGGER_WARNING("saving...");
 
-  //this.imageExport.saveFileSeries(true);
+  this.imageExport.saveFileSeries(true);
 
   // This is a sink node, hence no output.
 }
