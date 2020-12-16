@@ -29,6 +29,6 @@ duration = 2000
 
 [readout]
 type = waveform
-file = InterleavedCartesianReadout3D2.spv
+file = InterleavedCartesianReadout3D.spv
 loopIndex = 0
 associatedRF = excitation

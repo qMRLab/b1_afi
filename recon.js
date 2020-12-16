@@ -28,85 +28,125 @@ var instanceName = rth.instanceName();
 
 var observer = new RthReconRawObserver();
 observer.setSequenceId(sequenceId);
+observer.objectName = "Observer";
 // Acquisition samples vs acqCartROSamples!!!!
 observer.observeValueForKey("acquisition.samples", "samples");
 // Disable button after observer is discond
-observer.scanDisabled.connect(function (completed){
-  rth.deactivateScanButton();
-});
+observer.scanDisabled.connect(rth.deactivateScanButton);
 
-function reconBlock(input) {
+var kspace = new RthReconKSpace();
+if (!kspace.loadFromReadoutTags(rth.readoutTags("readout"))) {
+  RTHLOGGER_ERROR("Could not load k-space trajectory from readout tags");
+}
+observer.geometryChanged.connect(kspace.setGeometry);
+
+function reconBlock(input,index) {
   
   var that  = this;
-  //this.sort = new RthReconRawToImageSort();
   
-  //this.sort.observeKeys(["acquisition.samples","reconstruction.phaseEncodes","reconstruction.partitions"]);
-  //this.sort.observedKeysChanged.connect(function(keys){
-   // that.sort.setPhaseEncodes(keys["reconstruction.phaseEncodes"]);
-    //that.sort.setSamples(keys["acquisition.samples"]);
-    //that.sort.setSliceEncodes(keys["reconstruction.zPartitions"]);
-    //that.sort.setAccumulate(keys["reconstruction.phaseEncodes"]*keys["reconstruction.zPartitions"]);
-  //});
-  
+// acquisition.<Cartesian Readout>.index --> 0 to 123 
+// acquisition.<inter>.input --> 0/1 
  this.sort3d = new RthReconSort();
- this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index", "acquisition.<zPartition1>.index"]);
+ this.sort3d.objectName = "3DSORT(" + index + ")";
+ this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index","acquisition.<zPartition" + index + ">.index"]);
  this.sort3d.setInput(input);
- this.sort3d.observeKeys(["mri.RunNumber"]);
+ //"acquisition.<Cartesian Readout>.index","acquisition.<inter>.input","acquisition.<zPartition1>.index"
+ //this.sort3d.observeKeys(["mri.RunNumber"]);
+ this.sort3d.observeKeys(["acquisition.<interleave>.input"]);
  this.sort3d.observedKeysChanged.connect(
   function(keys) {
     that.sort3d.resetAccumulation();
     var yEncodes = keys["reconstruction.phaseEncodes"];
+    //RTHLOGGER_WARNING("CROUT IDX" + keys["acquisition.<Cartesian Readout>.index"] + "INTERLEAVE" + keys["acquisition.<inter>.input"] + "SLICE" + keys["acquisition.<zPartition1>.index"]);
     var samples = keys["acquisition.samples"];
     //var coils = keys["acquisition.channels"];
     var zEncodes = keys["reconstruction.zPartitions"];
     //this.sort3d.extent = [samples, coils, yEncodes, zEncodes]; // if the input is [samples x coils]
-    that.sort3d.extent = [samples, yEncodes, zEncodes]; // if the input is [samples]
+    that.sort3d.extent = [samples,yEncodes,zEncodes]; // if the input is [samples]
     that.sort3d.accumulate = yEncodes * zEncodes;
   }
 );
 
-  //this.sort = RthReconSort();
-  //this.sort.setIndexKeys(["acquisition.index"]);
-  //this.sort.setInput(input);
-  //this.sort.setUseSliceEncodeKey(false);
-  //this.sort.setSwapSePe(true);
-  //this.sort.observeKeys(["acquisition.slice", "acquisition.index"]);
-  //this.sort.observedKeysChanged.connect(function(keys){
-    //RTHLOGGER_WARNING("Slice" + keys["acquisition.slice"] + "index" + keys["acquisition.index"]);
-  //});
-  //this.sort.observeKeys(["acquisition.<Repeat 1>.index"]);
-  //this.sort.observedKeysChanged.connect(function(keys){
-  //  RTHLOGGER_WARNING("Slice" + keys["acquisition.<Repeat 1>.index"]);
-  //});
-  //this.sort.setExtent([256,256])
-  //this.sort.setAccumulate(2*256);
+  
   this.fft = new RthReconImageFFT();
+  this.fft.objectName = "FFT(" + index + ")";
   this.fft.setInput(this.sort3d.output());
 
   this.output = function() {
   return this.fft.output();
   };
+
 }
 
+function  coilBlock(input,index){
+  var that = this;
+  this.b1Data = new Array();
+
+  this.router = new RthReconRouteByKeys();
+  this.router.objectName = "DATA(C" + index + ")";
+  // Router index to be altered w.r.t. TR1 and TR2 changes.s
+  this.router.setIndexKeys(["acquisition.<interleave>.input"]);
+  // This one is not view index, should come from SB hence from control.
+  this.router.setMaxIndexKeys(["reconstruction.<interleave>.numInputs"]);
+  this.router.observeKeys(["reconstruction.interleaveSteps"]);
+  this.router.observedKeysChanged.connect(function(keys){
+    var interleaveSteps = keys["reconstruction.interleaveSteps"];
+    
+    that.b1Data[0] = new reconBlock(that.router.output(0), 0);
+    sos0.setInput(index,that.b1Data[0].output());
+
+    that.b1Data[1] = new reconBlock(that.router.output(1), 1);
+    sos1.setInput(index,that.b1Data[1].output());
+    
+    //for (var m=0; m < interleaveSteps; m++){
+     // that.b1Data[m] = new reconBlock(that.router.output(m), m);
+     // sos.setInput(index,that.b1Data[m].output());
+      //that.packCoils.setInput(index, that.b1Data[m].rawOutput());
+      // BUNU burada that.b1Data[m].output() vs seklinde al
+    //}
+  });
+  this.router.setInput(input);
+
+  //this.packCoils = new RthReconImagePack();
+  //this.packCoils.objectName = "Pack Coils" + index;
 // For each `coil we need sort and FFT.
+  //this.sos = new RthReconImageSumOfSquares();
+  //this.sos.objectName = "SoS" + index;
 
-var sos = new RthReconImageSumOfSquares();
-var block  = [];
 
+  //this.splitter = RthReconSplitter();
+  //this.splitter.objectName = "splitOutput" + index;
+  //this.splitter.setInput(this.sos.output());
+
+
+  //this.threePlane = new RthImageThreePlaneOutput();
+  //this.threePlane.setInput(this.splitter.output(0));
+  //this.threePlane.objectName = "gorsel" + index;
+
+  //this.exporter  = new ExportBlock(this.splitter.output(1),index);
+
+}
+
+var coilArray  = new Array();
 function connectCoils(coils){
-  block = [];
   for (var i = 0; i<coils; i++){
-    block[i] = new reconBlock(observer.output(i));
-    sos.setInput(i,block[i].output());
-  }
- rth.collectGarbage();
+    coilArray[i] = new coilBlock(observer.output(i),i);
+  } 
+  rth.collectGarbage();
 }
 
 observer.coilsChanged.connect(connectCoils);
 
+//var packCoils = new RthReconImagePack();
+//packCoils.objectName = "Pack Coils";
+// For each `coil we need sort and FFT.
+//var sos = new RthReconImageSumOfSquares();
+
+
+
 rth.importJS("lib:RthImageThreePlaneOutput.js");
 
-function ExportBlock(input){
+function ExportBlock(input,trName){
 
   var that = this;
 
@@ -146,7 +186,7 @@ function ExportBlock(input){
     "geometry.FieldOfViewZ",
     "mri.FlipIndex", // Ensured that this one will change per run.
     "mri.SubjectBIDS",
-    "mri.SessionBIDS",
+    //"mri.SessionBIDS",
     "mri.AcquisitionBIDS"  
   ]);
   this.imageExport.observedKeysChanged.connect(function(keys){
@@ -177,43 +217,49 @@ function ExportBlock(input){
     var exportDirectory = "/home/agah/Desktop/AgahHV/";
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
-    var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
-    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_TB1AFI.dat";
+    //var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
+    var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + trName + "_TB1AFI.dat";
     that.imageExport.setFileName(exportFileName);
   });
   
-  //this.imageExport.observeKeys(["mri.RunNumber", // Ensured that this one will change per run.
-  //                              "mri.SubjectBIDS",
-  //                              "mri.SessionBIDS",
-  //                              "mri.AcquisitionBIDS"  
-  //]);
-  //this.imageExport.observedKeysChanged(function(keys){
-  //  var flipIndex = keys["mri.RunNumber"] + 1;
-  //  var subjectBIDS  = "sub-" + keys["mri.SessionBIDS"]; 
-  //  var sessionBIDS = (keys["mri.SessionBIDS"]!=="") ? "_ses-" + keys["mri.SessionBIDS"] : "";
-  //  var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]!=="") ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
-  //});
-
-  //var exportDirectory = "/home/agah/Desktop/AgahHV/";
-  //var exportFileName  = exportDirectory + subjectBIDS + sessionBIDS + acquisitionBIDS + "_flip-" + flipIndex + '_VFAT1.dat';
-  this.imageExport.objectName = "save_image";
+  this.imageExport.objectName = "save_image" + trName;
   
   this.imageExport.setInput(input);
-  
-  RTHLOGGER_WARNING("saving...");
+  //this.imageExport.setKSpace(inputRaw);
 
-  this.imageExport.saveFileSeries(true);
+  //this.imageExport.saveFileSeries(true);
 
-  // This is a sink node, hence no output.
 }
 
 
-var splitter = RthReconSplitter();
-splitter.objectName = "splitOutput";
-splitter.setInput(sos.output());
+//var splitter = RthReconSplitter();
+//splitter.objectName = "splitOutput";
+//splitter.setInput(sos.output());
 
+//var threePlane = new RthImageThreePlaneOutput();
+//threePlane.setInput(splitter.output(0));
 
-var threePlane = new RthImageThreePlaneOutput();
-threePlane.setInput(splitter.output(0));
+//var exporter  = new ExportBlock(splitter.output(1),packCoils.output());
 
-var exporter  = new ExportBlock(splitter.output(1));
+var sos0 = new RthReconImageSumOfSquares();
+sos0.objectName = "SoS0";
+
+var sos1 = new RthReconImageSumOfSquares();
+sos1.objectName = "SoS1";
+
+var splitter0 = RthReconSplitter();
+splitter0.objectName = "splitOutput";
+splitter0.setInput(this.sos0.output());
+
+var splitter1 = RthReconSplitter();
+splitter1.objectName = "splitOutput";
+splitter1.setInput(this.sos1.output());
+
+threePlane0 = new RthImageThreePlaneOutput();
+threePlane0.setInput(this.splitter0.output(0));
+
+threePlane1 = new RthImageThreePlaneOutput();
+threePlane1.setInput(this.splitter1.output(0));
+
+exporter0  = new ExportBlock(this.splitter0.output(1),'_acq-tr1');
+exporter1  = new ExportBlock(this.splitter1.output(1),'_acq-tr2');

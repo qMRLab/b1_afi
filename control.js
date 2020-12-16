@@ -29,8 +29,9 @@ var displayTools = new RthDisplayThreePlaneTools();
 var xPixels = SB.readout["<Cartesian Readout>.xRes"]; // Number of samples, no need for this, acquisition emits this. 
 var phaseEncodes = SB.readout["<Cartesian Readout>.yRes"]; // Number of repeats 
 var zPartitions = SB.readout["<Phase Encode Gradient>.res"]; // Number of partitions (has attr fov as well)
+var interleaveSteps = SB.readout["<interleave>.numInputs"];
 
-var rectSelected = true; 
+var rectSelected = true;
 var sincSelected = false;
 
 // These values are changed in the SB only.
@@ -38,6 +39,11 @@ rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, {
   phaseEncodes: phaseEncodes,
   zPartitions: zPartitions
 }));
+rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "<interleave>.numInputs", SB.readout["<interleave>.numInputs"]));
+rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "interleaveSteps", interleaveSteps));
+for (var i = 0; i < interleaveSteps; i++) {
+  rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, "<zPartition" + i + ">.repetitions", SB.readout["<zPartition" + i + ">.repetitions"]));
+}
 
 // Get the sequence parameters from the sequencer.
 var scannerParameters = new RthUpdateGetParametersCommand(sequenceId);
