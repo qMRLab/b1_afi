@@ -141,9 +141,11 @@ var startingResolution = startingFOV/xPixels* 10; // mm
 
 
 // These params are agnostic to the RF selection
+// For SS this would correspond to ssg thickness, but in absence it is PEZ FOV.
+// In VFA T1 SS 48 but PEZ FOV is 50 (just followed a buffer convention I saw in other apps.)
+// TODO: Match these xross apps.
 var startingThickness = startingZFOV; // mm
-// HARDCODED FIXME
-displayTools.setSliceThickness(10);
+displayTools.setSliceThickness(startingThickness*10);
 rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
 rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,startingZFOV/zPartitions*10]);
 
