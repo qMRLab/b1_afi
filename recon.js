@@ -127,7 +127,7 @@ function  coilBlock(input,index){
 
 }
 
-var coilArray  = new Array();truoey89qrew
+var coilArray  = new Array();
 function connectCoils(coils){
   for (var i = 0; i<coils; i++){
     coilArray[i] = new coilBlock(observer.output(i),i);
