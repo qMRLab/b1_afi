@@ -282,14 +282,14 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>45.715999603271484</real>
+					<real>65.71600341796875</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>1.5</real>
+				<real>1.1000000238418579</real>
 				<key>plateauDuration</key>
-				<real>50</real>
+				<real>30</real>
 				<key>pluginClass</key>
 				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
@@ -336,7 +336,7 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 					<real>0.0</real>
 				</dict>
 				<key>b</key>
-				<real>45.715999603271484</real>
+				<real>65.71600341796875</real>
 				<key>editableName</key>
 				<string>Time Interval</string>
 				<key>max</key>
@@ -576,9 +576,9 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>351.52767520022883</real>
+	<real>648.7275390625</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -618,7 +618,7 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 		<key>width</key>
 		<integer>1239</integer>
 		<key>x</key>
-		<integer>15</integer>
+		<integer>14</integer>
 		<key>y</key>
 		<integer>45</integer>
 	</dict>
@@ -852,11 +852,11 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>63.647675200228839</real>
+	<real>73.367539062500001</real>
 	<key>tr</key>
-	<real>96.062408447265625</real>
+	<real>95.970039367675781</real>
 	<key>trNum</key>
-	<integer>3</integer>
+	<integer>6</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
