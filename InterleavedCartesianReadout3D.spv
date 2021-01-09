@@ -360,7 +360,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>99.310000000000002</real>
+				<real>95.715999999999994</real>
 				<key>editableName</key>
 				<string>InplaneTR2</string>
 				<key>pluginClass</key>
@@ -403,7 +403,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>99.310000000000002</real>
+				<real>95.715999999999994</real>
 				<key>editableName</key>
 				<string>SlabTR2</string>
 				<key>pluginClass</key>
@@ -533,7 +533,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<key>width</key>
 		<integer>1239</integer>
 		<key>x</key>
-		<integer>-81</integer>
+		<integer>0</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
@@ -767,11 +767,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>87.132973576944792</real>
+	<real>60.852973576944784</real>
 	<key>tr</key>
 	<real>2.8436057567596436</real>
 	<key>trNum</key>
-	<integer>323</integer>
+	<integer>335</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
