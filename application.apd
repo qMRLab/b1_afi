@@ -1,5 +1,5 @@
 [Application]
-defaultName = B1 EXP1
+defaultName = B1 EXP2
 interface = lib:threeplane.ui
 continuous = 0
 sharedSlot = Real-Time
