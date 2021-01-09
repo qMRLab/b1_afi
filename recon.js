@@ -34,11 +34,11 @@ observer.observeValueForKey("acquisition.samples", "samples");
 // Disable button after observer is discond
 observer.scanDisabled.connect(rth.deactivateScanButton);
 
+var viewKsIndexKey = "acquisition.<Cartesian Readout>.index";
 var kspace = new RthReconKSpace();
-if (!kspace.loadFromReadoutTags(rth.readoutTags("readout"))) {
+if (!this.kspace.loadFromReadoutTags(rth.readoutTags("readout"),viewKsIndexKey)) {
   RTHLOGGER_ERROR("Could not load k-space trajectory from readout tags");
 }
-observer.geometryChanged.connect(kspace.setGeometry);
 
 function reconBlock(input,index) {
   
@@ -47,7 +47,7 @@ function reconBlock(input,index) {
 // acquisition.<Cartesian Readout>.index --> 0 to 123 
 // acquisition.<inter>.input --> 0/1 
  this.sort3d = new RthReconSort();
- this.sort3d.objectName = "3DSORT(" + index + ")";
+ this.sort3d.objectName = "TRNumber(" + index + ")";
  this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index","acquisition.<zPartition" + index + ">.index"]);
  this.sort3d.setInput(input);
  //"acquisition.<Cartesian Readout>.index","acquisition.<inter>.input","acquisition.<zPartition1>.index"
@@ -67,13 +67,20 @@ function reconBlock(input,index) {
   }
 );
 
-  
+  this.rawSplit = new RthReconRawSplitter();
+  this.rawSplit.objectName = "Split for TR " + index;
+  this.rawSplit.setInput(this.sort3d.output());
+
   this.fft = new RthReconImageFFT();
   this.fft.objectName = "FFT(" + index + ")";
-  this.fft.setInput(this.sort3d.output());
+  this.fft.setInput(this.rawSplit.output(-1));
 
   this.output = function() {
   return this.fft.output();
+  };
+
+  this.rawOutput = function() {
+    return this.rawSplit.output(-1);
   };
 
 }
@@ -83,7 +90,7 @@ function  coilBlock(input,index){
   this.b1Data = new Array();
 
   this.router = new RthReconRouteByKeys();
-  this.router.objectName = "DATA(C" + index + ")";
+  this.router.objectName = "DATA(Coil " + index + ")";
   // Router index to be altered w.r.t. TR1 and TR2 changes.s
   this.router.setIndexKeys(["acquisition.<interleave>.input"]);
   // This one is not view index, should come from SB hence from control.
@@ -94,9 +101,11 @@ function  coilBlock(input,index){
     
     that.b1Data[0] = new reconBlock(that.router.output(0), 0);
     sos0.setInput(index,that.b1Data[0].output());
+    pack0.setInput(index,that.b1Data[0].rawOutput());
 
     that.b1Data[1] = new reconBlock(that.router.output(1), 1);
     sos1.setInput(index,that.b1Data[1].output());
+    pack1.setInput(index,that.b1Data[1].rawOutput());
     
     //for (var m=0; m < interleaveSteps; m++){
      // that.b1Data[m] = new reconBlock(that.router.output(m), m);
@@ -146,7 +155,7 @@ observer.coilsChanged.connect(connectCoils);
 
 rth.importJS("lib:RthImageThreePlaneOutput.js");
 
-function ExportBlock(input,trName){
+function ExportBlock(input,inputRaw,trName){
 
   var that = this;
 
@@ -225,7 +234,26 @@ function ExportBlock(input,trName){
   this.imageExport.objectName = "save_image" + trName;
   
   this.imageExport.setInput(input);
-  //this.imageExport.setKSpace(inputRaw);
+
+  this.imageExportRaw = new RthReconImageExport();
+  this.imageExportRaw.objectName = "save_raw" + trName;
+  this.imageExportRaw.observeKeys([
+    "mri.FlipIndex", // Ensured that this one will change per run.
+    "mri.SubjectBIDS",
+    //"mri.SessionBIDS",
+    "mri.AcquisitionBIDS"  
+  ]);
+  this.imageExportRaw.observedKeysChanged.connect(function(keys){
+    var exportDirectory = "/home/agah/Desktop/AgahHV/";
+    var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
+    var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
+    //var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
+    var exportFileNameRaw  = exportDirectory + subjectBIDS + sessionBIDS + trName + "_TB1AFIraw.dat";
+    that.imageExportRaw.setFileName(exportFileNameRaw);
+  });
+
+  this.imageExportRaw.setInput(inputRaw);
+  this.imageExportRaw.setKSpace(kspace);
 
   //this.imageExport.saveFileSeries(true);
 
@@ -247,12 +275,18 @@ sos0.objectName = "SoS0";
 var sos1 = new RthReconImageSumOfSquares();
 sos1.objectName = "SoS1";
 
+var pack0 = new RthReconImagePack();
+pack0.objectName = "coilPack0";
+
+var pack1 = new RthReconImagePack();
+pack1.objectName = "coilPack1";
+
 var splitter0 = RthReconSplitter();
-splitter0.objectName = "splitOutput";
+splitter0.objectName = "splitOutput 0";
 splitter0.setInput(this.sos0.output());
 
 var splitter1 = RthReconSplitter();
-splitter1.objectName = "splitOutput";
+splitter1.objectName = "splitOutput 1";
 splitter1.setInput(this.sos1.output());
 
 threePlane0 = new RthImageThreePlaneOutput();
@@ -261,5 +295,5 @@ threePlane0.setInput(this.splitter0.output(0));
 threePlane1 = new RthImageThreePlaneOutput();
 threePlane1.setInput(this.splitter1.output(0));
 
-exporter0  = new ExportBlock(this.splitter0.output(1),'_acq-tr1');
-exporter1  = new ExportBlock(this.splitter1.output(1),'_acq-tr2');
+exporter0  = new ExportBlock(this.splitter0.output(1),pack0.output(),'_acq-tr1');
+exporter1  = new ExportBlock(this.splitter1.output(1),pack1.output(),'_acq-tr2');
