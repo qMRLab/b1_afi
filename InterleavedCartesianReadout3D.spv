@@ -74,7 +74,7 @@
 SB.set(SB.get('&lt;Phase Encode Gradient&gt;.res'),'&lt;zPartition1&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
-SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.plateauDuration'),'&lt;Time Interval&gt;.b');
+SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-5,'&lt;Time Interval&gt;.b');
 </string>
 		</dict>
 	</array>
@@ -273,27 +273,54 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 				<real>1</real>
 			</dict>
 			<dict>
+				<key>a</key>
+				<real>0.0</real>
 				<key>anchor</key>
 				<dict>
 					<key>activeAnchor</key>
 					<string>start</string>
 					<key>anchorType</key>
+					<integer>0</integer>
+					<key>anchoredToSBKey</key>
+					<string>startOfTR</string>
+					<key>position</key>
+					<real>0.0</real>
+				</dict>
+				<key>b</key>
+				<real>90.71600341796875</real>
+				<key>editableName</key>
+				<string>Time Interval</string>
+				<key>max</key>
+				<real>5000</real>
+				<key>min</key>
+				<real>0.0</real>
+				<key>pluginClass</key>
+				<string>SBTRInterval</string>
+				<key>pluginName</key>
+				<string>Time Interval</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>end</string>
+					<key>anchorType</key>
 					<integer>1</integer>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>65.71600341796875</real>
+					<real>90.71600341796875</real>
 				</dict>
+				<key>area</key>
+				<real>6</real>
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
-				<key>maxVal</key>
-				<real>1.1000000238418579</real>
-				<key>plateauDuration</key>
-				<real>30</real>
 				<key>pluginClass</key>
-				<string>SBPlateauTrapezoid</string>
+				<string>SBAreaTrapezoid</string>
 				<key>pluginName</key>
-				<string>Plateau Trapezoid</string>
+				<string>Area Trapezoid</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
@@ -320,35 +347,6 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 				<real>1</real>
 				<key>zRiseOverlap</key>
 				<real>1</real>
-			</dict>
-			<dict>
-				<key>a</key>
-				<real>0.0</real>
-				<key>anchor</key>
-				<dict>
-					<key>activeAnchor</key>
-					<string>start</string>
-					<key>anchorType</key>
-					<integer>0</integer>
-					<key>anchoredToSBKey</key>
-					<string>startOfTR</string>
-					<key>position</key>
-					<real>0.0</real>
-				</dict>
-				<key>b</key>
-				<real>65.71600341796875</real>
-				<key>editableName</key>
-				<string>Time Interval</string>
-				<key>max</key>
-				<real>5000</real>
-				<key>min</key>
-				<real>0.0</real>
-				<key>pluginClass</key>
-				<string>SBTRInterval</string>
-				<key>pluginName</key>
-				<string>Time Interval</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
 			</dict>
 		</array>
 		<key>SequencePlugins</key>
@@ -378,7 +376,6 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Plateau Trapezoid</string>
 					<string>Time Interval</string>
 				</array>
 				<key>pluginVersion</key>
@@ -478,7 +475,6 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Plateau Trapezoid</string>
 					<string>Time Interval</string>
 				</array>
 				<key>pluginVersion</key>
@@ -523,7 +519,6 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Plateau Trapezoid</string>
 					<string>Time Interval</string>
 				</array>
 				<key>pluginVersion</key>
@@ -576,7 +571,7 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>648.7275390625</real>
+	<real>1990.845458984375</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -824,7 +819,7 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 	<key>readoutSampleDivisor</key>
 	<integer>2</integer>
 	<key>receiverPhase</key>
-	<real>0.0</real>
+	<real>132.41508152173913</real>
 	<key>rfLimit</key>
 	<real>0.10000000000000001</real>
 	<key>slewMagLimitXScale</key>
@@ -852,13 +847,13 @@ SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.p
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>73.367539062500001</real>
+	<real>35.765458984375002</real>
 	<key>tr</key>
-	<real>95.970039367675781</real>
+	<real>90.71600341796875</real>
 	<key>trNum</key>
-	<integer>6</integer>
+	<integer>21</integer>
 	<key>waveSamplingRate</key>
-	<real>50</real>
+	<real>250</real>
 	<key>xPosition</key>
 	<real>0.0</real>
 	<key>xVelocity</key>
