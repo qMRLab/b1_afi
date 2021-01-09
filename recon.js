@@ -182,7 +182,7 @@ function ExportBlock(input,inputRaw,trName){
     "reconstruction.phaseEncodes",
     "acquisition.samples",
     "reconstruction.zPartitions",
-    "mri.PreAcqDuration",
+    //"mri.PreAcqDuration",
     "geometry.TranslationX",
     "geometry.TranslationY",
     "geometry.TranslationZ",
@@ -211,7 +211,7 @@ function ExportBlock(input,inputRaw,trName){
     that.imageExport.addTag("SliceThickness",keys["mri.SliceThickness"]);
     that.imageExport.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
     that.imageExport.addTag("NumberOfColumns",keys["acquisition.samples"]);
-    that.imageExport.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
+    //that.imageExport.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
     that.imageExport.addTag("TranslationX",keys["geometry.TranslationX"]);
     that.imageExport.addTag("TranslationY",keys["geometry.TranslationY"]);
     that.imageExport.addTag("TranslationZ",keys["geometry.TranslationZ"]);

@@ -213,8 +213,8 @@ function changeNFactor(N)
 
 // Send metadata to recon
 rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
-  NumberOfCoils: parameterList[2],
-  PreAcqDuration: SB.readout["<Preacquisitions>.duration"]
+  NumberOfCoils: parameterList[2]
+  //PreAcqDuration: SB.readout["<Preacquisitions>.duration"]
 }));
 
 var startingN = 5;
