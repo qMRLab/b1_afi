@@ -74,6 +74,7 @@
 SB.set(SB.get('&lt;Phase Encode Gradient&gt;.res'),'&lt;zPartition1&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
+SB.set(SB.get('&lt;InplaneTR2&gt;.duration')-SB.get('&lt;Plateau Trapezoid&gt;.plateauDuration'),'&lt;Time Interval&gt;.b');
 </string>
 		</dict>
 	</array>
@@ -271,6 +272,84 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<key>zRiseOverlap</key>
 				<real>1</real>
 			</dict>
+			<dict>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>start</string>
+					<key>anchorType</key>
+					<integer>1</integer>
+					<key>anchoredToSBKey</key>
+					<string>&lt;Time Interval&gt;.end</string>
+					<key>position</key>
+					<real>45.715999603271484</real>
+				</dict>
+				<key>editableName</key>
+				<string>Plateau Trapezoid</string>
+				<key>maxVal</key>
+				<real>1.5</real>
+				<key>plateauDuration</key>
+				<real>50</real>
+				<key>pluginClass</key>
+				<string>SBPlateauTrapezoid</string>
+				<key>pluginName</key>
+				<string>Plateau Trapezoid</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>x0Component</key>
+				<real>1</real>
+				<key>xFallOverlap</key>
+				<real>1</real>
+				<key>xPlateauOverlap</key>
+				<real>1</real>
+				<key>xRiseOverlap</key>
+				<real>1</real>
+				<key>y0Component</key>
+				<real>0.0</real>
+				<key>yFallOverlap</key>
+				<real>1</real>
+				<key>yPlateauOverlap</key>
+				<real>1</real>
+				<key>yRiseOverlap</key>
+				<real>1</real>
+				<key>z0Component</key>
+				<real>1</real>
+				<key>zFallOverlap</key>
+				<real>1</real>
+				<key>zPlateauOverlap</key>
+				<real>1</real>
+				<key>zRiseOverlap</key>
+				<real>1</real>
+			</dict>
+			<dict>
+				<key>a</key>
+				<real>0.0</real>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>start</string>
+					<key>anchorType</key>
+					<integer>0</integer>
+					<key>anchoredToSBKey</key>
+					<string>startOfTR</string>
+					<key>position</key>
+					<real>0.0</real>
+				</dict>
+				<key>b</key>
+				<real>45.715999603271484</real>
+				<key>editableName</key>
+				<string>Time Interval</string>
+				<key>max</key>
+				<real>5000</real>
+				<key>min</key>
+				<real>0.0</real>
+				<key>pluginClass</key>
+				<string>SBTRInterval</string>
+				<key>pluginName</key>
+				<string>Time Interval</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
 		</array>
 		<key>SequencePlugins</key>
 		<array>
@@ -299,6 +378,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
+					<string>Plateau Trapezoid</string>
+					<string>Time Interval</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -397,6 +478,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
+					<string>Plateau Trapezoid</string>
+					<string>Time Interval</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -440,6 +523,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
+					<string>Plateau Trapezoid</string>
+					<string>Time Interval</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -491,7 +576,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>16155.132973576945</real>
+	<real>351.52767520022883</real>
 	<key>activeInspector</key>
 	<integer>3</integer>
 	<key>appVersion</key>
@@ -533,9 +618,9 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<key>width</key>
 		<integer>1239</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>15</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>45</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -725,11 +810,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-233.61328125</real>
+			<real>-224.01171875</real>
 			<key>viewHeight</key>
 			<real>564.27734375</real>
 			<key>viewLeft</key>
-			<real>114.86328125</real>
+			<real>353.28515625</real>
 			<key>viewWidth</key>
 			<real>562.484375</real>
 		</dict>
@@ -767,11 +852,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>60.852973576944784</real>
+	<real>63.647675200228839</real>
 	<key>tr</key>
-	<real>2.8436057567596436</real>
+	<real>96.062408447265625</real>
 	<key>trNum</key>
-	<integer>335</integer>
+	<integer>3</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
