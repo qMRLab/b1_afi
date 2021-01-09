@@ -20,7 +20,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>range</key>
-			<real>80</real>
+			<real>102.97719573974609</real>
 			<key>res</key>
 			<integer>114</integer>
 			<key>selectionStart</key>
@@ -53,9 +53,9 @@
 					<key>anchorType</key>
 					<integer>1</integer>
 					<key>anchoredToSBKey</key>
-					<string>startOfTR</string>
+					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>0.0</real>
+					<real>1.6203387975692749</real>
 				</dict>
 				<key>duration</key>
 				<real>3.2000000476837158</real>
@@ -79,6 +79,71 @@
 				<real>60</real>
 				<key>window</key>
 				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>start</string>
+					<key>anchorType</key>
+					<integer>1</integer>
+					<key>anchoredToSBKey</key>
+					<string>startOfTR</string>
+					<key>position</key>
+					<real>0.0</real>
+				</dict>
+				<key>editableName</key>
+				<string>Slice Select Gradient</string>
+				<key>hasPrewinder</key>
+				<integer>0</integer>
+				<key>hasRewinder</key>
+				<integer>1</integer>
+				<key>netArea</key>
+				<real>4.025423526763916</real>
+				<key>plateauDuration</key>
+				<real>3.2000000476837158</real>
+				<key>plateauRefocusOffset</key>
+				<real>1.6000000238418579</real>
+				<key>pluginClass</key>
+				<string>SBSliceSelectGradient</string>
+				<key>pluginName</key>
+				<string>Slice Select Gradient</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>prewindFirstMoment</key>
+				<integer>0</integer>
+				<key>rewindFirstMoment</key>
+				<integer>0</integer>
+				<key>rfPulse</key>
+				<string>RF</string>
+				<key>tbw</key>
+				<real>8</real>
+				<key>thickness</key>
+				<real>50</real>
+				<key>x0Component</key>
+				<real>0.0</real>
+				<key>xPlateauOverlap</key>
+				<real>0.0</real>
+				<key>xPostPlateauOverlap</key>
+				<real>1</real>
+				<key>xPrePlateauOverlap</key>
+				<real>1</real>
+				<key>y0Component</key>
+				<real>0.0</real>
+				<key>yPlateauOverlap</key>
+				<real>0.0</real>
+				<key>yPostPlateauOverlap</key>
+				<real>1</real>
+				<key>yPrePlateauOverlap</key>
+				<real>1</real>
+				<key>z0Component</key>
+				<real>1</real>
+				<key>zPlateauOverlap</key>
+				<real>0.0</real>
+				<key>zPostPlateauOverlap</key>
+				<real>1</real>
+				<key>zPrePlateauOverlap</key>
+				<real>1</real>
 			</dict>
 		</array>
 		<key>SequencePlugins</key>
@@ -138,15 +203,15 @@
 	<key>inspectorWidth</key>
 	<real>222</real>
 	<key>magnification</key>
-	<real>1.09375</real>
+	<real>0.68702024221420288</real>
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>732</integer>
+		<integer>683</integer>
 		<key>width</key>
-		<integer>1204</integer>
+		<integer>1158</integer>
 		<key>x</key>
-		<integer>62</integer>
+		<integer>49</integer>
 		<key>y</key>
 		<integer>45</integer>
 	</dict>
@@ -178,13 +243,41 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>-118</real>
+			<real>-167</real>
 			<key>viewHeight</key>
 			<real>776</real>
 			<key>viewLeft</key>
 			<real>75.57421875</real>
 			<key>viewWidth</key>
 			<real>1080.40234375</real>
+		</dict>
+		<dict>
+			<key>editableName</key>
+			<string>Waveforms</string>
+			<key>gradDisplayStyle</key>
+			<string>XYZ Separate Plots</string>
+			<key>pluginClass</key>
+			<string>SBWaveformViewPlugin</string>
+			<key>pluginName</key>
+			<string>Waveforms</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>rfDisplayStyle</key>
+			<string>XY Combined Plot</string>
+			<key>showReadoutWindows</key>
+			<integer>1</integer>
+			<key>showValues</key>
+			<integer>0</integer>
+			<key>viewBottom</key>
+			<real>-5.4609375</real>
+			<key>viewHeight</key>
+			<real>516.83203125</real>
+			<key>viewLeft</key>
+			<real>109.6171875</real>
+			<key>viewWidth</key>
+			<real>508.8203125</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -198,7 +291,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>68</real>
+			<real>19</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -218,7 +311,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>505</real>
+			<real>456</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -262,7 +355,7 @@
 	<key>timeWithinTr</key>
 	<real>3.1389310359954834</real>
 	<key>tr</key>
-	<real>1.6000000238418579</real>
+	<real>3.6026105880737305</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>

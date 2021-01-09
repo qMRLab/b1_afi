@@ -96,7 +96,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<key>editableName</key>
 				<string>Cartesian Readout</string>
 				<key>fov</key>
-				<real>40</real>
+				<real>30</real>
 				<key>hasPhaseEncoding</key>
 				<integer>1</integer>
 				<key>hasRewinder</key>
@@ -160,12 +160,12 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>0.50199997425079346</real>
+					<real>0.6119999885559082</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>6</real>
+				<real>5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -197,12 +197,12 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>0.90200001001358032</real>
+					<real>1.0119999647140503</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>6</real>
+				<real>5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -234,7 +234,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.end</string>
 					<key>position</key>
-					<real>1.3700000000000001</real>
+					<real>1.5600000000000001</real>
 				</dict>
 				<key>area</key>
 				<real>10</real>
@@ -470,20 +470,6 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<key>pluginVersion</key>
 				<integer>1</integer>
 			</dict>
-			<dict>
-				<key>duration</key>
-				<real>1</real>
-				<key>editableName</key>
-				<string>Preacquisitions</string>
-				<key>granularity</key>
-				<integer>1</integer>
-				<key>pluginClass</key>
-				<string>SBPreacquisitionPlugin</string>
-				<key>pluginName</key>
-				<string>Preacquisitions</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-			</dict>
 		</array>
 		<key>numGradAxes</key>
 		<integer>3</integer>
@@ -491,9 +477,9 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>107.71679100036388</real>
+	<real>205.77679100036386</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -535,7 +521,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<key>x</key>
 		<integer>0</integer>
 		<key>y</key>
-		<integer>45</integer>
+		<integer>44</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -572,34 +558,6 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<real>25</real>
 			<key>viewWidth</key>
 			<real>292</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>Waveforms</string>
-			<key>gradDisplayStyle</key>
-			<string>XYZ Separate Plots</string>
-			<key>pluginClass</key>
-			<string>SBWaveformViewPlugin</string>
-			<key>pluginName</key>
-			<string>Waveforms</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>rfDisplayStyle</key>
-			<string>XY Combined Plot</string>
-			<key>showReadoutWindows</key>
-			<integer>0</integer>
-			<key>showValues</key>
-			<integer>0</integer>
-			<key>viewBottom</key>
-			<real>110</real>
-			<key>viewHeight</key>
-			<real>548</real>
-			<key>viewLeft</key>
-			<real>0.0</real>
-			<key>viewWidth</key>
-			<real>1086.90234375</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -681,11 +639,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-752.5</real>
+			<real>-235.37890625</real>
 			<key>viewHeight</key>
 			<real>813.5</real>
 			<key>viewLeft</key>
-			<real>279.4921875</real>
+			<real>0.0</real>
 			<key>viewWidth</key>
 			<real>629.33984375</real>
 			<key>xWaveform</key>
@@ -712,6 +670,34 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<real>251.72265625</real>
 			<key>viewWidth</key>
 			<real>661.140625</real>
+		</dict>
+		<dict>
+			<key>editableName</key>
+			<string>Waveforms</string>
+			<key>gradDisplayStyle</key>
+			<string>XYZ Separate Plots</string>
+			<key>pluginClass</key>
+			<string>SBWaveformViewPlugin</string>
+			<key>pluginName</key>
+			<string>Waveforms</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>rfDisplayStyle</key>
+			<string>XY Combined Plot</string>
+			<key>showReadoutWindows</key>
+			<integer>0</integer>
+			<key>showValues</key>
+			<integer>0</integer>
+			<key>viewBottom</key>
+			<real>419</real>
+			<key>viewHeight</key>
+			<real>214</real>
+			<key>viewLeft</key>
+			<real>44</real>
+			<key>viewWidth</key>
+			<real>292</real>
 		</dict>
 	</array>
 	<key>protonDensity</key>
@@ -747,11 +733,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.6767910003638826</real>
+	<real>1.0767910003638463</real>
 	<key>tr</key>
-	<real>2.6536059379577637</real>
+	<real>2.8436057567596436</real>
 	<key>trNum</key>
-	<integer>4</integer>
+	<integer>5</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
