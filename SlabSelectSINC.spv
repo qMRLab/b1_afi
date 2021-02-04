@@ -55,7 +55,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.6203387975692749</real>
+					<real>1.6101694107055664</real>
 				</dict>
 				<key>duration</key>
 				<real>3.2000000476837158</real>
@@ -74,11 +74,11 @@
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>timeBandwidth</key>
-				<real>8</real>
+				<real>4</real>
 				<key>tip</key>
 				<real>60</real>
 				<key>window</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>anchor</key>
@@ -99,7 +99,7 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>4.025423526763916</real>
+				<real>2.0063557624816895</real>
 				<key>plateauDuration</key>
 				<real>3.2000000476837158</real>
 				<key>plateauRefocusOffset</key>
@@ -117,7 +117,7 @@
 				<key>rfPulse</key>
 				<string>RF</string>
 				<key>tbw</key>
-				<real>8</real>
+				<real>4</real>
 				<key>thickness</key>
 				<real>50</real>
 				<key>x0Component</key>
@@ -211,9 +211,9 @@
 		<key>width</key>
 		<integer>1158</integer>
 		<key>x</key>
-		<integer>49</integer>
+		<integer>-55</integer>
 		<key>y</key>
-		<integer>45</integer>
+		<integer>91</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -271,11 +271,11 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>-5.4609375</real>
+			<real>71.3671875</real>
 			<key>viewHeight</key>
 			<real>516.83203125</real>
 			<key>viewLeft</key>
-			<real>109.6171875</real>
+			<real>-374.609375</real>
 			<key>viewWidth</key>
 			<real>508.8203125</real>
 		</dict>
@@ -355,7 +355,7 @@
 	<key>timeWithinTr</key>
 	<real>3.1389310359954834</real>
 	<key>tr</key>
-	<real>3.6026105880737305</real>
+	<real>3.4758596420288086</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
