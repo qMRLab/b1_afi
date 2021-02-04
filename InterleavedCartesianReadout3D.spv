@@ -247,7 +247,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>xFallOverlap</key>
 				<real>1</real>
 				<key>xPlateauOverlap</key>
@@ -294,7 +294,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
-				<real>1</real>
+				<real>0.0</real>
 				<key>xFallOverlap</key>
 				<real>1</real>
 				<key>xPlateauOverlap</key>
@@ -558,7 +558,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>11622.66796875</real>
+	<real>11288.347968749998</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -596,13 +596,13 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>978</integer>
+		<integer>731</integer>
 		<key>width</key>
-		<integer>1586</integer>
+		<integer>1280</integer>
 		<key>x</key>
-		<integer>101</integer>
+		<integer>0</integer>
 		<key>y</key>
-		<integer>61</integer>
+		<integer>45</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -632,7 +632,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>646</real>
+			<real>399</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -652,7 +652,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>164</real>
+			<real>-83</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -672,7 +672,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>751</real>
+			<real>504</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -692,7 +692,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>10.97265625</real>
+			<real>-236.5</real>
 			<key>viewHeight</key>
 			<real>420</real>
 			<key>viewLeft</key>
@@ -720,7 +720,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>195.62890625</real>
+			<real>-51.5</real>
 			<key>viewHeight</key>
 			<real>375</real>
 			<key>viewLeft</key>
@@ -744,7 +744,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-125.0546875</real>
+			<real>-372.5</real>
 			<key>viewHeight</key>
 			<real>544</real>
 			<key>viewLeft</key>
@@ -772,9 +772,9 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>350.51171875</real>
+			<real>103.5</real>
 			<key>viewHeight</key>
-			<real>548.48828125</real>
+			<real>548.5</real>
 			<key>viewLeft</key>
 			<real>178.75</real>
 			<key>viewWidth</key>
@@ -792,7 +792,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-293.3671875</real>
+			<real>-540.5</real>
 			<key>viewHeight</key>
 			<real>564</real>
 			<key>viewLeft</key>
@@ -834,11 +834,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.46796875</real>
+	<real>1.4679687499976717</real>
 	<key>tr</key>
 	<real>63.147800445556641</real>
 	<key>trNum</key>
-	<integer>210</integer>
+	<integer>204</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
