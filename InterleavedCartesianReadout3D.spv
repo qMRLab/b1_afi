@@ -234,7 +234,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.end</string>
 					<key>position</key>
-					<real>10</real>
+					<real>8</real>
 				</dict>
 				<key>area</key>
 				<real>10</real>
@@ -417,7 +417,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<array>
 			<dict>
 				<key>duration</key>
-				<real>15.710000000000001</real>
+				<real>10.710000000000001</real>
 				<key>editableName</key>
 				<string>New TR</string>
 				<key>pluginClass</key>
@@ -464,7 +464,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>15.710000000000001</real>
+				<real>10.710000000000001</real>
 				<key>editableName</key>
 				<string>SlabTR1</string>
 				<key>pluginClass</key>
@@ -521,7 +521,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>95.715999999999994</real>
+				<real>70.209999999999994</real>
 				<key>editableName</key>
 				<string>InplaneTR2</string>
 				<key>pluginClass</key>
@@ -568,7 +568,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>95.715999999999994</real>
+				<real>70.209999999999994</real>
 				<key>editableName</key>
 				<string>SlabTR2</string>
 				<key>pluginClass</key>
@@ -658,9 +658,9 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>11339.150390625</real>
+	<real>11620.030390624999</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>0</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -696,13 +696,13 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>731</integer>
+		<integer>720</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1289</integer>
 		<key>x</key>
-		<integer>22</integer>
+		<integer>-16</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>57</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -732,7 +732,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>399</real>
+			<real>388</real>
 			<key>viewHeight</key>
 			<real>253</real>
 			<key>viewLeft</key>
@@ -752,7 +752,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-83</real>
+			<real>-94</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -772,7 +772,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>504</real>
+			<real>493</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -792,11 +792,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-236.5</real>
+			<real>-49.328125</real>
 			<key>viewHeight</key>
 			<real>420</real>
 			<key>viewLeft</key>
-			<real>104.97265625</real>
+			<real>95.01171875</real>
 			<key>viewWidth</key>
 			<real>1100.8515625</real>
 		</dict>
@@ -820,7 +820,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-51.5</real>
+			<real>-62.5</real>
 			<key>viewHeight</key>
 			<real>375</real>
 			<key>viewLeft</key>
@@ -844,11 +844,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-372.5</real>
+			<real>-107.19921875</real>
 			<key>viewHeight</key>
 			<real>544</real>
 			<key>viewLeft</key>
-			<real>25</real>
+			<real>-132.74609375</real>
 			<key>viewWidth</key>
 			<real>661.140625</real>
 		</dict>
@@ -872,11 +872,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>117.2890625</real>
+			<real>305.47265625</real>
 			<key>viewHeight</key>
 			<real>548.5</real>
 			<key>viewLeft</key>
-			<real>-24.67578125</real>
+			<real>-34.53125</real>
 			<key>viewWidth</key>
 			<real>1097.0546875</real>
 		</dict>
@@ -892,7 +892,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-540.5</real>
+			<real>-551.5</real>
 			<key>viewHeight</key>
 			<real>564</real>
 			<key>viewLeft</key>
@@ -934,11 +934,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>36.550390624999999</real>
+	<real>2.7303906250000001</real>
 	<key>tr</key>
 	<real>45.351364135742188</real>
 	<key>trNum</key>
-	<integer>205</integer>
+	<integer>290</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
