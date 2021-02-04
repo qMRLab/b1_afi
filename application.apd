@@ -19,7 +19,6 @@ allowDisable = true
 [excitationsinc]
 type = waveform
 file = SlabSelectSINC.spv
-linearPhaseIncrement = 180
 quadraticPhaseIncrement = 117
 allowDisable = true
 
