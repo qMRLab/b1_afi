@@ -237,7 +237,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<real>10</real>
 				</dict>
 				<key>area</key>
-				<real>6</real>
+				<real>10</real>
 				<key>editableName</key>
 				<string>Area Trapezoid</string>
 				<key>pluginClass</key>
@@ -284,7 +284,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<real>40</real>
 				</dict>
 				<key>area</key>
-				<real>30</real>
+				<real>50</real>
 				<key>editableName</key>
 				<string>Area Trapezoid 1</string>
 				<key>pluginClass</key>
@@ -311,6 +311,100 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<real>1</real>
 				<key>z0Component</key>
 				<real>1</real>
+				<key>zFallOverlap</key>
+				<real>1</real>
+				<key>zPlateauOverlap</key>
+				<real>1</real>
+				<key>zRiseOverlap</key>
+				<real>1</real>
+			</dict>
+			<dict>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>start</string>
+					<key>anchorType</key>
+					<integer>0</integer>
+					<key>anchoredToSBKey</key>
+					<string>&lt;Cartesian Readout&gt;.end</string>
+					<key>position</key>
+					<real>5</real>
+				</dict>
+				<key>area</key>
+				<real>10</real>
+				<key>editableName</key>
+				<string>Area Trapezoid 2</string>
+				<key>pluginClass</key>
+				<string>SBAreaTrapezoid</string>
+				<key>pluginName</key>
+				<string>Area Trapezoid</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>x0Component</key>
+				<real>1</real>
+				<key>xFallOverlap</key>
+				<real>1</real>
+				<key>xPlateauOverlap</key>
+				<real>1</real>
+				<key>xRiseOverlap</key>
+				<real>1</real>
+				<key>y0Component</key>
+				<real>0.0</real>
+				<key>yFallOverlap</key>
+				<real>1</real>
+				<key>yPlateauOverlap</key>
+				<real>1</real>
+				<key>yRiseOverlap</key>
+				<real>1</real>
+				<key>z0Component</key>
+				<real>0.0</real>
+				<key>zFallOverlap</key>
+				<real>1</real>
+				<key>zPlateauOverlap</key>
+				<real>1</real>
+				<key>zRiseOverlap</key>
+				<real>1</real>
+			</dict>
+			<dict>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>start</string>
+					<key>anchorType</key>
+					<integer>0</integer>
+					<key>anchoredToSBKey</key>
+					<string>&lt;Cartesian Readout&gt;.end</string>
+					<key>position</key>
+					<real>30</real>
+				</dict>
+				<key>area</key>
+				<real>50</real>
+				<key>editableName</key>
+				<string>Area Trapezoid 3</string>
+				<key>pluginClass</key>
+				<string>SBAreaTrapezoid</string>
+				<key>pluginName</key>
+				<string>Area Trapezoid</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>x0Component</key>
+				<real>1</real>
+				<key>xFallOverlap</key>
+				<real>1</real>
+				<key>xPlateauOverlap</key>
+				<real>1</real>
+				<key>xRiseOverlap</key>
+				<real>1</real>
+				<key>y0Component</key>
+				<real>0.0</real>
+				<key>yFallOverlap</key>
+				<real>1</real>
+				<key>yPlateauOverlap</key>
+				<real>1</real>
+				<key>yRiseOverlap</key>
+				<real>1</real>
+				<key>z0Component</key>
+				<real>0.0</real>
 				<key>zFallOverlap</key>
 				<real>1</real>
 				<key>zPlateauOverlap</key>
@@ -362,6 +456,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<string>Phase Encode Gradient 1</string>
 					<string>Area Trapezoid 1</string>
 					<string>Area Trapezoid</string>
+					<string>Area Trapezoid 2</string>
+					<string>Area Trapezoid 3</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -406,6 +502,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
 					<string>Area Trapezoid</string>
+					<string>Area Trapezoid 2</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -463,6 +560,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<string>Phase Encode Gradient 1</string>
 					<string>Area Trapezoid</string>
 					<string>Area Trapezoid 1</string>
+					<string>Area Trapezoid 2</string>
+					<string>Area Trapezoid 3</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -507,6 +606,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
 					<string>Area Trapezoid 1</string>
+					<string>Area Trapezoid 3</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -558,9 +658,9 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>11288.347968749998</real>
+	<real>11339.150390625</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -600,7 +700,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>22</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
@@ -772,11 +872,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>103.5</real>
+			<real>117.2890625</real>
 			<key>viewHeight</key>
 			<real>548.5</real>
 			<key>viewLeft</key>
-			<real>178.75</real>
+			<real>-24.67578125</real>
 			<key>viewWidth</key>
 			<real>1097.0546875</real>
 		</dict>
@@ -834,11 +934,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>1.4679687499976717</real>
+	<real>36.550390624999999</real>
 	<key>tr</key>
-	<real>43.317485809326172</real>
+	<real>45.351364135742188</real>
 	<key>trNum</key>
-	<integer>204</integer>
+	<integer>205</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
