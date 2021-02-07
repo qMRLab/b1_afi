@@ -232,18 +232,20 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<key>anchorType</key>
 					<integer>0</integer>
 					<key>anchoredToSBKey</key>
-					<string>&lt;Cartesian Readout&gt;.end</string>
+					<string>startOfTR</string>
 					<key>position</key>
-					<real>10</real>
+					<real>35</real>
 				</dict>
-				<key>area</key>
-				<real>10</real>
 				<key>editableName</key>
-				<string>Area Trapezoid</string>
+				<string>Plateau Trapezoid</string>
+				<key>maxVal</key>
+				<real>2.2000000476837158</real>
+				<key>plateauDuration</key>
+				<real>52</real>
 				<key>pluginClass</key>
-				<string>SBAreaTrapezoid</string>
+				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
-				<string>Area Trapezoid</string>
+				<string>Plateau Trapezoid</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
@@ -279,18 +281,20 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<key>anchorType</key>
 					<integer>0</integer>
 					<key>anchoredToSBKey</key>
-					<string>&lt;Cartesian Readout&gt;.end</string>
+					<string>startOfTR</string>
 					<key>position</key>
-					<real>40</real>
+					<real>3</real>
 				</dict>
-				<key>area</key>
-				<real>50</real>
 				<key>editableName</key>
-				<string>Area Trapezoid 1</string>
+				<string>Plateau Trapezoid 1</string>
+				<key>maxVal</key>
+				<real>2.2000000476837158</real>
+				<key>plateauDuration</key>
+				<real>10.399999618530273</real>
 				<key>pluginClass</key>
-				<string>SBAreaTrapezoid</string>
+				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
-				<string>Area Trapezoid</string>
+				<string>Plateau Trapezoid</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
@@ -311,100 +315,6 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<real>1</real>
 				<key>z0Component</key>
 				<real>1</real>
-				<key>zFallOverlap</key>
-				<real>1</real>
-				<key>zPlateauOverlap</key>
-				<real>1</real>
-				<key>zRiseOverlap</key>
-				<real>1</real>
-			</dict>
-			<dict>
-				<key>anchor</key>
-				<dict>
-					<key>activeAnchor</key>
-					<string>start</string>
-					<key>anchorType</key>
-					<integer>0</integer>
-					<key>anchoredToSBKey</key>
-					<string>&lt;Cartesian Readout&gt;.end</string>
-					<key>position</key>
-					<real>5</real>
-				</dict>
-				<key>area</key>
-				<real>10</real>
-				<key>editableName</key>
-				<string>Area Trapezoid 2</string>
-				<key>pluginClass</key>
-				<string>SBAreaTrapezoid</string>
-				<key>pluginName</key>
-				<string>Area Trapezoid</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>x0Component</key>
-				<real>1</real>
-				<key>xFallOverlap</key>
-				<real>1</real>
-				<key>xPlateauOverlap</key>
-				<real>1</real>
-				<key>xRiseOverlap</key>
-				<real>1</real>
-				<key>y0Component</key>
-				<real>0.0</real>
-				<key>yFallOverlap</key>
-				<real>1</real>
-				<key>yPlateauOverlap</key>
-				<real>1</real>
-				<key>yRiseOverlap</key>
-				<real>1</real>
-				<key>z0Component</key>
-				<real>0.0</real>
-				<key>zFallOverlap</key>
-				<real>1</real>
-				<key>zPlateauOverlap</key>
-				<real>1</real>
-				<key>zRiseOverlap</key>
-				<real>1</real>
-			</dict>
-			<dict>
-				<key>anchor</key>
-				<dict>
-					<key>activeAnchor</key>
-					<string>start</string>
-					<key>anchorType</key>
-					<integer>0</integer>
-					<key>anchoredToSBKey</key>
-					<string>&lt;Cartesian Readout&gt;.end</string>
-					<key>position</key>
-					<real>30</real>
-				</dict>
-				<key>area</key>
-				<real>50</real>
-				<key>editableName</key>
-				<string>Area Trapezoid 3</string>
-				<key>pluginClass</key>
-				<string>SBAreaTrapezoid</string>
-				<key>pluginName</key>
-				<string>Area Trapezoid</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>x0Component</key>
-				<real>1</real>
-				<key>xFallOverlap</key>
-				<real>1</real>
-				<key>xPlateauOverlap</key>
-				<real>1</real>
-				<key>xRiseOverlap</key>
-				<real>1</real>
-				<key>y0Component</key>
-				<real>0.0</real>
-				<key>yFallOverlap</key>
-				<real>1</real>
-				<key>yPlateauOverlap</key>
-				<real>1</real>
-				<key>yRiseOverlap</key>
-				<real>1</real>
-				<key>z0Component</key>
-				<real>0.0</real>
 				<key>zFallOverlap</key>
 				<real>1</real>
 				<key>zPlateauOverlap</key>
@@ -454,10 +364,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Area Trapezoid 1</string>
-					<string>Area Trapezoid</string>
-					<string>Area Trapezoid 2</string>
-					<string>Area Trapezoid 3</string>
+					<string>Plateau Trapezoid</string>
+					<string>Plateau Trapezoid 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -501,8 +409,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Area Trapezoid</string>
-					<string>Area Trapezoid 2</string>
+					<string>Plateau Trapezoid 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -558,10 +465,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Area Trapezoid</string>
-					<string>Area Trapezoid 1</string>
-					<string>Area Trapezoid 2</string>
-					<string>Area Trapezoid 3</string>
+					<string>Plateau Trapezoid</string>
+					<string>Plateau Trapezoid 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -605,8 +510,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Area Trapezoid 1</string>
-					<string>Area Trapezoid 3</string>
+					<string>Plateau Trapezoid</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -658,9 +562,9 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>11339.150390625</real>
+	<real>11291.990390624995</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.1</string>
 	<key>beginAtSS</key>
@@ -700,7 +604,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>22</integer>
+		<integer>-53</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
@@ -854,6 +758,26 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		</dict>
 		<dict>
 			<key>editableName</key>
+			<string>Waveform Info 1</string>
+			<key>pluginClass</key>
+			<string>SBWaveformInfoPlugin</string>
+			<key>pluginName</key>
+			<string>Waveform Info</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>viewBottom</key>
+			<real>-540.5</real>
+			<key>viewHeight</key>
+			<real>564</real>
+			<key>viewLeft</key>
+			<real>261.8359375</real>
+			<key>viewWidth</key>
+			<real>562.484375</real>
+		</dict>
+		<dict>
+			<key>editableName</key>
 			<string>Waveforms</string>
 			<key>gradDisplayStyle</key>
 			<string>XYZ Separate Plots</string>
@@ -879,26 +803,6 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 			<real>-24.67578125</real>
 			<key>viewWidth</key>
 			<real>1097.0546875</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>Waveform Info 1</string>
-			<key>pluginClass</key>
-			<string>SBWaveformInfoPlugin</string>
-			<key>pluginName</key>
-			<string>Waveform Info</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>-540.5</real>
-			<key>viewHeight</key>
-			<real>564</real>
-			<key>viewLeft</key>
-			<real>261.8359375</real>
-			<key>viewWidth</key>
-			<real>562.484375</real>
 		</dict>
 	</array>
 	<key>protonDensity</key>
@@ -934,11 +838,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>36.550390624999999</real>
+	<real>5.1103906249953432</real>
 	<key>tr</key>
-	<real>45.351364135742188</real>
+	<real>87.508071899414062</real>
 	<key>trNum</key>
-	<integer>205</integer>
+	<integer>204</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
