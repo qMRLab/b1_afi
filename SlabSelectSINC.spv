@@ -53,9 +53,9 @@
 					<key>anchorType</key>
 					<integer>1</integer>
 					<key>anchoredToSBKey</key>
-					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
+					<string>startOfTR</string>
 					<key>position</key>
-					<real>1.6203387975692749</real>
+					<real>0.0</real>
 				</dict>
 				<key>duration</key>
 				<real>3.2000000476837158</real>
@@ -79,71 +79,6 @@
 				<real>60</real>
 				<key>window</key>
 				<integer>1</integer>
-			</dict>
-			<dict>
-				<key>anchor</key>
-				<dict>
-					<key>activeAnchor</key>
-					<string>start</string>
-					<key>anchorType</key>
-					<integer>1</integer>
-					<key>anchoredToSBKey</key>
-					<string>startOfTR</string>
-					<key>position</key>
-					<real>0.0</real>
-				</dict>
-				<key>editableName</key>
-				<string>Slice Select Gradient</string>
-				<key>hasPrewinder</key>
-				<integer>0</integer>
-				<key>hasRewinder</key>
-				<integer>1</integer>
-				<key>netArea</key>
-				<real>4.025423526763916</real>
-				<key>plateauDuration</key>
-				<real>3.2000000476837158</real>
-				<key>plateauRefocusOffset</key>
-				<real>1.6000000238418579</real>
-				<key>pluginClass</key>
-				<string>SBSliceSelectGradient</string>
-				<key>pluginName</key>
-				<string>Slice Select Gradient</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>prewindFirstMoment</key>
-				<integer>0</integer>
-				<key>rewindFirstMoment</key>
-				<integer>0</integer>
-				<key>rfPulse</key>
-				<string>RF</string>
-				<key>tbw</key>
-				<real>8</real>
-				<key>thickness</key>
-				<real>50</real>
-				<key>x0Component</key>
-				<real>0.0</real>
-				<key>xPlateauOverlap</key>
-				<real>0.0</real>
-				<key>xPostPlateauOverlap</key>
-				<real>1</real>
-				<key>xPrePlateauOverlap</key>
-				<real>1</real>
-				<key>y0Component</key>
-				<real>0.0</real>
-				<key>yPlateauOverlap</key>
-				<real>0.0</real>
-				<key>yPostPlateauOverlap</key>
-				<real>1</real>
-				<key>yPrePlateauOverlap</key>
-				<real>1</real>
-				<key>z0Component</key>
-				<real>1</real>
-				<key>zPlateauOverlap</key>
-				<real>0.0</real>
-				<key>zPostPlateauOverlap</key>
-				<real>1</real>
-				<key>zPrePlateauOverlap</key>
-				<real>1</real>
 			</dict>
 		</array>
 		<key>SequencePlugins</key>
@@ -211,7 +146,7 @@
 		<key>width</key>
 		<integer>1158</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>250</integer>
 		<key>y</key>
 		<integer>94</integer>
 	</dict>
@@ -355,7 +290,7 @@
 	<key>timeWithinTr</key>
 	<real>3.1389310359954834</real>
 	<key>tr</key>
-	<real>3.6026105880737305</real>
+	<real>1.6000000238418579</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
