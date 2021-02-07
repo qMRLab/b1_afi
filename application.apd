@@ -20,7 +20,7 @@ allowDisable = true
 type = waveform
 file = SlabSelectSINC.spv
 linearPhaseIncrement = 180
-quadraticPhaseIncrement = 35
+quadraticPhaseIncrement = 34
 allowDisable = true
 
 [echodelay]
