@@ -239,7 +239,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>2.2999999523162842</real>
+				<real>2.2000000476837158</real>
 				<key>plateauDuration</key>
 				<real>30</real>
 				<key>pluginClass</key>
@@ -288,7 +288,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
 				<key>maxVal</key>
-				<real>2.2999999523162842</real>
+				<real>2.2000000476837158</real>
 				<key>plateauDuration</key>
 				<real>6</real>
 				<key>pluginClass</key>
@@ -604,9 +604,9 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-187</integer>
+		<integer>-89</integer>
 		<key>y</key>
-		<integer>47</integer>
+		<integer>0</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -880,7 +880,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>timeWithinTr</key>
 	<real>3.6292187500000002</real>
 	<key>tr</key>
-	<real>35.531162261962891</real>
+	<real>35.508068084716797</real>
 	<key>trNum</key>
 	<integer>659</integer>
 	<key>waveSamplingRate</key>
