@@ -237,7 +237,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<real>8</real>
 				</dict>
 				<key>area</key>
-				<real>20</real>
+				<real>10</real>
 				<key>editableName</key>
 				<string>Area Trapezoid</string>
 				<key>pluginClass</key>
@@ -284,7 +284,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 					<real>40</real>
 				</dict>
 				<key>area</key>
-				<real>150</real>
+				<real>100</real>
 				<key>editableName</key>
 				<string>Area Trapezoid 1</string>
 				<key>pluginClass</key>
@@ -658,7 +658,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>22861.349609375</real>
+	<real>22386.429609374991</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -700,7 +700,7 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-3</integer>
+		<integer>-12</integer>
 		<key>y</key>
 		<integer>57</integer>
 	</dict>
@@ -974,11 +974,11 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetiti
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>4.1096093749999998</real>
+	<real>4.1096093749906863</real>
 	<key>tr</key>
-	<real>55.520755767822266</real>
+	<real>50.436058044433594</real>
 	<key>trNum</key>
-	<integer>567</integer>
+	<integer>556</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
