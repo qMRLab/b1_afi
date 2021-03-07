@@ -17,7 +17,7 @@ allowDisable = true
 
 [excitationsinc]
 type = waveform
-file = SlabSelect.spv
+file = SlabSelectLFSLR.spv
 linearPhaseIncrement = 180
 quadraticPhaseIncrement = 34
 allowDisable = true
