@@ -64,11 +64,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>4.0323810577392578</real>
+				<real>4.025423526763916</real>
 				<key>plateauDuration</key>
-				<real>4.0567975234985347</real>
+				<real>3.2000000000000002</real>
 				<key>plateauRefocusOffset</key>
-				<real>2.0367975234985347</real>
+				<real>1.6000000000000001</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -120,10 +120,10 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>2.0528407467967384</real>
+					<real>1.6203387839203398</real>
 				</dict>
 				<key>duration</key>
-				<real>4.0567975234985347</real>
+				<real>3.2000000000000002</real>
 				<key>editableName</key>
 				<string>RF</string>
 				<key>enforceRFLimit</key>
@@ -173,7 +173,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>8.4199914932250977</real>
+	<real>3.5999963283538818</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -279,7 +279,7 @@
 			<key>viewHeight</key>
 			<real>516.83203125</real>
 			<key>viewLeft</key>
-			<real>265.8984375</real>
+			<real>96.80859375</real>
 			<key>viewWidth</key>
 			<real>508.8203125</real>
 		</dict>
@@ -323,6 +323,26 @@
 			<key>viewWidth</key>
 			<real>23</real>
 		</dict>
+		<dict>
+			<key>editableName</key>
+			<string>Waveform Info</string>
+			<key>pluginClass</key>
+			<string>SBWaveformInfoPlugin</string>
+			<key>pluginName</key>
+			<string>Waveform Info</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>viewBottom</key>
+			<real>361</real>
+			<key>viewHeight</key>
+			<real>223</real>
+			<key>viewLeft</key>
+			<real>44</real>
+			<key>viewWidth</key>
+			<real>266</real>
+		</dict>
 	</array>
 	<key>protonDensity</key>
 	<real>1</real>
@@ -357,9 +377,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>8.4199914932250977</real>
+	<real>3.5999963283538818</real>
 	<key>tr</key>
-	<real>4.449638843536377</real>
+	<real>3.6026105880737305</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
