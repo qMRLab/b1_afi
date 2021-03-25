@@ -1,5 +1,5 @@
 [Application]
-defaultName = B1 SLR
+defaultName = B1 AFI-one
 interface = lib:threeplane.ui
 continuous = 0
 sharedSlot = Real-Time
@@ -8,26 +8,6 @@ controlScript = control.js
 reconScript = recon.js
 singleJSEngine = false
 
-[excitationrect]
+[sequence]
 type = waveform
-file = NonSelHardPulse.spv
-linearPhaseIncrement = 180
-quadraticPhaseIncrement = 117
-allowDisable = true
-
-[excitationsinc]
-type = waveform
-file = SlabSelectLFSLR.spv
-linearPhaseIncrement = 180
-quadraticPhaseIncrement = 34
-allowDisable = true
-
-[echodelay]
-type = delay
-duration = 2000
-
-[readout]
-type = waveform
-file = InterleavedCartesianReadout3D.spv
-loopIndex = 0
-associatedRF = excitationsinc
+file = AFI.spv
