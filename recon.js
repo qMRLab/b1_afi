@@ -36,7 +36,7 @@ observer.scanDisabled.connect(rth.deactivateScanButton);
 
 var viewKsIndexKey = "acquisition.<Cartesian Readout>.index";
 var kspace = new RthReconKSpace();
-if (!this.kspace.loadFromReadoutTags(rth.readoutTags("readout"),viewKsIndexKey)) {
+if (!this.kspace.loadFromReadoutTags(rth.readoutTags("sequence"),viewKsIndexKey)) {
   RTHLOGGER_ERROR("Could not load k-space trajectory from readout tags");
 }
 
