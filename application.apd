@@ -1,5 +1,5 @@
 [Application]
-defaultName = B1 AFI
+defaultName = B1 SLR
 interface = lib:threeplane.ui
 continuous = 0
 sharedSlot = Real-Time
@@ -7,7 +7,6 @@ calibrations = RealTimeShimming, Adjustments, CFtuning
 controlScript = control.js
 reconScript = recon.js
 singleJSEngine = false
-continuous = 0
 
 [excitationrect]
 type = waveform
@@ -18,9 +17,9 @@ allowDisable = true
 
 [excitationsinc]
 type = waveform
-file = SlabSelectSINC.spv
+file = SlabSelectLFSLR.spv
 linearPhaseIncrement = 180
-quadraticPhaseIncrement = 117
+quadraticPhaseIncrement = 34
 allowDisable = true
 
 [echodelay]
