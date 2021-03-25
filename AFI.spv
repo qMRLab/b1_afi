@@ -241,7 +241,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>1.5</real>
+				<real>1.3500000238418579</real>
 				<key>plateauDuration</key>
 				<real>79.5</real>
 				<key>pluginClass</key>
@@ -290,7 +290,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
 				<key>maxVal</key>
-				<real>1.5</real>
+				<real>1.3500000238418579</real>
 				<key>plateauDuration</key>
 				<real>14.399999618530273</real>
 				<key>pluginClass</key>
@@ -630,7 +630,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>17575.560546875</real>
+	<real>17577.94921875</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -672,7 +672,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>-43</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
@@ -926,9 +926,9 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>35.560546875</real>
+	<real>37.94921875</real>
 	<key>tr</key>
-	<real>97.846412658691406</real>
+	<real>97.811767578125</real>
 	<key>trNum</key>
 	<integer>293</integer>
 	<key>waveSamplingRate</key>
