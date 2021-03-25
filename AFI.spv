@@ -337,7 +337,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<real>0.0</real>
 				</dict>
 				<key>duration</key>
-				<real>3.2000000476837158</real>
+				<real>3.0915524959564209</real>
 				<key>editableName</key>
 				<string>Sinc RF</string>
 				<key>enforceRFLimit</key>
@@ -353,7 +353,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>timeBandwidth</key>
-				<real>2.7000000476837158</real>
+				<real>8</real>
 				<key>tip</key>
 				<real>60</real>
 				<key>window</key>
@@ -371,10 +371,10 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Sinc RF&gt;.peak</string>
 					<key>position</key>
-					<real>1.6000000238418579</real>
+					<real>1.5457762479782104</real>
 				</dict>
 				<key>b</key>
-				<real>1.3179999589920044</real>
+				<real>1.3722237348556519</real>
 				<key>editableName</key>
 				<string>Time Interval</string>
 				<key>max</key>
@@ -391,22 +391,6 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		</array>
 		<key>SequencePlugins</key>
 		<array>
-			<dict>
-				<key>editableName</key>
-				<string>RF Phase Increment</string>
-				<key>linearIncrement</key>
-				<real>180</real>
-				<key>pluginClass</key>
-				<string>SBRFIncrement</string>
-				<key>pluginName</key>
-				<string>RF Phase Increment</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>quadraticIncrement</key>
-				<real>39</real>
-				<key>setReadoutPhase</key>
-				<integer>1</integer>
-			</dict>
 			<dict>
 				<key>duration</key>
 				<real>20</real>
@@ -632,7 +616,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 	<key>absoluteTime</key>
 	<real>17577.94921875</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -672,7 +656,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-101</integer>
+		<integer>0</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>

@@ -11,4 +11,7 @@ singleJSEngine = false
 [sequence]
 type = waveform
 file = AFI.spv
+linearPhaseIncrement = 180
+quadraticPhaseIncrement = 39
+associatedRF = sequence
 loopIndex = 0
