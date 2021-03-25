@@ -74,7 +74,8 @@
 SB.set(SB.get('&lt;Phase Encode Gradient&gt;.res'),'&lt;zPartition1&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
-var echoDelay = 3.53-SB.get('&lt;Sinc RF&gt;.peak')-(SB.get('&lt;Cartesian Readout&gt;.readoutStart')-SB.get('&lt;Cartesian Readout&gt;.start'));
+var echoTime = 3.53;
+var echoDelay = echoTime-SB.get('&lt;Sinc RF&gt;.peak')-(SB.get('&lt;Cartesian Readout&gt;.readoutStart')-SB.get('&lt;Cartesian Readout&gt;.start'));
 SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		</dict>
 	</array>
@@ -92,12 +93,12 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>2.9179999828338623</real>
+					<real>2.9819998741149902</real>
 				</dict>
 				<key>editableName</key>
 				<string>Cartesian Readout</string>
 				<key>fov</key>
-				<real>30</real>
+				<real>32</real>
 				<key>hasPhaseEncoding</key>
 				<integer>1</integer>
 				<key>hasRewinder</key>
@@ -127,7 +128,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>xReadoutOverlap</key>
 				<real>0.0</real>
 				<key>xRes</key>
-				<integer>100</integer>
+				<integer>80</integer>
 				<key>y0Component</key>
 				<real>0.0</real>
 				<key>y1Component</key>
@@ -139,7 +140,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>yReadoutOverlap</key>
 				<real>0.0</real>
 				<key>yRes</key>
-				<integer>100</integer>
+				<integer>80</integer>
 				<key>z0Component</key>
 				<real>0.0</real>
 				<key>z1Component</key>
@@ -161,7 +162,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>3.5299997329711914</real>
+					<real>3.5299999713897705</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
@@ -174,7 +175,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>5</integer>
+				<integer>8</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -198,7 +199,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>3.9300000667572021</real>
+					<real>3.8499999046325684</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
@@ -211,7 +212,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>5</integer>
+				<integer>8</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -373,7 +374,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<real>1.6000000238418579</real>
 				</dict>
 				<key>b</key>
-				<real>1.3179999589920044</real>
+				<real>1.3819999694824219</real>
 				<key>editableName</key>
 				<string>Time Interval</string>
 				<key>max</key>
@@ -414,7 +415,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>100</integer>
+				<integer>80</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -459,7 +460,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>5</integer>
+				<integer>8</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -515,7 +516,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>100</integer>
+				<integer>80</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -560,7 +561,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>5</integer>
+				<integer>8</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -629,9 +630,9 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>17294.849609375</real>
+	<real>17575.560546875</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -661,7 +662,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 	<key>gradLimitZScale</key>
 	<real>1</real>
 	<key>inspectorWidth</key>
-	<real>317</real>
+	<real>359</real>
 	<key>magnification</key>
 	<real>4.8300437927246094</real>
 	<key>mainWindowFrame</key>
@@ -671,9 +672,9 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		<key>width</key>
 		<integer>1637</integer>
 		<key>x</key>
-		<integer>99</integer>
+		<integer>186</integer>
 		<key>y</key>
-		<integer>72</integer>
+		<integer>56</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -815,11 +816,11 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-345</real>
+			<real>-394.6953125</real>
 			<key>viewHeight</key>
 			<real>564</real>
 			<key>viewLeft</key>
-			<real>681.4140625</real>
+			<real>475.12890625</real>
 			<key>viewWidth</key>
 			<real>562.484375</real>
 		</dict>
@@ -863,11 +864,11 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>190.24609375</real>
+			<real>146.0390625</real>
 			<key>viewHeight</key>
 			<real>811.4453125</real>
 			<key>viewLeft</key>
-			<real>-59.5</real>
+			<real>80.26171875</real>
 			<key>viewWidth</key>
 			<real>1368.5546875</real>
 		</dict>
@@ -925,11 +926,11 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>14.849609375</real>
+	<real>35.560546875</real>
 	<key>tr</key>
 	<real>97.961883544921875</real>
 	<key>trNum</key>
-	<integer>288</integer>
+	<integer>293</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
