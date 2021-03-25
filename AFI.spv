@@ -167,7 +167,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>3.2000000476837158</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -204,7 +204,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>3.2000000476837158</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -632,7 +632,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 	<key>absoluteTime</key>
 	<real>17575.560546875</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -816,11 +816,11 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-394.6953125</real>
+			<real>-152.7265625</real>
 			<key>viewHeight</key>
 			<real>564</real>
 			<key>viewLeft</key>
-			<real>475.12890625</real>
+			<real>392.29296875</real>
 			<key>viewWidth</key>
 			<real>562.484375</real>
 		</dict>
