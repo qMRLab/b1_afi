@@ -93,12 +93,12 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>2.9819998741149902</real>
+					<real>2.9179999828338623</real>
 				</dict>
 				<key>editableName</key>
 				<string>Cartesian Readout</string>
 				<key>fov</key>
-				<real>32</real>
+				<real>25.600000000000001</real>
 				<key>hasPhaseEncoding</key>
 				<integer>1</integer>
 				<key>hasRewinder</key>
@@ -128,7 +128,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>xReadoutOverlap</key>
 				<real>0.0</real>
 				<key>xRes</key>
-				<integer>80</integer>
+				<integer>64</integer>
 				<key>y0Component</key>
 				<real>0.0</real>
 				<key>y1Component</key>
@@ -140,7 +140,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>yReadoutOverlap</key>
 				<real>0.0</real>
 				<key>yRes</key>
-				<integer>80</integer>
+				<integer>64</integer>
 				<key>z0Component</key>
 				<real>0.0</real>
 				<key>z1Component</key>
@@ -167,7 +167,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>3.2000000476837158</real>
+				<real>5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -199,12 +199,12 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>3.8499999046325684</real>
+					<real>3.7860000133514404</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>3.2000000476837158</real>
+				<real>5</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -374,7 +374,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 					<real>1.6000000238418579</real>
 				</dict>
 				<key>b</key>
-				<real>1.3819999694824219</real>
+				<real>1.3179999589920044</real>
 				<key>editableName</key>
 				<string>Time Interval</string>
 				<key>max</key>
@@ -391,6 +391,22 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		</array>
 		<key>SequencePlugins</key>
 		<array>
+			<dict>
+				<key>editableName</key>
+				<string>RF Phase Increment</string>
+				<key>linearIncrement</key>
+				<real>180</real>
+				<key>pluginClass</key>
+				<string>SBRFIncrement</string>
+				<key>pluginName</key>
+				<string>RF Phase Increment</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>quadraticIncrement</key>
+				<real>39</real>
+				<key>setReadoutPhase</key>
+				<integer>1</integer>
+			</dict>
 			<dict>
 				<key>duration</key>
 				<real>20</real>
@@ -415,7 +431,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>80</integer>
+				<integer>64</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -516,7 +532,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>80</integer>
+				<integer>64</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -607,22 +623,6 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 			</dict>
-			<dict>
-				<key>editableName</key>
-				<string>RF Phase Increment</string>
-				<key>linearIncrement</key>
-				<real>180</real>
-				<key>pluginClass</key>
-				<string>SBRFIncrement</string>
-				<key>pluginName</key>
-				<string>RF Phase Increment</string>
-				<key>pluginVersion</key>
-				<integer>1</integer>
-				<key>quadraticIncrement</key>
-				<real>39</real>
-				<key>setReadoutPhase</key>
-				<integer>1</integer>
-			</dict>
 		</array>
 		<key>numGradAxes</key>
 		<integer>3</integer>
@@ -632,7 +632,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 	<key>absoluteTime</key>
 	<real>17577.94921875</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -672,7 +672,7 @@ SB.set(echoDelay,'&lt;Time Interval&gt;.b');</string>
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-43</integer>
+		<integer>-101</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
