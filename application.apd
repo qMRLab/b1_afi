@@ -11,3 +11,4 @@ singleJSEngine = false
 [sequence]
 type = waveform
 file = AFI.spv
+loopIndex = 0
