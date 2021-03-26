@@ -261,11 +261,14 @@
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QCheckBox" name="checkBox_RECT">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
          <property name="text">
           <string>RECT</string>
          </property>
          <property name="checked">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -278,7 +281,7 @@
           <string>Esc</string>
          </property>
          <property name="checked">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>

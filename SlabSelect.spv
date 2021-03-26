@@ -24,7 +24,7 @@
 			<key>res</key>
 			<integer>114</integer>
 			<key>selectionStart</key>
-			<real>-20.174041748046875</real>
+			<real>-25.572059631347656</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -64,11 +64,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>3.9039099216461182</real>
+				<real>4.0226988792419434</real>
 				<key>plateauDuration</key>
-				<real>3.0420947074890137</real>
+				<real>3.0915524959564209</real>
 				<key>plateauRefocusOffset</key>
-				<real>1.5210473537445068</real>
+				<real>1.5457762479782104</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -82,9 +82,9 @@
 				<key>rfPulse</key>
 				<string>RF</string>
 				<key>tbw</key>
-				<real>7.7549514770507812</real>
+				<real>8</real>
 				<key>thickness</key>
-				<real>50</real>
+				<real>40</real>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xPlateauOverlap</key>
@@ -120,10 +120,10 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.5417865514755249</real>
+					<real>1.5633198022842407</real>
 				</dict>
 				<key>duration</key>
-				<real>3.0420947074890137</real>
+				<real>3.0915524959564209</real>
 				<key>editableName</key>
 				<string>RF</string>
 				<key>enforceRFLimit</key>
@@ -139,7 +139,7 @@
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>timeBandwidth</key>
-				<real>7.7549514770507812</real>
+				<real>8</real>
 				<key>tip</key>
 				<real>60</real>
 				<key>window</key>
@@ -171,7 +171,7 @@
 	<key>absoluteTime</key>
 	<real>3.8399960994720459</real>
 	<key>activeInspector</key>
-	<integer>1</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -207,13 +207,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>729</integer>
+		<integer>933</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1349</integer>
 		<key>x</key>
-		<integer>72</integer>
+		<integer>113</integer>
 		<key>y</key>
-		<integer>0</integer>
+		<integer>82</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>750</real>
@@ -243,7 +243,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>58</real>
+			<real>262</real>
 			<key>viewHeight</key>
 			<real>578</real>
 			<key>viewLeft</key>
@@ -271,9 +271,9 @@
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>27.953125</real>
+			<real>231</real>
 			<key>viewHeight</key>
-			<real>515.2890625</real>
+			<real>516</real>
 			<key>viewLeft</key>
 			<real>132.58203125</real>
 			<key>viewWidth</key>
@@ -291,7 +291,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>558.203125</real>
+			<real>762</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -311,7 +311,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>502</real>
+			<real>706</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -335,7 +335,7 @@
 	<key>slewMagLimitZScale</key>
 	<real>0.0</real>
 	<key>slewRateLimit</key>
-	<real>10</real>
+	<real>15</real>
 	<key>slewRateLimitXScale</key>
 	<real>1</real>
 	<key>slewRateLimitXSlope</key>
@@ -355,11 +355,11 @@
 	<key>timeWithinTr</key>
 	<real>3.8399960994720459</real>
 	<key>tr</key>
-	<real>3.4400014877319336</real>
+	<real>3.4592535495758057</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
-	<real>100</real>
+	<real>250</real>
 	<key>xPosition</key>
 	<real>0.0</real>
 	<key>xVelocity</key>
@@ -369,7 +369,7 @@
 	<key>yVelocity</key>
 	<real>0.0</real>
 	<key>zPosition</key>
-	<real>-20.174041748046875</real>
+	<real>-25.572059631347656</real>
 	<key>zVelocity</key>
 	<real>0.0</real>
 </dict>

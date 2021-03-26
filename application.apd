@@ -24,7 +24,7 @@ allowDisable = true
 
 [echodelay]
 type = delay
-duration = 2000
+duration = 0
 
 [readout]
 type = waveform

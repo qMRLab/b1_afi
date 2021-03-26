@@ -31,8 +31,8 @@ var phaseEncodes = SB.readout["<Cartesian Readout>.yRes"]; // Number of repeats
 var zPartitions = SB.readout["<Phase Encode Gradient>.res"]; // Number of partitions (has attr fov as well)
 var interleaveSteps = SB.readout["<interleave>.numInputs"];
 
-var rectSelected = true;
-var sincSelected = false;
+var rectSelected = false;
+var sincSelected = true;
 
 // These values are changed in the SB only.
 rth.addCommand(new RthUpdateChangeReconstructionParameterCommand(sequenceId, {
@@ -63,23 +63,28 @@ rth.informationInsert(sequenceId, "mri.NumberOfAverages", 1);
 rth.informationInsert(sequenceId, "mri.NumberOfCoils", parameterList[2]);
 rth.informationInsert(sequenceId, "mri.EchoTrainLength", 1);
 
-// Set RECT by default
-rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", true));
-rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", false));
+// Set SINC by default
+rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
+rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", true));
 
-var rfEnd = SB.excitationrect["<RF>.end"];
-var rfPeak = SB.excitationrect["<RF>.peak"];
+// As there is rewinder in SINC, we should take its duration into account
+// to determine TE accurately. In other words, end of that block is not
+// equal to the end of SINC pulse.
+var rfEnd = SB.excitationsinc["<Slice Select Gradient>.end"];
+var rfPeak = SB.excitationsinc["<RF>.peak"];
 
 // Get minimum TR
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
-var startingTR = 15;
+var startingTR = 20;
 RTHLOGGER_WARNING("Minimum TR: " + minTR);
 
 // Specify TE delay interval 
 var minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
-var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
+//var startingTE = minTE + rth.apdKey("echodelay/duration")/1000; //ms
+// Hardcode to 3.5
+var startingTE = 3.5; 
 rth.informationInsert(sequenceId,"mri.EchoTime",startingTE);
 RTHLOGGER_WARNING("Starting TE: " + startingTE);
 
@@ -103,9 +108,9 @@ function updateSequenceParams(selected){
       minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
       RTHLOGGER_WARNING("Minimum TE  RECT: " + minTE);
       // Set echodelay to the desired value w.r.t pulse selection.
-      controlWidget.inputWidget_TE.value = minTE + 1;
+      controlWidget.inputWidget_TE.value = echoTime;
       rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
-        EchoTime: minTE+1
+        EchoTime: echoTime
       }));
       break;
     case "sinc":
@@ -119,13 +124,14 @@ function updateSequenceParams(selected){
       }));
       rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
       rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", true));
-      rfEnd = SB.excitationsinc["<RF>.end"];
-      rfPeak = SB.excitationsinc["<RF>.peak"];
+      var rfEnd = SB.excitationsinc["<Slice Select Gradient>.end"];
+      var rfPeak = SB.excitationsinc["<RF>.peak"];
+      // This is critical
       minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
       RTHLOGGER_WARNING("Minimum TE SINC: " + minTE);
-      controlWidget.inputWidget_TE.value = minTE + 1;
+      controlWidget.inputWidget_TE.value = echoTime;
       rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
-        EchoTime: minTE+1
+        EchoTime: echoTime
       }));
       break;
   }
@@ -188,12 +194,22 @@ function changeTR1(tr1) {
 function changeTE(te)
 {
 
+  // Give some buffer val
   controlWidget.inputWidget_TE.minimum = minTE + 0.1;
 
   rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "EchoTime", te));
 
+  // We need to adjust delay time w.r.t desired TE
   var echoDelay = (te - minTE) * 1000; // Convert to usec
-  RTHLOGGER_WARNING("EchoDelay has been set to: " + echoDelay);
+  RTHLOGGER_WARNING("EchoDelay has been set to: " + echoDelay + "For requested TE of: " + te + "usec");
+  RTHLOGGER_WARNING("Please make sure that the values in SB/Plugin/JavaScript are correct");
+  RTHLOGGER_WARNING("====================== REQUIRED ================================");
+  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (20 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
+  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (100 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
+  RTHLOGGER_WARNING("====================== CURRENT =================================");
+  RTHLOGGER_WARNING("Current TR1 duration in spv: " + SB.readout["<New TR>.duration"]);
+  RTHLOGGER_WARNING("Current TR2 duration in spv: " + SB.readout["<InplaneTR2>.duration"]);
+
   rth.addCommand(new RthUpdateIntParameterCommand(sequenceId, "echodelay", "setDelay", "", echoDelay));
   
   echoTime = te;
@@ -232,7 +248,7 @@ controlWidget.inputWidget_TR.value   = 20;
 
 controlWidget.inputWidget_TE.minimum = minTE;
 controlWidget.inputWidget_TE.maximum = 10;
-controlWidget.inputWidget_TE.value   = 5;
+controlWidget.inputWidget_TE.value   = 3.5;
 
 
 function sessionClicked(chck){
