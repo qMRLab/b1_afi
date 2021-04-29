@@ -14,7 +14,6 @@ file = NonSelHardPulse.spv
 linearPhaseIncrement = 180
 quadraticPhaseIncrement = 117
 allowDisable = true
-loopIndex = 0
 
 [excitationsinc]
 type = waveform
