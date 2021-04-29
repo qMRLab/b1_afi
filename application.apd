@@ -14,6 +14,7 @@ file = NonSelHardPulse.spv
 linearPhaseIncrement = 180
 quadraticPhaseIncrement = 117
 allowDisable = true
+loopIndex = 0
 
 [excitationsinc]
 type = waveform
@@ -28,5 +29,4 @@ duration = 0
 [readout]
 type = waveform
 file = InterleavedCartesianReadout3D.spv
-loopIndex = 0
 associatedRF = excitationsinc
