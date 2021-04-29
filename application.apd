@@ -29,3 +29,4 @@ duration = 0
 type = waveform
 file = InterleavedCartesianReadout3D.spv
 associatedRF = excitationsinc
+loopIndex=1
