@@ -55,14 +55,14 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.6135592460632324</real>
+					<real>1.0271183252334595</real>
 				</dict>
 				<key>duration</key>
-				<real>3.2000000476837158</real>
+				<real>2</real>
 				<key>editableName</key>
 				<string>RF</string>
 				<key>enforceRFLimit</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>pluginClass</key>
 				<string>SBSincRF</string>
 				<key>pluginName</key>
@@ -74,11 +74,11 @@
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>timeBandwidth</key>
-				<real>8</real>
+				<real>10</real>
 				<key>tip</key>
 				<real>60</real>
 				<key>window</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>anchor</key>
@@ -99,11 +99,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>4.0169491767883301</real>
+				<real>5.0677957534790039</real>
 				<key>plateauDuration</key>
-				<real>3.2000000476837158</real>
+				<real>2</real>
 				<key>plateauRefocusOffset</key>
-				<real>1.6000000238418579</real>
+				<real>1</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -117,7 +117,7 @@
 				<key>rfPulse</key>
 				<string>RF</string>
 				<key>tbw</key>
-				<real>8</real>
+				<real>10</real>
 				<key>thickness</key>
 				<real>50</real>
 				<key>x0Component</key>
@@ -137,7 +137,7 @@
 				<key>yPrePlateauOverlap</key>
 				<real>1</real>
 				<key>z0Component</key>
-				<real>1</real>
+				<real>-1</real>
 				<key>zPlateauOverlap</key>
 				<real>0.0</real>
 				<key>zPostPlateauOverlap</key>
@@ -169,7 +169,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>3.8399960994720459</real>
+	<real>2.3879976272583008</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -201,19 +201,19 @@
 	<key>gradLimitZScale</key>
 	<real>1</real>
 	<key>inspectorWidth</key>
-	<real>222</real>
+	<real>373</real>
 	<key>magnification</key>
-	<real>0.80249446630477905</real>
+	<real>0.7404741644859314</real>
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>731</integer>
+		<integer>1057</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1526</integer>
 		<key>x</key>
-		<integer>32</integer>
+		<integer>245</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>0</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>750</real>
@@ -231,7 +231,7 @@
 			<key>editableName</key>
 			<string>Profile</string>
 			<key>magnification</key>
-			<real>1</real>
+			<real>0.64914512634277344</real>
 			<key>pluginClass</key>
 			<string>SBProfileViewPlugin</string>
 			<key>pluginName</key>
@@ -243,7 +243,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>60</real>
+			<real>386</real>
 			<key>viewHeight</key>
 			<real>578</real>
 			<key>viewLeft</key>
@@ -269,13 +269,13 @@
 			<key>showReadoutWindows</key>
 			<integer>1</integer>
 			<key>showValues</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>122</real>
+			<real>312.71484375</real>
 			<key>viewHeight</key>
 			<real>516</real>
 			<key>viewLeft</key>
-			<real>28.69140625</real>
+			<real>98.11328125</real>
 			<key>viewWidth</key>
 			<real>448.203125</real>
 		</dict>
@@ -291,7 +291,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>560</real>
+			<real>886</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -311,7 +311,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>504</real>
+			<real>830</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -353,9 +353,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>3.8399960994720459</real>
+	<real>2.3879976272583008</real>
 	<key>tr</key>
-	<real>3.5223302841186523</real>
+	<real>2.3883085250854492</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>

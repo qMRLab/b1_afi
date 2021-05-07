@@ -399,6 +399,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
 					<string>Area Trapezoid</string>
+					<string>Area Trapezoid 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -499,6 +500,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
 					<string>Area Trapezoid</string>
+					<string>Area Trapezoid 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -542,6 +544,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
+					<string>Area Trapezoid 1</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -581,7 +584,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>absoluteTime</key>
 	<real>27475.244140625</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -621,12 +624,12 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<key>width</key>
 		<integer>1676</integer>
 		<key>x</key>
-		<integer>170</integer>
+		<integer>24</integer>
 		<key>y</key>
-		<integer>0</integer>
+		<integer>44</integer>
 	</dict>
 	<key>maxReadoutRate</key>
-	<real>500</real>
+	<real>250</real>
 	<key>nominalGradLimitScale</key>
 	<real>1</real>
 	<key>numRfRxChannels</key>
@@ -775,7 +778,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>readoutSampleDivisor</key>
 	<integer>2</integer>
 	<key>receiverPhase</key>
-	<real>0.0</real>
+	<real>-180</real>
 	<key>rfLimit</key>
 	<real>0.10000000000000001</real>
 	<key>slewMagLimitXScale</key>
