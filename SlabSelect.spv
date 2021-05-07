@@ -78,7 +78,7 @@
 				<key>tip</key>
 				<real>60</real>
 				<key>window</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>anchor</key>
@@ -207,13 +207,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>1057</integer>
+		<integer>731</integer>
 		<key>width</key>
-		<integer>1526</integer>
+		<integer>1280</integer>
 		<key>x</key>
-		<integer>245</integer>
-		<key>y</key>
 		<integer>0</integer>
+		<key>y</key>
+		<integer>46</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>750</real>
@@ -243,7 +243,7 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>386</real>
+			<real>60</real>
 			<key>viewHeight</key>
 			<real>578</real>
 			<key>viewLeft</key>
@@ -271,7 +271,7 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>312.71484375</real>
+			<real>-13.5</real>
 			<key>viewHeight</key>
 			<real>516</real>
 			<key>viewLeft</key>
@@ -291,7 +291,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>886</real>
+			<real>560</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -311,7 +311,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>830</real>
+			<real>504</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
