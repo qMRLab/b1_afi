@@ -1,5 +1,5 @@
 [Application]
-defaultName = B1 AFI-one
+defaultName = B1 AFI
 interface = lib:threeplane.ui
 continuous = 0
 sharedSlot = Real-Time

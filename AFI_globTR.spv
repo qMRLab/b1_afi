@@ -76,7 +76,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetiti
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
 var echoTime = 3.53;
 var echoDelay = echoTime-SB.get('&lt;Sinc RF&gt;.peak')-(SB.get('&lt;Cartesian Readout&gt;.readoutStart')-SB.get('&lt;Cartesian Readout&gt;.start'));
-SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
+SB.set(echoDelay,'&lt;echodelay&gt;.b');
+SB.set(20,SB.tr);</string>
 		</dict>
 	</array>
 	<key>Waveforms</key>
@@ -708,13 +709,13 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>35295.908203125</real>
+	<real>35256.599999999999</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>chronaxie</key>
 	<real>0.35999999999999999</real>
 	<key>dFrequency</key>
@@ -750,9 +751,9 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 		<key>width</key>
 		<integer>1327</integer>
 		<key>x</key>
-		<integer>137</integer>
+		<integer>220</integer>
 		<key>y</key>
-		<integer>52</integer>
+		<integer>36</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -846,7 +847,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>viewHeight</key>
 			<real>588.61328125</real>
 			<key>viewLeft</key>
-			<real>20.32421875</real>
+			<real>19.55859375</real>
 			<key>viewWidth</key>
 			<real>1098.79296875</real>
 		</dict>
@@ -910,11 +911,11 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>200.62890625</real>
+			<real>-215.61328125</real>
 			<key>viewHeight</key>
 			<real>597.140625</real>
 			<key>viewLeft</key>
-			<real>114.33984375</real>
+			<real>62.26953125</real>
 			<key>viewWidth</key>
 			<real>908.78125</real>
 		</dict>
@@ -972,11 +973,11 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>15.908203125</real>
+	<real>76.599999999999994</real>
 	<key>tr</key>
 	<real>68.359939575195312</real>
 	<key>trNum</key>
-	<integer>588</integer>
+	<integer>587</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
