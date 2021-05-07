@@ -74,7 +74,7 @@
 SB.set(SB.get('&lt;Phase Encode Gradient&gt;.res'),'&lt;zPartition1&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetitions');
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
-var echoTime = 3.53;
+var echoTime = 3.4;
 var echoDelay = echoTime-SB.get('&lt;Sinc RF&gt;.peak')-(SB.get('&lt;Cartesian Readout&gt;.readoutStart')-SB.get('&lt;Cartesian Readout&gt;.start'));
 SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 		</dict>
@@ -93,7 +93,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;echodelay&gt;.end</string>
 					<key>position</key>
-					<real>3.9179997444152832</real>
+					<real>3.7880001068115234</real>
 				</dict>
 				<key>editableName</key>
 				<string>Cartesian Readout</string>
@@ -164,10 +164,10 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Sinc RF&gt;.end</string>
 					<key>position</key>
-					<real>2.0271182060241699</real>
+					<real>2.067795991897583</real>
 				</dict>
 				<key>b</key>
-				<real>1.8908816576004028</real>
+				<real>1.7202039957046509</real>
 				<key>editableName</key>
 				<string>echodelay</string>
 				<key>max</key>
@@ -191,12 +191,12 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>4.5299997329711914</real>
+					<real>4.4000000953674316</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>3</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -204,7 +204,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>6</integer>
+				<integer>3</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -228,12 +228,12 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>4.7859997749328613</real>
+					<real>4.6560001373291016</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
 				<key>fov</key>
-				<real>5</real>
+				<real>3</real>
 				<key>pluginClass</key>
 				<string>SBPhaseEncodeGradient</string>
 				<key>pluginName</key>
@@ -241,7 +241,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>6</integer>
+				<integer>3</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -265,7 +265,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>5.625999927520752</real>
+					<real>5.4960002899169922</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
@@ -314,7 +314,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>5.625999927520752</real>
+					<real>5.4960002899169922</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
@@ -363,7 +363,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.0271183252334595</real>
+					<real>1.067795991897583</real>
 				</dict>
 				<key>duration</key>
 				<real>2</real>
@@ -386,7 +386,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>tip</key>
 				<real>60</real>
 				<key>window</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>anchor</key>
@@ -407,7 +407,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>5.0677957534790039</real>
+				<real>5.169489860534668</real>
 				<key>plateauDuration</key>
 				<real>2</real>
 				<key>plateauRefocusOffset</key>
@@ -427,7 +427,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>tbw</key>
 				<real>10</real>
 				<key>thickness</key>
-				<real>50</real>
+				<real>20</real>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xPlateauOverlap</key>
@@ -465,7 +465,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.end</string>
 					<key>position</key>
-					<real>5.125999927520752</real>
+					<real>4.9960002899169922</real>
 				</dict>
 				<key>b</key>
 				<real>0.5</real>
@@ -554,7 +554,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>6</integer>
+				<integer>3</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -655,7 +655,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>6</integer>
+				<integer>3</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -701,6 +701,22 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 			</dict>
+			<dict>
+				<key>editableName</key>
+				<string>RF Phase Increment</string>
+				<key>linearIncrement</key>
+				<real>0.0</real>
+				<key>pluginClass</key>
+				<string>SBRFIncrement</string>
+				<key>pluginName</key>
+				<string>RF Phase Increment</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+				<key>quadraticIncrement</key>
+				<real>39</real>
+				<key>setReadoutPhase</key>
+				<integer>1</integer>
+			</dict>
 		</array>
 		<key>numGradAxes</key>
 		<integer>3</integer>
@@ -710,7 +726,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 	<key>absoluteTime</key>
 	<real>36632.6953125</real>
 	<key>activeInspector</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -750,9 +766,9 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>30</integer>
 		<key>y</key>
-		<integer>46</integer>
+		<integer>9</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -842,11 +858,11 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>43</real>
+			<real>95.7734375</real>
 			<key>viewHeight</key>
 			<real>589</real>
 			<key>viewLeft</key>
-			<real>20.32421875</real>
+			<real>-175.4921875</real>
 			<key>viewWidth</key>
 			<real>1098.79296875</real>
 		</dict>
@@ -910,11 +926,11 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>12.828125</real>
+			<real>-404.51171875</real>
 			<key>viewHeight</key>
 			<real>597</real>
 			<key>viewLeft</key>
-			<real>94.10546875</real>
+			<real>111.39453125</real>
 			<key>viewWidth</key>
 			<real>908.78125</real>
 		</dict>
@@ -972,11 +988,11 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>12.6953125</real>
+	<real>13692.6953125</real>
 	<key>tr</key>
-	<real>66.96905517578125</real>
+	<real>66.839057922363281</real>
 	<key>trNum</key>
-	<integer>611</integer>
+	<integer>383</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
