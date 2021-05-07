@@ -239,22 +239,20 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 					<key>activeAnchor</key>
 					<string>start</string>
 					<key>anchorType</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>anchoredToSBKey</key>
-					<string>&lt;Cartesian Readout&gt;.end</string>
+					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>1.5</real>
+					<real>1.7079999446868896</real>
 				</dict>
+				<key>area</key>
+				<real>-120</real>
 				<key>editableName</key>
-				<string>Plateau Trapezoid</string>
-				<key>maxVal</key>
-				<real>2.2999999523162842</real>
-				<key>plateauDuration</key>
-				<real>56.5</real>
+				<string>Area Trapezoid</string>
 				<key>pluginClass</key>
-				<string>SBPlateauTrapezoid</string>
+				<string>SBAreaTrapezoid</string>
 				<key>pluginName</key>
-				<string>Plateau Trapezoid</string>
+				<string>Area Trapezoid</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
@@ -283,27 +281,54 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<real>1</real>
 			</dict>
 			<dict>
+				<key>a</key>
+				<real>0.0</real>
 				<key>anchor</key>
 				<dict>
 					<key>activeAnchor</key>
 					<string>start</string>
 					<key>anchorType</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.end</string>
 					<key>position</key>
-					<real>1.5</real>
+					<real>1.2079999446868896</real>
 				</dict>
+				<key>b</key>
+				<real>0.5</real>
 				<key>editableName</key>
-				<string>Plateau Trapezoid 1</string>
-				<key>maxVal</key>
-				<real>2.2999999523162842</real>
-				<key>plateauDuration</key>
-				<real>11.300000190734863</real>
+				<string>Time Interval</string>
+				<key>max</key>
+				<real>5000</real>
+				<key>min</key>
+				<real>0.0</real>
 				<key>pluginClass</key>
-				<string>SBPlateauTrapezoid</string>
+				<string>SBTRInterval</string>
 				<key>pluginName</key>
-				<string>Plateau Trapezoid</string>
+				<string>Time Interval</string>
+				<key>pluginVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>anchor</key>
+				<dict>
+					<key>activeAnchor</key>
+					<string>start</string>
+					<key>anchorType</key>
+					<integer>1</integer>
+					<key>anchoredToSBKey</key>
+					<string>&lt;Time Interval&gt;.end</string>
+					<key>position</key>
+					<real>1.7079999446868896</real>
+				</dict>
+				<key>area</key>
+				<real>-600</real>
+				<key>editableName</key>
+				<string>Area Trapezoid 1</string>
+				<key>pluginClass</key>
+				<string>SBAreaTrapezoid</string>
+				<key>pluginName</key>
+				<string>Area Trapezoid</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>x0Component</key>
@@ -373,8 +398,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Plateau Trapezoid</string>
-					<string>Plateau Trapezoid 1</string>
+					<string>Area Trapezoid</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -418,7 +442,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Plateau Trapezoid 1</string>
+					<string>Area Trapezoid</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -474,8 +498,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Plateau Trapezoid</string>
-					<string>Plateau Trapezoid 1</string>
+					<string>Area Trapezoid</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -519,7 +542,6 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<array>
 					<string>Phase Encode Gradient</string>
 					<string>Phase Encode Gradient 1</string>
-					<string>Plateau Trapezoid</string>
 				</array>
 				<key>pluginVersion</key>
 				<integer>1</integer>
@@ -557,9 +579,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>29423.216499999988</real>
+	<real>27475.244140625</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -595,13 +617,13 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>731</integer>
+		<integer>1013</integer>
 		<key>width</key>
-		<integer>1280</integer>
+		<integer>1676</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>170</integer>
 		<key>y</key>
-		<integer>45</integer>
+		<integer>0</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -614,52 +636,6 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>outputPlugins</key>
 	<array>
 		<dict>
-			<key>displayStyle</key>
-			<string>Magnitude / Phase</string>
-			<key>editableName</key>
-			<string>Profile</string>
-			<key>magnification</key>
-			<real>1</real>
-			<key>pluginClass</key>
-			<string>SBProfileViewPlugin</string>
-			<key>pluginName</key>
-			<string>Profile</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>showYValues</key>
-			<integer>0</integer>
-			<key>viewBottom</key>
-			<real>399</real>
-			<key>viewHeight</key>
-			<real>253</real>
-			<key>viewLeft</key>
-			<real>25</real>
-			<key>viewWidth</key>
-			<real>292</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>Time Controller</string>
-			<key>pluginClass</key>
-			<string>SBTimeControlPlugin</string>
-			<key>pluginName</key>
-			<string>Time Controller</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>-83</real>
-			<key>viewHeight</key>
-			<real>48</real>
-			<key>viewLeft</key>
-			<real>0.0</real>
-			<key>viewWidth</key>
-			<real>340</real>
-		</dict>
-		<dict>
 			<key>editableName</key>
 			<string>View Scaling Controller</string>
 			<key>pluginClass</key>
@@ -671,105 +647,13 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>504</real>
+			<real>786</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
 			<real>0.0</real>
 			<key>viewWidth</key>
 			<real>23</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>Sequencing View</string>
-			<key>pluginClass</key>
-			<string>SBSequencingViewPlugin</string>
-			<key>pluginName</key>
-			<string>Sequencing View</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>-237</real>
-			<key>viewHeight</key>
-			<real>420</real>
-			<key>viewLeft</key>
-			<real>104.97265625</real>
-			<key>viewWidth</key>
-			<real>1100.8515625</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>k-Space Trajectory</string>
-			<key>magnification</key>
-			<real>0.28238701820373535</real>
-			<key>pluginClass</key>
-			<string>SBTrajectoryViewPlugin</string>
-			<key>pluginName</key>
-			<string>k-Space Trajectory</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>showAllTrs</key>
-			<integer>1</integer>
-			<key>showReadoutKSpace</key>
-			<integer>0</integer>
-			<key>showValues</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>40</real>
-			<key>viewHeight</key>
-			<real>375</real>
-			<key>viewLeft</key>
-			<real>197.45703125</real>
-			<key>viewWidth</key>
-			<real>336.25390625</real>
-			<key>xWaveform</key>
-			<string>kx</string>
-			<key>yWaveform</key>
-			<string>ky</string>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>Waveform Info</string>
-			<key>pluginClass</key>
-			<string>SBWaveformInfoPlugin</string>
-			<key>pluginName</key>
-			<string>Waveform Info</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>-80</real>
-			<key>viewHeight</key>
-			<real>544</real>
-			<key>viewLeft</key>
-			<real>870.84765625</real>
-			<key>viewWidth</key>
-			<real>661.140625</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>Waveform Info 1</string>
-			<key>pluginClass</key>
-			<string>SBWaveformInfoPlugin</string>
-			<key>pluginName</key>
-			<string>Waveform Info</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>-533.5</real>
-			<key>viewHeight</key>
-			<real>564</real>
-			<key>viewLeft</key>
-			<real>261.8359375</real>
-			<key>viewWidth</key>
-			<real>562.484375</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -785,43 +669,45 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>rfDisplayStyle</key>
-			<string>Magnitude / Phase</string>
+			<string>XY Combined Plot</string>
 			<key>showReadoutWindows</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>103</real>
+			<real>44.79296875</real>
 			<key>viewHeight</key>
-			<real>549</real>
+			<real>634.71484375</real>
 			<key>viewLeft</key>
-			<real>44</real>
+			<real>338.90625</real>
 			<key>viewWidth</key>
-			<real>1097.0546875</real>
+			<real>993.43359375</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
-			<string>Time Controller 1</string>
+			<string>Gradient Moments</string>
+			<key>moment</key>
+			<integer>0</integer>
 			<key>pluginClass</key>
-			<string>SBTimeControlPlugin</string>
+			<string>SBGradMomentViewPlugin</string>
 			<key>pluginName</key>
-			<string>Time Controller</string>
+			<string>Gradient Moments</string>
 			<key>pluginURL</key>
 			<string>[ Not Specified ]</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>584</real>
+			<real>599.55859375</real>
 			<key>viewHeight</key>
-			<real>48</real>
+			<real>305.078125</real>
 			<key>viewLeft</key>
-			<real>44</real>
+			<real>475.80859375</real>
 			<key>viewWidth</key>
-			<real>340</real>
+			<real>419.89453125</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
-			<string>Waveform Info 2</string>
+			<string>Waveform Info</string>
 			<key>pluginClass</key>
 			<string>SBWaveformInfoPlugin</string>
 			<key>pluginName</key>
@@ -831,33 +717,57 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-243.5</real>
+			<real>592.40234375</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
-			<real>914.49609375</real>
+			<real>77.4765625</real>
 			<key>viewWidth</key>
 			<real>266</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
-			<string>Waveform Info 3</string>
+			<string>Slew Limits</string>
+			<key>magnification</key>
+			<real>1</real>
 			<key>pluginClass</key>
-			<string>SBWaveformInfoPlugin</string>
+			<string>SBSlewLimitViewPlugin</string>
 			<key>pluginName</key>
-			<string>Waveform Info</string>
+			<string>Slew Limits</string>
+			<key>pluginURL</key>
+			<string>[ Not Specified ]</string>
+			<key>pluginVersion</key>
+			<integer>1</integer>
+			<key>spinIcon</key>
+			<integer>0</integer>
+			<key>viewBottom</key>
+			<real>634.28515625</real>
+			<key>viewHeight</key>
+			<real>292</real>
+			<key>viewLeft</key>
+			<real>960.33203125</real>
+			<key>viewWidth</key>
+			<real>292</real>
+		</dict>
+		<dict>
+			<key>editableName</key>
+			<string>Slew Rate Plot</string>
+			<key>pluginClass</key>
+			<string>SBGradSlewRateViewPlugin</string>
+			<key>pluginName</key>
+			<string>Slew Rate Plot</string>
 			<key>pluginURL</key>
 			<string>[ Not Specified ]</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>215.88671875</real>
+			<real>182.890625</real>
 			<key>viewHeight</key>
-			<real>223</real>
+			<real>214</real>
 			<key>viewLeft</key>
-			<real>623.08203125</real>
+			<real>-9.875</real>
 			<key>viewWidth</key>
-			<real>266</real>
+			<real>292</real>
 		</dict>
 	</array>
 	<key>protonDensity</key>
@@ -893,11 +803,11 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>6.3804999999888246</real>
+	<real>63.032140624999997</real>
 	<key>tr</key>
-	<real>58.531162261962891</real>
+	<real>62.991020202636719</real>
 	<key>trNum</key>
-	<integer>529</integer>
+	<integer>493</integer>
 	<key>waveSamplingRate</key>
 	<real>250</real>
 	<key>xPosition</key>
