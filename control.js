@@ -204,8 +204,8 @@ function changeTE(te)
   RTHLOGGER_WARNING("EchoDelay has been set to: " + echoDelay + "For requested TE of: " + te + "usec");
   RTHLOGGER_WARNING("Please make sure that the values in SB/Plugin/JavaScript are correct");
   RTHLOGGER_WARNING("====================== REQUIRED ================================");
-  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (20 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
-  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (100 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
+  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (10 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
+  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (50 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
   RTHLOGGER_WARNING("====================== CURRENT =================================");
   RTHLOGGER_WARNING("Current TR1 duration in spv: " + SB.readout["<New TR>.duration"]);
   RTHLOGGER_WARNING("Current TR2 duration in spv: " + SB.readout["<InplaneTR2>.duration"]);

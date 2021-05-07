@@ -76,8 +76,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetiti
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
 
 // CHANGE THESE VALUES W.R.T RTHawk logs 
-var TR1duration = 6.335;
-var TR2duration = 46.335;
+var TR1duration = 6.1734;
+var TR2duration = 46.1734;
 
 SB.set(TR1duration,'&lt;New TR&gt;.duration');
 SB.set(TR1duration,'&lt;SlabTR1&gt;.duration');
@@ -365,7 +365,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<array>
 			<dict>
 				<key>duration</key>
-				<real>6.335</real>
+				<real>6.1734</real>
 				<key>editableName</key>
 				<string>New TR</string>
 				<key>pluginClass</key>
@@ -410,7 +410,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>6.335</real>
+				<real>6.1734</real>
 				<key>editableName</key>
 				<string>SlabTR1</string>
 				<key>pluginClass</key>
@@ -466,7 +466,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>46.335000000000001</real>
+				<real>46.173400000000001</real>
 				<key>editableName</key>
 				<string>InplaneTR2</string>
 				<key>pluginClass</key>
@@ -511,7 +511,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>46.335000000000001</real>
+				<real>46.173400000000001</real>
 				<key>editableName</key>
 				<string>SlabTR2</string>
 				<key>pluginClass</key>
@@ -588,7 +588,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>absoluteTime</key>
 	<real>12959.429203125006</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -810,11 +810,11 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>2.117203125005588</real>
+	<real>22.309203125005588</real>
 	<key>tr</key>
 	<real>6.069880485534668</real>
 	<key>trNum</key>
-	<integer>492</integer>
+	<integer>495</integer>
 	<key>waveSamplingRate</key>
 	<real>250</real>
 	<key>xPosition</key>
