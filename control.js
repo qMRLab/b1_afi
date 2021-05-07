@@ -77,7 +77,7 @@ var rfPeak = SB.excitationsinc["<RF>.peak"];
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
-var startingTR = 20;
+var startingTR = 10;
 RTHLOGGER_WARNING("HEY Minimum TR: " + minTR);
 
 // Specify TE delay interval 
