@@ -265,7 +265,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>7.0168814659118652</real>
+					<real>5.625999927520752</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
@@ -314,7 +314,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>7.0168814659118652</real>
+					<real>5.625999927520752</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
@@ -468,7 +468,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 					<real>5.125999927520752</real>
 				</dict>
 				<key>b</key>
-				<real>1.8908816576004028</real>
+				<real>0.5</real>
 				<key>editableName</key>
 				<string>Time Interval</string>
 				<key>max</key>
@@ -708,9 +708,9 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>35295.908203125</real>
+	<real>36632.6953125</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -746,13 +746,13 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>999</integer>
+		<integer>731</integer>
 		<key>width</key>
-		<integer>1327</integer>
+		<integer>1280</integer>
 		<key>x</key>
-		<integer>137</integer>
+		<integer>0</integer>
 		<key>y</key>
-		<integer>52</integer>
+		<integer>46</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -782,7 +782,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>669</real>
+			<real>279.8203125</real>
 			<key>viewHeight</key>
 			<real>183</real>
 			<key>viewLeft</key>
@@ -802,7 +802,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>185</real>
+			<real>-83</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -822,7 +822,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>772</real>
+			<real>504</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -842,9 +842,9 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>311.38671875</real>
+			<real>43</real>
 			<key>viewHeight</key>
-			<real>588.61328125</real>
+			<real>589</real>
 			<key>viewLeft</key>
 			<real>20.32421875</real>
 			<key>viewWidth</key>
@@ -862,7 +862,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-262.70703125</real>
+			<real>-531</real>
 			<key>viewHeight</key>
 			<real>564</real>
 			<key>viewLeft</key>
@@ -882,7 +882,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>852</real>
+			<real>584</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -910,11 +910,11 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>200.62890625</real>
+			<real>12.828125</real>
 			<key>viewHeight</key>
-			<real>597.140625</real>
+			<real>597</real>
 			<key>viewLeft</key>
-			<real>114.33984375</real>
+			<real>94.10546875</real>
 			<key>viewWidth</key>
 			<real>908.78125</real>
 		</dict>
@@ -930,7 +930,7 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>157</real>
+			<real>-111</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -972,11 +972,11 @@ SB.set(echoDelay,'&lt;echodelay&gt;.b');</string>
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>15.908203125</real>
+	<real>12.6953125</real>
 	<key>tr</key>
-	<real>68.359939575195312</real>
+	<real>66.96905517578125</real>
 	<key>trNum</key>
-	<integer>588</integer>
+	<integer>611</integer>
 	<key>waveSamplingRate</key>
 	<real>50</real>
 	<key>xPosition</key>
