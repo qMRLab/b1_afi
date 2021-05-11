@@ -55,14 +55,14 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.0271183252334595</real>
+					<real>1.6135592460632324</real>
 				</dict>
 				<key>duration</key>
-				<real>2</real>
+				<real>3.2000000476837158</real>
 				<key>editableName</key>
 				<string>RF</string>
 				<key>enforceRFLimit</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>pluginClass</key>
 				<string>SBSincRF</string>
 				<key>pluginName</key>
@@ -74,7 +74,7 @@
 				<key>rfPhase_0_0</key>
 				<real>90</real>
 				<key>timeBandwidth</key>
-				<real>10</real>
+				<real>8</real>
 				<key>tip</key>
 				<real>60</real>
 				<key>window</key>
@@ -99,11 +99,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>5.0677957534790039</real>
+				<real>4.0169491767883301</real>
 				<key>plateauDuration</key>
-				<real>2</real>
+				<real>3.2000000476837158</real>
 				<key>plateauRefocusOffset</key>
-				<real>1</real>
+				<real>1.6000000238418579</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -117,7 +117,7 @@
 				<key>rfPulse</key>
 				<string>RF</string>
 				<key>tbw</key>
-				<real>10</real>
+				<real>8</real>
 				<key>thickness</key>
 				<real>50</real>
 				<key>x0Component</key>
@@ -169,7 +169,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>2.3879976272583008</real>
+	<real>3.5199964046478271</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -201,7 +201,7 @@
 	<key>gradLimitZScale</key>
 	<real>1</real>
 	<key>inspectorWidth</key>
-	<real>373</real>
+	<real>370</real>
 	<key>magnification</key>
 	<real>0.7404741644859314</real>
 	<key>mainWindowFrame</key>
@@ -211,7 +211,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>-67</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
@@ -243,11 +243,11 @@
 			<key>showYValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>60</real>
+			<real>30</real>
 			<key>viewHeight</key>
 			<real>578</real>
 			<key>viewLeft</key>
-			<real>616.1875</real>
+			<real>571.48046875</real>
 			<key>viewWidth</key>
 			<real>449.484375</real>
 		</dict>
@@ -353,9 +353,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>2.3879976272583008</real>
+	<real>3.5199964046478271</real>
 	<key>tr</key>
-	<real>2.3883085250854492</real>
+	<real>3.5223302841186523</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
