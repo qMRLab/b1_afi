@@ -277,9 +277,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>2.2999999523162842</real>
+				<real>2.3499999046325684</real>
 				<key>plateauDuration</key>
-				<real>3</real>
+				<real>4</real>
 				<key>pluginClass</key>
 				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
@@ -326,9 +326,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
 				<key>maxVal</key>
-				<real>2.2999999523162842</real>
+				<real>2.3499999046325684</real>
 				<key>plateauDuration</key>
-				<real>0.60000002384185791</real>
+				<real>0.80000001192092896</real>
 				<key>pluginClass</key>
 				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
@@ -588,7 +588,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>absoluteTime</key>
 	<real>12464.539890624981</real>
 	<key>activeInspector</key>
-	<integer>3</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -628,7 +628,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-142</integer>
+		<integer>-34</integer>
 		<key>y</key>
 		<integer>46</integer>
 	</dict>
@@ -812,7 +812,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>timeWithinTr</key>
 	<real>4.7638906249813733</real>
 	<key>tr</key>
-	<real>5.0391621589660645</real>
+	<real>6.0507092475891113</real>
 	<key>trNum</key>
 	<integer>476</integer>
 	<key>waveSamplingRate</key>
