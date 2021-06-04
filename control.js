@@ -77,8 +77,13 @@ var rfPeak = SB.excitationsinc["<RF>.peak"];
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
-var startingTR = 10;
+var startingTR = 25;
 RTHLOGGER_WARNING("HEY Minimum TR: " + minTR);
+
+var scannerTR0 = new RthUpdateGetTRCommand(sequenceId, [], [0]);
+var scannerTR1 = new RthUpdateGetTRCommand(sequenceId, [], [1]);
+RTHLOGGER_WARNING("HEY Minimum TR0: " + scannerTR0);
+RTHLOGGER_WARNING("HEY Minimum TR0: " + scannerTR1);
 
 // Specify TE delay interval 
 var minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
