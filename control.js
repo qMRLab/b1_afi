@@ -77,8 +77,13 @@ var rfPeak = SB.excitationsinc["<RF>.peak"];
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
-var startingTR = 20;
-RTHLOGGER_WARNING("Minimum TR: " + minTR);
+var startingTR = 25;
+RTHLOGGER_WARNING("HEY Minimum TR: " + minTR);
+
+//var scannerTR0 = new RthUpdateGetTRCommand(sequenceId, [0,0,0,1], []);
+//var scannerTR1 = new RthUpdateGetTRCommand(sequenceId, [0,0,0,1], [1]);
+//RTHLOGGER_WARNING("HEY Minimum TR0: " + scannerTR0.tr());
+//RTHLOGGER_WARNING("HEY Minimum TR1: " + scannerTR1.tr());
 
 // Specify TE delay interval 
 var minTE = rfEnd - rfPeak + SB.readout['<Cartesian Readout>.readoutCenter'];
@@ -204,8 +209,8 @@ function changeTE(te)
   RTHLOGGER_WARNING("EchoDelay has been set to: " + echoDelay + "For requested TE of: " + te + "usec");
   RTHLOGGER_WARNING("Please make sure that the values in SB/Plugin/JavaScript are correct");
   RTHLOGGER_WARNING("====================== REQUIRED ================================");
-  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (20 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
-  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (100 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
+  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (25 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
+  RTHLOGGER_WARNING("TR1Duration in InterleavedCartesian3D.spv should be : " + (50 - echoDelay/1000 - SB.excitationsinc["<Slice Select Gradient>.end"]));
   RTHLOGGER_WARNING("====================== CURRENT =================================");
   RTHLOGGER_WARNING("Current TR1 duration in spv: " + SB.readout["<New TR>.duration"]);
   RTHLOGGER_WARNING("Current TR2 duration in spv: " + SB.readout["<InplaneTR2>.duration"]);
@@ -242,9 +247,9 @@ controlWidget.inputWidget_FOV.minimum = startingFOV;
 controlWidget.inputWidget_FOV.maximum = startingFOV*2;
 controlWidget.inputWidget_FOV.value   = startingFOV;
 
-controlWidget.inputWidget_TR.minimum = 10;
+controlWidget.inputWidget_TR.minimum = 25;
 controlWidget.inputWidget_TR.maximum = minTR + 30;
-controlWidget.inputWidget_TR.value   = 20;
+controlWidget.inputWidget_TR.value   = 25;
 
 controlWidget.inputWidget_TE.minimum = minTE;
 controlWidget.inputWidget_TE.maximum = 10;
