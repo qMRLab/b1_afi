@@ -76,8 +76,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetiti
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
 
 // CHANGE THESE VALUES W.R.T RTHawk logs 
-var TR1duration = 20.1734;
-var TR2duration = 46.1734;
+var TR1duration = 20.557655655;
+var TR2duration = 46.557655655;
 
 SB.set(TR1duration,'&lt;New TR&gt;.duration');
 SB.set(TR1duration,'&lt;SlabTR1&gt;.duration');
@@ -182,7 +182,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>6</integer>
+				<integer>10</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -219,7 +219,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>6</integer>
+				<integer>10</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -277,7 +277,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>2.2999999523162842</real>
+				<real>2.3499999046325684</real>
 				<key>plateauDuration</key>
 				<real>4</real>
 				<key>pluginClass</key>
@@ -326,7 +326,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
 				<key>maxVal</key>
-				<real>2.2999999523162842</real>
+				<real>2.3499999046325684</real>
 				<key>plateauDuration</key>
 				<real>0.80000001192092896</real>
 				<key>pluginClass</key>
@@ -365,7 +365,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<array>
 			<dict>
 				<key>duration</key>
-				<real>20.173400000000001</real>
+				<real>20.557655655000001</real>
 				<key>editableName</key>
 				<string>New TR</string>
 				<key>pluginClass</key>
@@ -410,7 +410,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>20.173400000000001</real>
+				<real>20.557655655000001</real>
 				<key>editableName</key>
 				<string>SlabTR1</string>
 				<key>pluginClass</key>
@@ -432,7 +432,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>6</integer>
+				<integer>10</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -466,7 +466,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>46.173400000000001</real>
+				<real>46.557655654999998</real>
 				<key>editableName</key>
 				<string>InplaneTR2</string>
 				<key>pluginClass</key>
@@ -511,7 +511,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>46.173400000000001</real>
+				<real>46.557655654999998</real>
 				<key>editableName</key>
 				<string>SlabTR2</string>
 				<key>pluginClass</key>
@@ -533,7 +533,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>6</integer>
+				<integer>10</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -586,9 +586,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>11233.038175781241</real>
+	<real>11233.611328125</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -624,13 +624,13 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>994</integer>
+		<integer>732</integer>
 		<key>width</key>
-		<integer>1509</integer>
+		<integer>1280</integer>
 		<key>x</key>
-		<integer>275</integer>
+		<integer>-40</integer>
 		<key>y</key>
-		<integer>63</integer>
+		<integer>45</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>250</real>
@@ -654,7 +654,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>767</real>
+			<real>505</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -682,7 +682,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>399</real>
+			<real>137</real>
 			<key>viewHeight</key>
 			<real>635</real>
 			<key>viewLeft</key>
@@ -704,7 +704,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>72</real>
+			<real>-190</real>
 			<key>viewHeight</key>
 			<real>305</real>
 			<key>viewLeft</key>
@@ -724,7 +724,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>607.91796875</real>
+			<real>345.5</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
@@ -744,7 +744,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>163</real>
+			<real>-99</real>
 			<key>viewHeight</key>
 			<real>214</real>
 			<key>viewLeft</key>
@@ -786,11 +786,11 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>19.550175781240686</real>
+	<real>4.0113281250000004</real>
 	<key>tr</key>
-	<real>6.0391621589660645</real>
+	<real>6.0507092475891113</real>
 	<key>trNum</key>
-	<integer>338</integer>
+	<integer>335</integer>
 	<key>waveSamplingRate</key>
 	<real>250</real>
 	<key>xPosition</key>
