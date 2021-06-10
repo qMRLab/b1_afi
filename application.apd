@@ -32,3 +32,4 @@ type = waveform
 file = InterleavedCartesianReadout3D.spv
 associatedRF = excitationsinc
 loopIndex=0
+allowDisable = true

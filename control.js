@@ -66,6 +66,7 @@ rth.informationInsert(sequenceId, "mri.EchoTrainLength", 1);
 // Set SINC by default
 rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
 rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", true));
+rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "readout", false));
 
 // As there is rewinder in SINC, we should take its duration into account
 // to determine TE accurately. In other words, end of that block is not
@@ -79,6 +80,8 @@ rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
 var startingTR = 25;
 RTHLOGGER_WARNING("HEY Minimum TR: " + minTR);
+
+rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "readout", true));
 
 //var scannerTR0 = new RthUpdateGetTRCommand(sequenceId, [0,0,0,1], []);
 //var scannerTR1 = new RthUpdateGetTRCommand(sequenceId, [0,0,0,1], [1]);
