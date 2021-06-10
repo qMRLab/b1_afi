@@ -24,7 +24,7 @@
 			<key>res</key>
 			<integer>114</integer>
 			<key>selectionStart</key>
-			<real>-5.1671457290649414</real>
+			<real>30.34922981262207</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -64,7 +64,7 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>4.025423526763916</real>
+				<real>5.1210055351257324</real>
 				<key>plateauDuration</key>
 				<real>3.2000000000000002</real>
 				<key>plateauRefocusOffset</key>
@@ -82,7 +82,7 @@
 				<key>rfPulse</key>
 				<string>RF</string>
 				<key>tbw</key>
-				<real>8</real>
+				<real>10.16</real>
 				<key>thickness</key>
 				<real>50</real>
 				<key>x0Component</key>
@@ -120,14 +120,14 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>1.6203387839203398</real>
+					<real>1.6258302555788315</real>
 				</dict>
 				<key>duration</key>
 				<real>3.2000000000000002</real>
 				<key>editableName</key>
 				<string>RF</string>
 				<key>enforceRFLimit</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>passbandRipple</key>
 				<real>-40</real>
 				<key>pluginClass</key>
@@ -145,7 +145,7 @@
 				<key>stopbandRipple</key>
 				<real>-50</real>
 				<key>timeBandwidth</key>
-				<real>8</real>
+				<real>10.16</real>
 				<key>tip</key>
 				<real>60</real>
 			</dict>
@@ -173,7 +173,7 @@
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>3.5999963283538818</real>
+	<real>3.649996280670166</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -211,13 +211,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>683</integer>
+		<integer>892</integer>
 		<key>width</key>
-		<integer>1158</integer>
+		<integer>1505</integer>
 		<key>x</key>
-		<integer>21</integer>
+		<integer>222</integer>
 		<key>y</key>
-		<integer>70</integer>
+		<integer>137</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>500</real>
@@ -235,7 +235,7 @@
 			<key>editableName</key>
 			<string>Profile</string>
 			<key>magnification</key>
-			<real>1</real>
+			<real>1.091249942779541</real>
 			<key>pluginClass</key>
 			<string>SBProfileViewPlugin</string>
 			<key>pluginName</key>
@@ -245,13 +245,13 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>showYValues</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>149.06640625</real>
+			<real>334</real>
 			<key>viewHeight</key>
-			<real>439.1328125</real>
+			<real>439</real>
 			<key>viewLeft</key>
-			<real>242.24609375</real>
+			<real>558.20703125</real>
 			<key>viewWidth</key>
 			<real>689.15625</real>
 		</dict>
@@ -273,13 +273,13 @@
 			<key>showReadoutWindows</key>
 			<integer>1</integer>
 			<key>showValues</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>71.3671875</real>
+			<real>238</real>
 			<key>viewHeight</key>
-			<real>516.83203125</real>
+			<real>517</real>
 			<key>viewLeft</key>
-			<real>96.80859375</real>
+			<real>10.52734375</real>
 			<key>viewWidth</key>
 			<real>508.8203125</real>
 		</dict>
@@ -295,11 +295,11 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>19</real>
+			<real>227.62109375</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
-			<real>480.59375</real>
+			<real>635.5703125</real>
 			<key>viewWidth</key>
 			<real>340</real>
 		</dict>
@@ -315,33 +315,13 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>456</real>
+			<real>665</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
 			<real>0.0</real>
 			<key>viewWidth</key>
 			<real>23</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
-			<string>Waveform Info</string>
-			<key>pluginClass</key>
-			<string>SBWaveformInfoPlugin</string>
-			<key>pluginName</key>
-			<string>Waveform Info</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>361</real>
-			<key>viewHeight</key>
-			<real>223</real>
-			<key>viewLeft</key>
-			<real>44</real>
-			<key>viewWidth</key>
-			<real>266</real>
 		</dict>
 	</array>
 	<key>protonDensity</key>
@@ -377,9 +357,9 @@
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>3.5999963283538818</real>
+	<real>3.649996280670166</real>
 	<key>tr</key>
-	<real>3.6026105880737305</real>
+	<real>3.6598858833312988</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
@@ -393,7 +373,7 @@
 	<key>yVelocity</key>
 	<real>0.0</real>
 	<key>zPosition</key>
-	<real>-5.1671457290649414</real>
+	<real>30.34922981262207</real>
 	<key>zVelocity</key>
 	<real>0.0</real>
 </dict>
