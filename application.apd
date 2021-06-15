@@ -20,7 +20,7 @@ allowDisable = true
 type = waveform
 file = SlabSelectMFSLR.spv
 linearPhaseIncrement = 180
-quadraticPhaseIncrement = 117
+quadraticPhaseIncrement = 39
 allowDisable = true
 
 [echodelay]
