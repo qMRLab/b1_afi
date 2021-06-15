@@ -248,7 +248,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 					<real>1.2079999446868896</real>
 				</dict>
 				<key>b</key>
-				<real>0.30000001192092896</real>
+				<real>1</real>
 				<key>editableName</key>
 				<string>Time Interval</string>
 				<key>max</key>
@@ -272,12 +272,12 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>1.5079998970031738</real>
+					<real>2.2079999446868896</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>2</real>
+				<real>1.5</real>
 				<key>plateauDuration</key>
 				<real>15</real>
 				<key>pluginClass</key>
@@ -321,12 +321,12 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>1.5079998970031738</real>
+					<real>2.2079999446868896</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
 				<key>maxVal</key>
-				<real>2</real>
+				<real>1.5</real>
 				<key>plateauDuration</key>
 				<real>3</real>
 				<key>pluginClass</key>
@@ -628,9 +628,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-96</integer>
+		<integer>0</integer>
 		<key>y</key>
-		<integer>16</integer>
+		<integer>43</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>250</real>
@@ -714,26 +714,6 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		</dict>
 		<dict>
 			<key>editableName</key>
-			<string>Waveform Info</string>
-			<key>pluginClass</key>
-			<string>SBWaveformInfoPlugin</string>
-			<key>pluginName</key>
-			<string>Waveform Info</string>
-			<key>pluginURL</key>
-			<string>[ Not Specified ]</string>
-			<key>pluginVersion</key>
-			<integer>1</integer>
-			<key>viewBottom</key>
-			<real>347.75390625</real>
-			<key>viewHeight</key>
-			<real>223</real>
-			<key>viewLeft</key>
-			<real>633.76953125</real>
-			<key>viewWidth</key>
-			<real>266</real>
-		</dict>
-		<dict>
-			<key>editableName</key>
 			<string>Slew Rate Plot</string>
 			<key>pluginClass</key>
 			<string>SBGradSlewRateViewPlugin</string>
@@ -788,7 +768,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>timeWithinTr</key>
 	<real>2.8966113281250001</real>
 	<key>tr</key>
-	<real>16.969881057739258</real>
+	<real>17.554409027099609</real>
 	<key>trNum</key>
 	<integer>98</integer>
 	<key>waveSamplingRate</key>
