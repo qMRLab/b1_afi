@@ -277,9 +277,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
 				<key>maxVal</key>
-				<real>2.3499999046325684</real>
+				<real>2</real>
 				<key>plateauDuration</key>
-				<real>4</real>
+				<real>15</real>
 				<key>pluginClass</key>
 				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
@@ -326,9 +326,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
 				<key>maxVal</key>
-				<real>2.3499999046325684</real>
+				<real>2</real>
 				<key>plateauDuration</key>
-				<real>0.80000001192092896</real>
+				<real>3</real>
 				<key>pluginClass</key>
 				<string>SBPlateauTrapezoid</string>
 				<key>pluginName</key>
@@ -586,7 +586,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<integer>0</integer>
 	</dict>
 	<key>absoluteTime</key>
-	<real>11233.611328125</real>
+	<real>3291.776611328125</real>
 	<key>activeInspector</key>
 	<integer>2</integer>
 	<key>appVersion</key>
@@ -628,9 +628,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>-40</integer>
+		<integer>-96</integer>
 		<key>y</key>
-		<integer>45</integer>
+		<integer>16</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>250</real>
@@ -724,11 +724,11 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>345.5</real>
+			<real>347.75390625</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
-			<real>726.48046875</real>
+			<real>633.76953125</real>
 			<key>viewWidth</key>
 			<real>266</real>
 		</dict>
@@ -786,11 +786,11 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>4.0113281250000004</real>
+	<real>2.8966113281250001</real>
 	<key>tr</key>
-	<real>6.0507092475891113</real>
+	<real>16.969881057739258</real>
 	<key>trNum</key>
-	<integer>335</integer>
+	<integer>98</integer>
 	<key>waveSamplingRate</key>
 	<real>250</real>
 	<key>xPosition</key>
