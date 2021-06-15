@@ -24,7 +24,7 @@
 			<key>res</key>
 			<integer>114</integer>
 			<key>selectionStart</key>
-			<real>30.34922981262207</real>
+			<real>30.474081039428711</real>
 		</dict>
 		<dict>
 			<key>editableName</key>
@@ -64,11 +64,11 @@
 				<key>hasRewinder</key>
 				<integer>1</integer>
 				<key>netArea</key>
-				<real>8.9246673583984375</real>
+				<real>8.611933708190918</real>
 				<key>plateauDuration</key>
 				<real>3.2000000000000002</real>
 				<key>plateauRefocusOffset</key>
-				<real>2.7980038382738788</real>
+				<real>2.7006789956431048</real>
 				<key>pluginClass</key>
 				<string>SBSliceSelectGradient</string>
 				<key>pluginName</key>
@@ -84,7 +84,7 @@
 				<key>tbw</key>
 				<real>10.16</real>
 				<key>thickness</key>
-				<real>50</real>
+				<real>55</real>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xPlateauOverlap</key>
@@ -120,7 +120,7 @@
 					<key>anchoredToSBKey</key>
 					<string>&lt;Slice Select Gradient&gt;.plateauRefocusPoint</string>
 					<key>position</key>
-					<real>2.8238340938527102</real>
+					<real>2.7241610461693151</real>
 				</dict>
 				<key>duration</key>
 				<real>3.2000000000000002</real>
@@ -129,7 +129,7 @@
 				<key>enforceRFLimit</key>
 				<integer>0</integer>
 				<key>passbandRipple</key>
-				<real>-80</real>
+				<real>-30</real>
 				<key>pluginClass</key>
 				<string>SBSLRExcitation</string>
 				<key>pluginName</key>
@@ -143,7 +143,7 @@
 				<key>rfType</key>
 				<integer>1</integer>
 				<key>stopbandRipple</key>
-				<real>-40</real>
+				<real>-50</real>
 				<key>timeBandwidth</key>
 				<real>10.16</real>
 				<key>tip</key>
@@ -175,7 +175,7 @@
 	<key>absoluteTime</key>
 	<real>3.3604519367218018</real>
 	<key>activeInspector</key>
-	<integer>5</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -215,7 +215,7 @@
 		<key>width</key>
 		<integer>1280</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>20</integer>
 		<key>y</key>
 		<integer>43</integer>
 	</dict>
@@ -359,7 +359,7 @@
 	<key>timeWithinTr</key>
 	<real>3.3604519367218018</real>
 	<key>tr</key>
-	<real>3.4587090015411377</real>
+	<real>3.4660604000091553</real>
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
@@ -373,7 +373,7 @@
 	<key>yVelocity</key>
 	<real>0.0</real>
 	<key>zPosition</key>
-	<real>30.34922981262207</real>
+	<real>30.474081039428711</real>
 	<key>zVelocity</key>
 	<real>0.0</real>
 </dict>
