@@ -104,7 +104,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 				<key>editableName</key>
 				<string>Cartesian Readout</string>
 				<key>fov</key>
-				<real>25.600000000000001</real>
+				<real>32</real>
 				<key>hasPhaseEncoding</key>
 				<integer>1</integer>
 				<key>hasRewinder</key>
@@ -168,7 +168,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutStart</string>
 					<key>position</key>
-					<real>0.6119999885559082</real>
+					<real>0.51599997282028198</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient</string>
@@ -181,7 +181,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>10</integer>
+				<integer>12</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -205,7 +205,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.readoutEnd</string>
 					<key>position</key>
-					<real>0.86799997091293335</real>
+					<real>0.7720000147819519</real>
 				</dict>
 				<key>editableName</key>
 				<string>Phase Encode Gradient 1</string>
@@ -218,7 +218,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>res</key>
-				<integer>10</integer>
+				<integer>12</integer>
 				<key>x0Component</key>
 				<real>0.0</real>
 				<key>xDurationOverlap</key>
@@ -244,7 +244,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Cartesian Readout&gt;.end</string>
 					<key>position</key>
-					<real>1.2079999446868896</real>
+					<real>1.0700000524520874</real>
 				</dict>
 				<key>b</key>
 				<real>0.30000001192092896</real>
@@ -271,7 +271,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>1.5079998970031738</real>
+					<real>1.3700001239776611</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid</string>
@@ -320,7 +320,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 					<key>anchoredToSBKey</key>
 					<string>&lt;Time Interval&gt;.end</string>
 					<key>position</key>
-					<real>1.5079998970031738</real>
+					<real>1.3700001239776611</real>
 				</dict>
 				<key>editableName</key>
 				<string>Plateau Trapezoid 1</string>
@@ -431,7 +431,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>10</integer>
+				<integer>12</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -532,7 +532,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 				<key>pluginVersion</key>
 				<integer>1</integer>
 				<key>repetitions</key>
-				<integer>10</integer>
+				<integer>12</integer>
 			</dict>
 			<dict>
 				<key>editableName</key>
@@ -587,7 +587,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 	<key>absoluteTime</key>
 	<real>11233.611328125</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -723,11 +723,11 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>345.5</real>
+			<real>142.484375</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
-			<real>726.48046875</real>
+			<real>391.15234375</real>
 			<key>viewWidth</key>
 			<real>266</real>
 		</dict>
@@ -787,7 +787,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 	<key>timeWithinTr</key>
 	<real>18.323328125</real>
 	<key>tr</key>
-	<real>6.0507092475891113</real>
+	<real>5.9127092361450195</real>
 	<key>trNum</key>
 	<integer>351</integer>
 	<key>waveSamplingRate</key>

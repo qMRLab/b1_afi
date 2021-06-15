@@ -223,7 +223,7 @@ function ExportBlock(input,inputRaw,trName){
     that.imageExport.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
     that.imageExport.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
     that.imageExport.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
-    var exportDirectory = "/home/agah/Desktop/qmrlabAcq/";
+    var exportDirectory = "/home/agah/Desktop/qmrlabAcq/rthRecon/";
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
     //var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
@@ -244,7 +244,7 @@ function ExportBlock(input,inputRaw,trName){
     "mri.AcquisitionBIDS"  
   ]);
   this.imageExportRaw.observedKeysChanged.connect(function(keys){
-    var exportDirectory = "/home/agah/Desktop/qmrlabAcq/raw/";
+    var exportDirectory = "/home/agah/Desktop/qmrlabAcq/rthRaw/";
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
     //var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
