@@ -78,7 +78,7 @@ var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
 var startingTR = 25;
-RTHLOGGER_WARNING("HEY Minimum TR: " + minTR);
+RTHLOGGER_WARNING("B1AFI Minimum TR: " + minTR);
 
 //var scannerTR0 = new RthUpdateGetTRCommand(sequenceId, [0,0,0,1], []);
 //var scannerTR1 = new RthUpdateGetTRCommand(sequenceId, [0,0,0,1], [1]);
