@@ -244,7 +244,7 @@ function ExportBlock(input,inputRaw,trName){
     "mri.AcquisitionBIDS"  
   ]);
   this.imageExportRaw.observedKeysChanged.connect(function(keys){
-    var exportDirectory = "/home/agah/Desktop/AgahHV/";
+    var exportDirectory = "/home/agah/Desktop/qmrlabAcq/raw/";
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
     //var acquisitionBIDS = (keys["mri.AcquisitionBIDS"]) ? "_acq-" + keys["mri.AcquisitionBIDS"] : "";
