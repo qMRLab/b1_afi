@@ -76,8 +76,8 @@ SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat2&gt;.repetiti
 SB.set(SB.get('&lt;Cartesian Readout&gt;.yRes'),'&lt;InplaneRepeat1&gt;.repetitions');
 
 // CHANGE THESE VALUES W.R.T RTHawk logs 
-var TR1duration = 20.557655655;
-var TR2duration = 46.557655655;
+var TR1duration = 19.3985869;
+var TR2duration = 44.3985869;
 
 SB.set(TR1duration,'&lt;New TR&gt;.duration');
 SB.set(TR1duration,'&lt;SlabTR1&gt;.duration');
@@ -365,7 +365,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 		<array>
 			<dict>
 				<key>duration</key>
-				<real>20.557655655000001</real>
+				<real>19.398586900000002</real>
 				<key>editableName</key>
 				<string>New TR</string>
 				<key>pluginClass</key>
@@ -410,7 +410,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>20.557655655000001</real>
+				<real>19.398586900000002</real>
 				<key>editableName</key>
 				<string>SlabTR1</string>
 				<key>pluginClass</key>
@@ -466,7 +466,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>46.557655654999998</real>
+				<real>44.398586899999998</real>
 				<key>editableName</key>
 				<string>InplaneTR2</string>
 				<key>pluginClass</key>
@@ -511,7 +511,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 			</dict>
 			<dict>
 				<key>duration</key>
-				<real>46.557655654999998</real>
+				<real>44.398586899999998</real>
 				<key>editableName</key>
 				<string>SlabTR2</string>
 				<key>pluginClass</key>
@@ -588,7 +588,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>absoluteTime</key>
 	<real>11233.611328125</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>4</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -786,11 +786,11 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');
 	<key>t2</key>
 	<real>150</real>
 	<key>timeWithinTr</key>
-	<real>4.0113281250000004</real>
+	<real>4.8113281250000002</real>
 	<key>tr</key>
 	<real>5.9127092361450195</real>
 	<key>trNum</key>
-	<integer>335</integer>
+	<integer>352</integer>
 	<key>waveSamplingRate</key>
 	<real>250</real>
 	<key>xPosition</key>
