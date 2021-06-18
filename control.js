@@ -157,8 +157,7 @@ var startingResolution = startingFOV/xPixels* 10; // mm
 // TODO: Match these xross apps.
 var startingThickness = startingZFOV; // mm
 displayTools.setSliceThickness(startingThickness*10);
-rth.informationInsert(sequenceId,"mri.SliceThickness",startingThickness);
-rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,startingZFOV/zPartitions*10]);
+
 
 // To store the current values 
 var sliceThickness = startingThickness;
@@ -166,6 +165,8 @@ var fieldOfView = startingFOV;
 
 var repetitionTime = startingTR;
 
+rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,startingZFOV/zPartitions*10]);
+rth.informationInsert(sequenceId,"mri.SliceThickness",startingZFOV/zPartitions*10);
 
 
 // Change functions
