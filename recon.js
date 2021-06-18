@@ -161,28 +161,35 @@ function ExportBlock(input,inputRaw,trName){
 
   var date = new Date();
 
+  
+
   //var imageExport = new RthReconToQmrlab();
   // This is a bit annoying, but the only option for now. 
   this.imageExport = new RthReconImageExport();
-  this.imageExport.observeKeys([
+
+  this.changeInformation = new RthReconImageChangeInformation();
+
+  var reconKeys = new Array();
+  
+  reconKeys = [
     // For now, addTag does not support type string. 
-    //"mri.SequenceName",
-    //"mri.ScanningSequence",
-    //"mri.SequenceVariant",
-    //"mri.MRAcquisitionType",
+    "mri.SequenceName",
+    "mri.ScanningSequence",
+    "mri.SequenceVariant",
+    "mri.MRAcquisitionType",
     "mri.NumberOfCoils",
     "mri.ExcitationTimeBandwidth",
     "mri.ExcitationDuration",
-    //"mri.ExcitationType",
+    "mri.ExcitationType",
     "mri.VoxelSpacing",
     "mri.EchoTime",
     "mri.RepetitionTime",
-    "mri.FlipAngle", // Belonging to the current loop
+    "mri.FlipAngle",
     "mri.SliceThickness",
     "reconstruction.phaseEncodes",
     "acquisition.samples",
     "reconstruction.zPartitions",
-    //"mri.PreAcqDuration",
+    "mri.PreAcqDuration",
     "geometry.TranslationX",
     "geometry.TranslationY",
     "geometry.TranslationZ",
@@ -193,36 +200,46 @@ function ExportBlock(input,inputRaw,trName){
     "geometry.FieldOfViewX",
     "geometry.FieldOfViewY",
     "geometry.FieldOfViewZ",
-    "mri.FlipIndex", // Ensured that this one will change per run.
     "mri.SubjectBIDS",
-    //"mri.SessionBIDS",
-    "mri.AcquisitionBIDS"  
+    "mri.SessionBIDS",
+    "mri.AcquisitionBIDS",
+    "equipment.device/manufacturer",
+    "equipment.device/manufacturerModelName",
+    "equipment.device/softwareVersions",
+    "equipment.gradient/dcGain",
+    "equipment.gradient/xMaximumAmplitude",
+    "equipment.gradient/xRiseTime",
+    "equipment.gradient/xDbdtDistance",
+    "equipment.hostManufacturerModelName",
+    "equipment.hostSoftwareVersions",
+    "equipment.magnet/fieldStrength",
+    "equipment.prescan/cf",
+    "equipment.prescan/maxB1",
+    "equipment.prescan/nucleus",
+    "equipment.prescan/r1",
+    "equipment.prescan/r2",
+    "equipment.prescan/refPulseInGauss",
+    "equipment.prescan/refVoltage",
+    "equipment.prescan/status",
+    "equipment.prescan/tg",
+    "equipment.prescan/xs",
+    "equipment.prescan/ys",
+    "equipment.prescan/zs",
+    "equipment.regulatory/peakSar",
+  ];
+
+
+  for (var i = 0; i<reconKeys.length; i++){
+    this.imageExport.addInformationKey(reconKeys[i]);
+  }
+
+
+  this.imageExport.observeKeys([
+    "mri.SubjectBIDS",
+    "mri.SessionBIDS"
   ]);
   this.imageExport.observedKeysChanged.connect(function(keys){
-    that.imageExport.addTag("NumberOfCoils",keys["mri.NumberOfCoils"]);
-    that.imageExport.addTag("ExcitationTimeBandwidth",keys["mri.ExcitationTimeBandwidth"]);
-    that.imageExport.addTag("ExcitationDuration",keys["mri.ExcitationDuration"]);
-    that.imageExport.addTag("SpacingX",keys["mri.VoxelSpacing"][0]);
-    that.imageExport.addTag("SpacingY",keys["mri.VoxelSpacing"][1]);
-    that.imageExport.addTag("SpacingZ",keys["mri.VoxelSpacing"][2]);
-    that.imageExport.addTag("EchoTime",keys["mri.EchoTime"]);
-    that.imageExport.addTag("RepetitionTime",keys["mri.RepetitionTime"]);
-    that.imageExport.addTag("FlipAngle",keys["mri.FlipAngle"]);
-    that.imageExport.addTag("SliceThickness",keys["mri.SliceThickness"]);
-    that.imageExport.addTag("NumberOfRows",keys["reconstruction.phaseEncodes"]);
-    that.imageExport.addTag("NumberOfColumns",keys["acquisition.samples"]);
-    //that.imageExport.addTag("PreAcqDuration",keys["mri.PreAcqDuration"]);
-    that.imageExport.addTag("TranslationX",keys["geometry.TranslationX"]);
-    that.imageExport.addTag("TranslationY",keys["geometry.TranslationY"]);
-    that.imageExport.addTag("TranslationZ",keys["geometry.TranslationZ"]);
-    that.imageExport.addTag("QuaternionW",keys["geometry.QuaternionW"]);
-    that.imageExport.addTag("QuaternionX",keys["geometry.QuaternionX"]);
-    that.imageExport.addTag("QuaternionY",keys["geometry.QuaternionY"]);
-    that.imageExport.addTag("QuaternionZ",keys["geometry.QuaternionZ"]);
-    that.imageExport.addTag("FieldOfViewX",keys["geometry.FieldOfViewX"]);
-    that.imageExport.addTag("FieldOfViewY",keys["geometry.FieldOfViewY"]);
-    that.imageExport.addTag("FieldOfViewZ",keys["geometry.FieldOfViewZ"]);
-    that.imageExport.addTag("YYYMMDD",date.getFullYear() + date.getMonth() + date.getDay());
+
     var exportDirectory = "qMRLabAcq/rthRecon/";
     var subjectBIDS  = "sub-" + keys["mri.SubjectBIDS"];
     var sessionBIDS = (keys["mri.SessionBIDS"]) ? "_ses-" + keys["mri.SessionBIDS"] : "";
@@ -238,10 +255,8 @@ function ExportBlock(input,inputRaw,trName){
   this.imageExportRaw = new RthReconImageExport();
   this.imageExportRaw.objectName = "save_raw" + trName;
   this.imageExportRaw.observeKeys([
-    "mri.FlipIndex", // Ensured that this one will change per run.
     "mri.SubjectBIDS",
-    //"mri.SessionBIDS",
-    "mri.AcquisitionBIDS"  
+    "mri.SessionBIDS"
   ]);
   this.imageExportRaw.observedKeysChanged.connect(function(keys){
     var exportDirectory = "qMRLabAcq/rthRaw/";

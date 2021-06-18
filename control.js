@@ -123,9 +123,9 @@ function updateSequenceParams(selected){
       sincSelected = true;
       rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
         ExcitationDuration: SB.excitationsinc["<RF>.duration"],
-        ExcitationDuration: SB.excitationsinc["<RF>.timeBandwidth"],
+        ExcitationTimeBandwidth: SB.excitationsinc["<RF>.timeBandwidth"],
         FlipAngle:SB.excitationsinc["<RF>.tip"],
-        ExcitationType: "Slab-Selective SINC"
+        ExcitationType: "Slab-Selective MF-SLR"
       }));
       rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
       rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationsinc", true));
