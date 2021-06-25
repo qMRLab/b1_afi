@@ -62,6 +62,8 @@ rth.informationInsert(sequenceId, "mri.MRAcquisitionType", "3D");
 rth.informationInsert(sequenceId, "mri.NumberOfAverages", 1);
 rth.informationInsert(sequenceId, "mri.NumberOfCoils", parameterList[2]);
 rth.informationInsert(sequenceId, "mri.EchoTrainLength", 1);
+rth.informationInsert(sequenceId, "mri.SpoilerGradientAmplitude", SB.readout["<Plateau Trapezoid>.maxVal"]);
+rth.informationInsert(sequenceId, "mri.SpoilerGradientDuration", SB.readout["<Plateau Trapezoid>.plateauDuration"]);
 
 // Set SINC by default
 rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
@@ -125,6 +127,9 @@ function updateSequenceParams(selected){
         ExcitationDuration: SB.excitationsinc["<RF>.duration"],
         ExcitationTimeBandwidth: SB.excitationsinc["<RF>.timeBandwidth"],
         FlipAngle:SB.excitationsinc["<RF>.tip"],
+        ExcitationPassBandRippleDB:SB.excitationsinc["<RF>.passbandRipple"],
+        ExcitationStopBandRippleDB:SB.excitationsinc["<RF>.stopbandRipple"],
+        ExcitationEnforceRFLimit:SB.excitationsinc["<RF>.enforceRFLimit"],
         ExcitationType: "Slab-Selective MF-SLR"
       }));
       rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
@@ -239,8 +244,8 @@ rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
   //PreAcqDuration: SB.readout["<Preacquisitions>.duration"]
 }));
 
-var startingN = 5;
-controlWidget.inputWidget_TRNfactor.minimum = startingN-2;
+var startingN = 2;
+controlWidget.inputWidget_TRNfactor.minimum = startingN-1;
 controlWidget.inputWidget_TRNfactor.maximum = startingN+2;
 controlWidget.inputWidget_TRNfactor.value   = startingN;
 
