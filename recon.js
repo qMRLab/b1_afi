@@ -522,15 +522,19 @@ rxAtten0.objectName = "Rx Atten 0";
 rxAtten0.lowerLimit = 0.3;
 rxAtten0.upperLimit = 0.75;
 rxAtten0.newAttenuation.connect(function(newAtten) {
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "sequence", "setRxAttenuation", "", newAtten));
+  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
 });
+
+var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
+var atten = getRxAtten.receivedData();
+RTHLOGGER_ERROR("Received atten is " + atten);
 
 var rxAtten1 = new RthReconRawApplyRxAttenuation();
 rxAtten1.objectName = "Rx Atten 1";
 rxAtten1.lowerLimit = 0.3;
 rxAtten1.upperLimit = 0.75;
 rxAtten1.newAttenuation.connect(function(newAtten) {
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "sequence", "setRxAttenuation", "", newAtten));
+  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
 });
 
 var sos0 = new RthReconImageSumOfSquares();
