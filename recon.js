@@ -517,15 +517,16 @@ function ExportBlock(input,inputRaw,trName){
 
 //var exporter  = new ExportBlock(splitter.output(1),packCoils.output());
 
-var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
-var atten = getRxAtten.receivedData();
-RTHLOGGER_ERROR("Received atten is " + atten);
+//var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
+//var atten = getRxAtten.receivedData();
+//RTHLOGGER_ERROR("Received atten is " + atten);
 
 var rxAtten0 = new RthReconRawApplyRxAttenuation();
 rxAtten0.objectName = "Rx Atten 0";
 rxAtten0.lowerLimit = 0.3;
 rxAtten0.upperLimit = 0.75;
 rxAtten0.newAttenuation.connect(function(newAtten) {
+  RTHLOGGER_ERROR("Received atten is (afi in function tr1)" + newAtten);
   rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
 });
 
@@ -534,6 +535,7 @@ rxAtten1.objectName = "Rx Atten 1";
 rxAtten1.lowerLimit = 0.3;
 rxAtten1.upperLimit = 0.75;
 rxAtten1.newAttenuation.connect(function(newAtten) {
+  RTHLOGGER_ERROR("Received atten is (afi in function tr2)" + newAtten);
   rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
 });
 
