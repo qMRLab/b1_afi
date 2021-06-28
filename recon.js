@@ -517,6 +517,10 @@ function ExportBlock(input,inputRaw,trName){
 
 //var exporter  = new ExportBlock(splitter.output(1),packCoils.output());
 
+var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
+var atten = getRxAtten.receivedData();
+RTHLOGGER_ERROR("Received atten is " + atten);
+
 var rxAtten0 = new RthReconRawApplyRxAttenuation();
 rxAtten0.objectName = "Rx Atten 0";
 rxAtten0.lowerLimit = 0.3;
@@ -524,10 +528,6 @@ rxAtten0.upperLimit = 0.75;
 rxAtten0.newAttenuation.connect(function(newAtten) {
   rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
 });
-
-var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
-var atten = getRxAtten.receivedData();
-RTHLOGGER_ERROR("Received atten is " + atten);
 
 var rxAtten1 = new RthReconRawApplyRxAttenuation();
 rxAtten1.objectName = "Rx Atten 1";
