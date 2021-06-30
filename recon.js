@@ -531,9 +531,9 @@ function ExportBlock(input,inputRaw,trName){
 
 //var exporter  = new ExportBlock(splitter.output(1),packCoils.output());
 
-//var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
-//var atten = getRxAtten.receivedData();
-//RTHLOGGER_ERROR("Received atten is " + atten);
+var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
+var atten = getRxAtten.receivedData();
+RTHLOGGER_WARNING("AFI recon attenuation received " + atten);
 
 //var rxAtten0 = new RthReconRawApplyRxAttenuation();
 //rxAtten0.objectName = "Rx Atten 0";
