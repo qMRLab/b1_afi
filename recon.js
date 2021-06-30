@@ -44,20 +44,21 @@ function reconBlock(input,index) {
   
   var that  = this;
   
-  this.attenSplit = new RthReconSplitter();
-  this.attenSplit.objectName = "Atten Split " + index;
-  this.attenSplit.setInput(input);
+  //this.attenSplit = new RthReconSplitter();
+  //this.attenSplit.objectName = "Atten Split " + index;
+  //this.attenSplit.setInput(input);
   
-  this.attenOutput = function() {
-    return this.attenSplit.output(0);
-  };
+  //this.attenOutput = function() {
+  //    return this.attenSplit.output(0);
+  //};
 
 // acquisition.<Cartesian Readout>.index --> 0 to 123 
 // acquisition.<inter>.input --> 0/1 
  this.sort3d = new RthReconSort();
  this.sort3d.objectName = "TRNumber(" + index + ")";
  this.sort3d.setIndexKeys(["acquisition.<Cartesian Readout>.index","acquisition.<zPartition" + index + ">.index"]);
- this.sort3d.setInput(this.attenSplit.output(1));
+ //this.sort3d.setInput(this.attenSplit.output(1));
+ this.sort3d.setInput(input);
  //"acquisition.<Cartesian Readout>.index","acquisition.<inter>.input","acquisition.<zPartition1>.index"
  //this.sort3d.observeKeys(["mri.RunNumber"]);
  this.sort3d.observeKeys(["acquisition.<interleave>.input"]);
@@ -83,7 +84,15 @@ function reconBlock(input,index) {
   this.fft.objectName = "FFT(" + index + ")";
   this.fft.setInput(this.rawSplit.output(-1));
 
+  //this.fermi = new RthReconImageFermiFilter();
+  //this.fermi.objectName = "Fermi Filter ";
+  //this.fermi.setWidth(0.01);
+  //this.fermi.setRadius(0.48);
+  //this.fermi.setFilterZDirection(true);
+  //this.fermi.setInput(this.fft.output());
+
   this.output = function() {
+  //return this.fermi.output();
   return this.fft.output();
   };
 
@@ -111,12 +120,12 @@ function  coilBlock(input,index){
     that.b1Data[0] = new reconBlock(that.router.output(0), 0);
     sos0.setInput(index,that.b1Data[0].output());
     pack0.setInput(index,that.b1Data[0].rawOutput());
-    rxAtten0.setInput(index, that.b1Data[0].attenOutput());
+    //rxAtten0.setInput(index, that.b1Data[0].attenOutput());
 
     that.b1Data[1] = new reconBlock(that.router.output(1), 1);
     sos1.setInput(index,that.b1Data[1].output());
     pack1.setInput(index,that.b1Data[1].rawOutput());
-    rxAtten1.setInput(index, that.b1Data[1].attenOutput());
+    //rxAtten1.setInput(index, that.b1Data[1].attenOutput());
     
     //for (var m=0; m < interleaveSteps; m++){
      // that.b1Data[m] = new reconBlock(that.router.output(m), m);
@@ -195,7 +204,6 @@ function ExportBlock(input,inputRaw,trName){
     "mri.EchoTime",
     "mri.RepetitionTime",
     "mri.FlipAngle",
-    "mri.SliceThickness",
     "reconstruction.phaseEncodes",
     "acquisition.samples",
     "reconstruction.zPartitions",
@@ -205,6 +213,9 @@ function ExportBlock(input,inputRaw,trName){
     "mri.ExcitationPassBandRippleDB",
     "mri.ExcitationStopBandRippleDB",
     "mri.ExcitationEnforceRFLimit",
+    "mri.SpoilingState",
+    "mri.SpoilingType",
+    "mri.SpoilingRFPhaseIncrement",
     "mri.SpoilerGradientAmplitude",
     "mri.SpoilerGradientDuration",
   // Generic RTHawk keys
@@ -218,6 +229,7 @@ function ExportBlock(input,inputRaw,trName){
   "geometry.FieldOfViewX",
   "geometry.FieldOfViewY",
   "geometry.FieldOfViewZ",
+  "geometry.SliceThickness",
   "equipment.StationName",
   "equipment.regulatory/chronaxie",
   "equipment.regulatory/coilSar",
@@ -336,6 +348,7 @@ function ExportBlock(input,inputRaw,trName){
   "study.StudyDescription",
   "study.StudyTime",
   "equipment.prescan/cf",
+  "acquisition.rxAttenuation",
   ];
 
   // Siemens specific keys 
@@ -521,23 +534,23 @@ function ExportBlock(input,inputRaw,trName){
 //var atten = getRxAtten.receivedData();
 //RTHLOGGER_ERROR("Received atten is " + atten);
 
-var rxAtten0 = new RthReconRawApplyRxAttenuation();
-rxAtten0.objectName = "Rx Atten 0";
-rxAtten0.lowerLimit = 0.3;
-rxAtten0.upperLimit = 0.75;
-rxAtten0.newAttenuation.connect(function(newAtten) {
-  RTHLOGGER_ERROR("Received atten is (afi in function tr1)" + newAtten);
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
-});
+//var rxAtten0 = new RthReconRawApplyRxAttenuation();
+//rxAtten0.objectName = "Rx Atten 0";
+//rxAtten0.lowerLimit = 0.3;
+//rxAtten0.upperLimit = 0.75;
+//rxAtten0.newAttenuation.connect(function(newAtten) {
+//  RTHLOGGER_ERROR("Received atten is (afi in function tr1)" + newAtten);
+//  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
+//});
 
-var rxAtten1 = new RthReconRawApplyRxAttenuation();
-rxAtten1.objectName = "Rx Atten 1";
-rxAtten1.lowerLimit = 0.3;
-rxAtten1.upperLimit = 0.75;
-rxAtten1.newAttenuation.connect(function(newAtten) {
-  RTHLOGGER_ERROR("Received atten is (afi in function tr2)" + newAtten);
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
-});
+//var rxAtten1 = new RthReconRawApplyRxAttenuation();
+//rxAtten1.objectName = "Rx Atten 1";
+//rxAtten1.lowerLimit = 0.3;
+//rxAtten1.upperLimit = 0.75;
+//rxAtten1.newAttenuation.connect(function(newAtten) {
+//  RTHLOGGER_ERROR("Received atten is (afi in function tr2)" + newAtten);
+//  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
+//});
 
 var sos0 = new RthReconImageSumOfSquares();
 sos0.objectName = "SoS0";

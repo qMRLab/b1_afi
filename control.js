@@ -62,6 +62,9 @@ rth.informationInsert(sequenceId, "mri.MRAcquisitionType", "3D");
 rth.informationInsert(sequenceId, "mri.NumberOfAverages", 1);
 rth.informationInsert(sequenceId, "mri.NumberOfCoils", parameterList[2]);
 rth.informationInsert(sequenceId, "mri.EchoTrainLength", 1);
+rth.informationInsert(sequenceId, "mri.SpoilingState","True");
+rth.informationInsert(sequenceId, "mri.SpoilingType","COMBINED");
+rth.informationInsert(sequenceId, "mri.SpoilingRFPhaseIncrement",117);
 rth.informationInsert(sequenceId, "mri.SpoilerGradientAmplitude", SB.readout["<Plateau Trapezoid>.maxVal"]);
 rth.informationInsert(sequenceId, "mri.SpoilerGradientDuration", SB.readout["<Plateau Trapezoid>.plateauDuration"]);
 
@@ -171,8 +174,7 @@ var fieldOfView = startingFOV;
 var repetitionTime = startingTR;
 
 rth.informationInsert(sequenceId,"mri.VoxelSpacing",[fieldOfView/xPixels*10,fieldOfView/phaseEncodes*10,startingZFOV/zPartitions*10]);
-rth.informationInsert(sequenceId,"mri.SliceThickness",startingZFOV/zPartitions*10);
-
+rth.addCommand(new RthUpdateChangeSliceThicknessCommand(sequenceId, startingZFOV/zPartitions*10));
 
 // Change functions
 
@@ -243,6 +245,18 @@ rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
   NumberOfCoils: parameterList[2]
   //PreAcqDuration: SB.readout["<Preacquisitions>.duration"]
 }));
+
+function changeRxAtten(val)
+{
+  RTHLOGGER_WARNING("Setting attenuation to " + val);
+  // SET RECEIVER ATTENUATION TO A USER DEFINED VALUE
+  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", val));
+}
+controlWidget.inputWidget_RxAttenuation.valueChanged.connect(changeRxAtten);
+
+
+controlWidget.inputWidget_RxAttenuation.minimum = 0;
+controlWidget.inputWidget_RxAttenuation.maximum = 10;
 
 var startingN = 2;
 controlWidget.inputWidget_TRNfactor.minimum = startingN-1;
@@ -322,9 +336,25 @@ function subTextChanged(txt){
 
 }
 
+function attenuationClicked(chck){
+
+  if (chck){
+    var getRxAtten = new RthUpdateGetRxAttenuationCommand(sequenceId, "readout"); rth.addCommand(getRxAtten);
+    var atten = getRxAtten.receivedData();
+    RTHLOGGER_WARNING("Received attenuation is " + atten);
+    controlWidget.inputWidget_RxAttenuation.enabled = true;
+    controlWidget.inputWidget_RxAttenuation.value = atten;
+  }else{
+    RTHLOGGER_WARNING("Rx attenuation has been disabled.");
+    controlWidget.inputWidget_RxAttenuation.enabled = false;
+    rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", 0));
+  }
+}
 
 
 // Connect UI elements to the callback functions.
+controlWidget.isRxAttenuation.toggled.connect(attenuationClicked);
+attenuationClicked(controlWidget.isRxAttenuation.checked)
 
 controlWidget.acqBIDS.textChanged.connect(acqTextChanged);
 acqTextChanged(controlWidget.acqBIDS.text);
