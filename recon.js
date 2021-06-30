@@ -218,6 +218,7 @@ function ExportBlock(input,inputRaw,trName){
     "mri.SpoilingRFPhaseIncrement",
     "mri.SpoilerGradientAmplitude",
     "mri.SpoilerGradientDuration",
+    "mri.RxAttenuationManual",
   // Generic RTHawk keys
   "geometry.TranslationX",
   "geometry.TranslationY",
