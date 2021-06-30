@@ -67,6 +67,7 @@ rth.informationInsert(sequenceId, "mri.SpoilingType","COMBINED");
 rth.informationInsert(sequenceId, "mri.SpoilingRFPhaseIncrement",117);
 rth.informationInsert(sequenceId, "mri.SpoilerGradientAmplitude", SB.readout["<Plateau Trapezoid>.maxVal"]);
 rth.informationInsert(sequenceId, "mri.SpoilerGradientDuration", SB.readout["<Plateau Trapezoid>.plateauDuration"]);
+rth.informationInsert(sequenceId, "mri.RxAttenuationManual", "False");
 
 // Set SINC by default
 rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
@@ -248,7 +249,7 @@ rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
 
 function changeRxAtten(val)
 {
-  RTHLOGGER_WARNING("Setting attenuation to " + val);
+  //RTHLOGGER_WARNING("Setting attenuation to " + val);
   // SET RECEIVER ATTENUATION TO A USER DEFINED VALUE
   rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", val));
 }
@@ -256,7 +257,7 @@ controlWidget.inputWidget_RxAttenuation.valueChanged.connect(changeRxAtten);
 
 
 controlWidget.inputWidget_RxAttenuation.minimum = 0;
-controlWidget.inputWidget_RxAttenuation.maximum = 10;
+controlWidget.inputWidget_RxAttenuation.maximum = 20;
 
 var startingN = 2;
 controlWidget.inputWidget_TRNfactor.minimum = startingN-1;
@@ -344,10 +345,12 @@ function attenuationClicked(chck){
     RTHLOGGER_WARNING("Received attenuation is " + atten);
     controlWidget.inputWidget_RxAttenuation.enabled = true;
     controlWidget.inputWidget_RxAttenuation.value = atten;
+    rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RxAttenuationManual", "True"));
   }else{
     RTHLOGGER_WARNING("Rx attenuation has been disabled.");
     controlWidget.inputWidget_RxAttenuation.enabled = false;
     rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", 0));
+    rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RxAttenuationManual", "False"));
   }
 }
 
