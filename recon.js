@@ -349,6 +349,7 @@ function ExportBlock(input,inputRaw,trName){
   "study.StudyTime",
   "equipment.prescan/cf",
   "acquisition.rxAttenuation",
+  "acquisition.channels",
   ];
 
   // Siemens specific keys 
