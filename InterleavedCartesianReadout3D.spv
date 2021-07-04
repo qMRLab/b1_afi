@@ -629,7 +629,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 		<key>x</key>
 		<integer>0</integer>
 		<key>y</key>
-		<integer>45</integer>
+		<integer>301</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>250</real>
