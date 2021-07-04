@@ -539,18 +539,30 @@ var rxAtten0 = new RthReconRawApplyRxAttenuation();
 rxAtten0.objectName = "Rx Atten 0";
 rxAtten0.lowerLimit = 0.3;
 rxAtten0.upperLimit = 0.75;
+var enforceAtten0 = 0;
+rxAtten0.observeKeys(["mri.RxAttenuationValue"]);
+rxAtten0.observedKeysChanged.connect(function(keys){
+  RTHLOGGER_WARNING("Recon received user enforce rx factor " + keys["mri.RxAttenuationValue"]);
+  enforceAtten0 = keys["mri.RxAttenuationValue"];
+});
 rxAtten0.newAttenuation.connect(function(newAtten) {
-  RTHLOGGER_WARNING("AUTO rx attenuation (b1afi recon tr1) " + newAtten);
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
+  RTHLOGGER_WARNING("AUTO rx attenuation (b1afi recon tr1) " + newAtten + " but set to " + enforceAtten0);
+  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", enforceAtten0));
 });
 
 var rxAtten1 = new RthReconRawApplyRxAttenuation();
 rxAtten1.objectName = "Rx Atten 1";
 rxAtten1.lowerLimit = 0.3;
 rxAtten1.upperLimit = 0.75;
+var enforceAtten1 = 0;
+rxAtten1.observeKeys(["mri.RxAttenuationValue"]);
+rxAtten1.observedKeysChanged.connect(function(keys){
+  RTHLOGGER_WARNING("Recon received user enforce rx factor " + keys["mri.RxAttenuationValue"]);
+  enforceAtten1 = keys["mri.RxAttenuationValue"];
+});
 rxAtten1.newAttenuation.connect(function(newAtten) {
-  RTHLOGGER_WARNING("AUTO rx attenuation (b1afi recon tr2) " + newAtten);
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", newAtten));
+  RTHLOGGER_WARNING("AUTO rx attenuation (b1afi recon tr2) " + newAtten + " but set to " + enforceAtten1);
+  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", enforceAtten1));
 });
 
 var sos0 = new RthReconImageSumOfSquares();

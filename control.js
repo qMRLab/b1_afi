@@ -68,6 +68,7 @@ rth.informationInsert(sequenceId, "mri.SpoilingRFPhaseIncrement",117);
 rth.informationInsert(sequenceId, "mri.SpoilerGradientAmplitude", SB.readout["<Plateau Trapezoid>.maxVal"]);
 rth.informationInsert(sequenceId, "mri.SpoilerGradientDuration", SB.readout["<Plateau Trapezoid>.plateauDuration"]);
 rth.informationInsert(sequenceId, "mri.RxAttenuationManual", "False");
+rth.informationInsert(sequenceId, "mri.RxAttenuationValue", 0);
 
 // Set SINC by default
 rth.addCommand(new RthUpdateEnableBlockCommand(sequenceId, "excitationrect", false));
@@ -249,8 +250,10 @@ rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
 
 function changeRxAtten(val)
 {
-  RTHLOGGER_WARNING("SKIPPING MANUAL RX " + val);
+  //RTHLOGGER_WARNING("SKIPPING MANUAL RX " + val);
   // SET RECEIVER ATTENUATION TO A USER DEFINED VALUE
+  // Send this to recon
+  rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RxAttenuationValue", val));
   //rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", val));
 }
 controlWidget.inputWidget_RxAttenuation.valueChanged.connect(changeRxAtten);
