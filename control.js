@@ -249,9 +249,9 @@ rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId,{
 
 function changeRxAtten(val)
 {
-  //RTHLOGGER_WARNING("Setting attenuation to " + val);
+  RTHLOGGER_WARNING("SKIPPING MANUAL RX " + val);
   // SET RECEIVER ATTENUATION TO A USER DEFINED VALUE
-  rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", val));
+  //rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", val));
 }
 controlWidget.inputWidget_RxAttenuation.valueChanged.connect(changeRxAtten);
 
@@ -347,7 +347,7 @@ function attenuationClicked(chck){
     RTHLOGGER_WARNING("Rx attenuation has been disabled.");
     controlWidget.inputWidget_RxAttenuation.enabled = false;
     controlWidget.inputWidget_RxAttenuation.value = 0;
-    rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", 0));
+    //rth.addCommand(new RthUpdateFloatParameterCommand(sequenceId, "readout", "setRxAttenuation", "", 0));
     rth.addCommand(new RthUpdateChangeMRIParameterCommand(sequenceId, "RxAttenuationManual", "False"));
   }
 }
