@@ -83,7 +83,7 @@ var rfPeak = SB.excitationsinc["<RF>.peak"];
 var scannerTR = new RthUpdateGetTRCommand(sequenceId, [], []);
 rth.addCommand(scannerTR);
 var minTR = scannerTR.tr();
-var startingTR = 25;
+var startingTR = 20;
 RTHLOGGER_WARNING("B1AFI Minimum TR: " + minTR);
 
 //var scannerTR0 = new RthUpdateGetTRCommand(sequenceId, [0,0,0,1], []);
@@ -268,9 +268,9 @@ controlWidget.inputWidget_FOV.minimum = startingFOV;
 controlWidget.inputWidget_FOV.maximum = startingFOV*2;
 controlWidget.inputWidget_FOV.value   = startingFOV;
 
-controlWidget.inputWidget_TR.minimum = 25;
-controlWidget.inputWidget_TR.maximum = minTR + 30;
-controlWidget.inputWidget_TR.value   = 25;
+controlWidget.inputWidget_TR.minimum = 20;
+controlWidget.inputWidget_TR.maximum = minTR + 90;
+controlWidget.inputWidget_TR.value   = 20;
 
 controlWidget.inputWidget_TE.minimum = minTE;
 controlWidget.inputWidget_TE.maximum = 10;
