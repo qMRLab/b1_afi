@@ -216,7 +216,7 @@
 		<integer>36</integer>
 	</dict>
 	<key>maxReadoutRate</key>
-	<real>20</real>
+	<real>50</real>
 	<key>nominalGradLimitScale</key>
 	<real>1</real>
 	<key>numRfRxChannels</key>
