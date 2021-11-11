@@ -211,13 +211,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>581</integer>
+		<integer>966</integer>
 		<key>width</key>
-		<integer>1024</integer>
+		<integer>1440</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>177</integer>
 		<key>y</key>
-		<integer>36</integer>
+		<integer>91</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>20</real>
@@ -247,7 +247,7 @@
 			<key>showYValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>23</real>
+			<real>408</real>
 			<key>viewHeight</key>
 			<real>439</real>
 			<key>viewLeft</key>
@@ -275,7 +275,7 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-73</real>
+			<real>312</real>
 			<key>viewHeight</key>
 			<real>517</real>
 			<key>viewLeft</key>
@@ -295,7 +295,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-83.5</real>
+			<real>301</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -315,7 +315,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>354</real>
+			<real>739</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -363,7 +363,7 @@
 	<key>trNum</key>
 	<integer>0</integer>
 	<key>waveSamplingRate</key>
-	<real>100</real>
+	<real>250</real>
 	<key>xPosition</key>
 	<real>0.0</real>
 	<key>xVelocity</key>

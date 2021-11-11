@@ -627,9 +627,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 		<key>width</key>
 		<integer>1024</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>383</integer>
 		<key>y</key>
-		<integer>36</integer>
+		<integer>476</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>20</real>
@@ -757,7 +757,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 	<key>readoutSampleDivisor</key>
 	<integer>2</integer>
 	<key>receiverPhase</key>
-	<real>-180</real>
+	<real>0.0</real>
 	<key>rfLimit</key>
 	<real>0.10000000000000001</real>
 	<key>slewMagLimitXScale</key>

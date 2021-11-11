@@ -102,9 +102,9 @@
 	<key>absoluteTime</key>
 	<real>0.074746429920196533</real>
 	<key>activeInspector</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>appVersion</key>
-	<string>2.5.1</string>
+	<string>2.5.2</string>
 	<key>beginAtSS</key>
 	<integer>0</integer>
 	<key>chronaxie</key>
@@ -147,7 +147,7 @@
 		<integer>50</integer>
 	</dict>
 	<key>maxReadoutRate</key>
-	<real>500</real>
+	<real>20</real>
 	<key>nominalGradLimitScale</key>
 	<real>1</real>
 	<key>numRfRxChannels</key>
