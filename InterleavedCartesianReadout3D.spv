@@ -587,7 +587,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 	<key>absoluteTime</key>
 	<real>11236.880859375</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>1</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -627,9 +627,9 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 		<key>width</key>
 		<integer>1024</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>296</integer>
 		<key>y</key>
-		<integer>38</integer>
+		<integer>379</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>20</real>

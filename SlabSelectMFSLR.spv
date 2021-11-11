@@ -211,13 +211,13 @@
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>581</integer>
+		<integer>725</integer>
 		<key>width</key>
-		<integer>1024</integer>
+		<integer>1102</integer>
 		<key>x</key>
-		<integer>-17</integer>
+		<integer>176</integer>
 		<key>y</key>
-		<integer>36</integer>
+		<integer>263</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>20</real>
@@ -247,7 +247,7 @@
 			<key>showYValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>68</real>
+			<real>212</real>
 			<key>viewHeight</key>
 			<real>439</real>
 			<key>viewLeft</key>
@@ -275,7 +275,7 @@
 			<key>showValues</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-49.4765625</real>
+			<real>94</real>
 			<key>viewHeight</key>
 			<real>517</real>
 			<key>viewLeft</key>
@@ -295,7 +295,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-83.5</real>
+			<real>60</real>
 			<key>viewHeight</key>
 			<real>48</real>
 			<key>viewLeft</key>
@@ -315,7 +315,7 @@
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>354</real>
+			<real>498</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
