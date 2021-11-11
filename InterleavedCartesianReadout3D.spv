@@ -587,7 +587,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 	<key>absoluteTime</key>
 	<real>11236.880859375</real>
 	<key>activeInspector</key>
-	<integer>4</integer>
+	<integer>1</integer>
 	<key>appVersion</key>
 	<string>2.5.2</string>
 	<key>beginAtSS</key>
@@ -623,13 +623,13 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 	<key>mainWindowFrame</key>
 	<dict>
 		<key>height</key>
-		<integer>579</integer>
+		<integer>938</integer>
 		<key>width</key>
-		<integer>1024</integer>
+		<integer>1287</integer>
 		<key>x</key>
-		<integer>0</integer>
+		<integer>225</integer>
 		<key>y</key>
-		<integer>38</integer>
+		<integer>119</integer>
 	</dict>
 	<key>maxReadoutRate</key>
 	<real>20</real>
@@ -653,7 +653,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>352</real>
+			<real>711</real>
 			<key>viewHeight</key>
 			<real>153</real>
 			<key>viewLeft</key>
@@ -681,7 +681,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 			<key>showValues</key>
 			<integer>0</integer>
 			<key>viewBottom</key>
-			<real>-8</real>
+			<real>351</real>
 			<key>viewHeight</key>
 			<real>635</real>
 			<key>viewLeft</key>
@@ -703,7 +703,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-343</real>
+			<real>16</real>
 			<key>viewHeight</key>
 			<real>305</real>
 			<key>viewLeft</key>
@@ -723,7 +723,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>193</real>
+			<real>552</real>
 			<key>viewHeight</key>
 			<real>223</real>
 			<key>viewLeft</key>
@@ -743,7 +743,7 @@ SB.set(TR2duration,'&lt;SlabTR2&gt;.duration');</string>
 			<key>pluginVersion</key>
 			<integer>1</integer>
 			<key>viewBottom</key>
-			<real>-252</real>
+			<real>107</real>
 			<key>viewHeight</key>
 			<real>214</real>
 			<key>viewLeft</key>
